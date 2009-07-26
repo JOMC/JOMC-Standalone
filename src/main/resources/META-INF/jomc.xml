@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Copyright (c) 2009 The JOMC Project
+  Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in
+      the documentation and/or other materials provided with the
+      distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE JOMC PROJECT AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JOMC PROJECT OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  $Id$
+
+-->
+<module xmlns="http://jomc.org/model"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://jomc.org/model http://jomc.sourceforge.net/jomc-model/jomc-1.0.xsd"
+        name="${pom.name}"
+        version="${pom.version}"
+        vendor="${pom.organization.name}"
+        modelVersion="1.0">
+
+  <documentation defaultLanguage="en">
+    <text language="en"><![CDATA[${pom.description}]]></text>
+  </documentation>
+
+  <implementations>
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.Environment"
+                    class="org.jomc.standalone.Environment"
+                    name="${pom.name}"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}"
+                    stateless="true">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone environment.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <properties>
+        <property name="defaultEntityManagerFactoryJndiName"
+                  type="java.lang.String"
+                  value="java:comp/env/persistence/EntityManagerFactory">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default JNDI name the standalone {@code EntityManagerFactory} is bound to.]]></text>
+          </documentation>
+        </property>
+        <property name="defaultEntityManagerJndiName"
+                  type="java.lang.String"
+                  value="java:comp/env/persistence/EntityManager">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default JNDI name the standalone {@code EntityManager} is bound to.]]></text>
+          </documentation>
+        </property>
+        <property name="defaultTransactionManagerJndiName"
+                  type="java.lang.String"
+                  value="java:comp/TransactionManager">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default JNDI name the standalone {@code TransactionManager} is bound to.]]></text>
+          </documentation>
+        </property>
+        <property name="defaultUserTransactionJndiName"
+                  type="java.lang.String"
+                  value="java:comp/UserTransaction">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default JNDI name the standalone {@code UserTransaction} is bound to.]]></text>
+          </documentation>
+        </property>
+        <property name="defaultTransactionSynchronizationRegistryJndiName"
+                  type="java.lang.String"
+                  value="java:comp/TransactionSynchronizationRegistry">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default JNDI name the standalone {@code TransactionSynchronizationRegistry} is bound to.]]></text>
+          </documentation>
+        </property>
+        <property name="defaultDataSourceContextFactoryName"
+                  type="java.lang.String"
+                  value="org.jomc.standalone.naming.support.DataSourceContextFactory">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default class name of the {@code InitialContextFactory} providing the standalone {@code DataSource}.]]></text>
+          </documentation>
+        </property>
+        <property name="defaultDataSourceJndiName"
+                  type="java.lang.String"
+                  value="java:jdbc/${pom.artifactId}">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default JNDI name of the data source backing the standalone JPA implementation.]]></text>
+          </documentation>
+        </property>
+        <property name="defaultJtaDataSourceJndiName"
+                  type="java.lang.String"
+                  value="java:jta/${pom.artifactId}">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default JNDI name of the data source backing the standalone JTA implementation.]]></text>
+          </documentation>
+        </property>
+      </properties>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.StandaloneContext"
+                    class="org.jomc.standalone.naming.StandaloneContext"
+                    name="${pom.name}"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone {@code Context} implementation.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.StandaloneContext"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale"
+                    version="1.1" implementationName="default"/>
+
+      </dependencies>
+      <messages>
+        <message name="bindInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[''{0}'', ''{1}'']]></text>
+            <text language="de"><![CDATA[''{0}'',  ''{1}'']]></text>
+          </template>
+          <arguments>
+            <argument index="0" name="name"/>
+            <argument index="1" name="object"/>
+          </arguments>
+        </message>
+        <message name="rebindInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[''{0}'', ''{1}'']]></text>
+            <text language="de"><![CDATA[''{0}'',  ''{1}'']]></text>
+          </template>
+          <arguments>
+            <argument index="0" name="name"/>
+            <argument index="1" name="oldObject"/>
+            <argument index="2" name="newObject"/>
+          </arguments>
+        </message>
+        <message name="unbindInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[''{0}'', ''{1}'']]></text>
+            <text language="de"><![CDATA[''{0}'',  ''{1}'']]></text>
+          </template>
+          <arguments>
+            <argument index="0" name="name"/>
+          </arguments>
+        </message>
+        <message name="renameInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[''{0}'', ''{1}'']]></text>
+            <text language="de"><![CDATA[''{0}'',  ''{1}'']]></text>
+          </template>
+          <arguments>
+            <argument index="0" name="oldName"/>
+            <argument index="1" name="newName"/>
+          </arguments>
+        </message>
+        <message name="createSubcontextInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[''{0}'']]></text>
+            <text language="de"><![CDATA[''{0}'']]></text>
+          </template>
+          <arguments>
+            <argument index="0" name="contextName"/>
+          </arguments>
+        </message>
+        <message name="destroySubcontextInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[''{0}'']]></text>
+            <text language="de"><![CDATA[''{0}'']]></text>
+          </template>
+          <arguments>
+            <argument index="0" name="contextName"/>
+          </arguments>
+        </message>
+      </messages>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.StandaloneContextFactory"
+                    class="org.jomc.standalone.naming.StandaloneContextFactory"
+                    name="${pom.name}"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone {@code InitialContextFactory} implementation.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.StandaloneContextFactory"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale"
+                    version="1.1" implementationName="default"/>
+
+      </dependencies>
+      <messages>
+        <message name="implementationInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[StandaloneContextFactory ${pom.version}]]></text>
+            <text language="de"><![CDATA[StandaloneContextFactory ${pom.version}]]></text>
+          </template>
+        </message>
+        <message name="completedInitialization">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[StandaloneContextFactory ${pom.version} - started in {0}ms.]]></text>
+            <text language="de"><![CDATA[StandaloneContextFactory ${pom.version} - gestartet in {0}ms.]]></text>
+          </template>
+          <arguments>
+            <argument index="0" name="startMillis" type="Number"/>
+          </arguments>
+        </message>
+      </messages>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.java.javaURLContextFactory"
+                    class="org.jomc.standalone.naming.java.javaURLContextFactory"
+                    name="${pom.name}"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone context factory for the ''java'' URL scheme.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <specifications>
+        <reference identifier="javax.naming.spi.InitialContextFactory"/>
+      </specifications>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.java.javaURLContextFactory"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale"
+                    version="1.1" implementationName="default"/>
+
+      </dependencies>
+      <messages>
+        <message name="implementationInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[javaContextFactory ${pom.version}]]></text>
+            <text language="de"><![CDATA[javaContextFactory ${pom.version}]]></text>
+          </template>
+        </message>
+      </messages>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
+                    class="org.jomc.standalone.naming.support.AbstractContextFactory"
+                    name="${pom.name}"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Base context factory.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <specifications>
+        <reference identifier="javax.naming.spi.InitialContextFactory"/>
+      </specifications>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
+                    class="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
+                    name="${pom.name}"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}"
+                    parent="org.jomc.standalone.naming.support.AbstractContextFactory">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Base JPA context factory.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.support.AbstractJPAContextFactory"/>
+          </properties>
+        </dependency>
+      </dependencies>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.support.DataSourceContextFactory"
+                    class="org.jomc.standalone.naming.support.DataSourceContextFactory"
+                    name="JOMC DataSourceContextFactory"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}"
+                    parent="org.jomc.standalone.naming.support.AbstractContextFactory">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone data source context factory.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <specifications>
+        <reference identifier="javax.naming.spi.InitialContextFactory"/>
+      </specifications>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.support.DataSourceContextFactory"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
+                    implementationName="default"/>
+
+      </dependencies>
+      <messages>
+        <message name="implementationInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[DataSourceContextFactory ${pom.version}]]></text>
+            <text language="de"><![CDATA[DataSourceContextFactory ${pom.version}]]></text>
+          </template>
+        </message>
+      </messages>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.support.JBossJTAContextFactory"
+                    class="org.jomc.standalone.naming.support.JBossJTAContextFactory"
+                    name="JBoss JTA"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}"
+                    parent="org.jomc.standalone.naming.support.AbstractContextFactory">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone JBoss JTA context factory.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <specifications>
+        <reference identifier="javax.naming.spi.InitialContextFactory"/>
+      </specifications>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.support.JBossJTAContextFactory"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
+                    implementationName="default"/>
+
+      </dependencies>
+      <properties>
+        <property name="transactionalDriverEnabled" type="boolean" value="true">
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[{@code true} to enable ArjunaJTA's transactional JDBC driver (no JDBC3 support); {@code false} to disable ArjunaJTA's transactional JDBC driver.]]></text>
+          </documentation>
+        </property>
+      </properties>
+      <messages>
+        <message name="implementationInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[JBossJTAContextFactory ${pom.version}]]></text>
+            <text language="de"><![CDATA[JBossJTAContextFactory ${pom.version}]]></text>
+          </template>
+        </message>
+      </messages>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"
+                    class="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"
+                    name="Geronimo JTA"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}"
+                    parent="org.jomc.standalone.naming.support.AbstractContextFactory">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone Geronimo JTA context factory.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <specifications>
+        <reference identifier="javax.naming.spi.InitialContextFactory"/>
+      </specifications>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
+                    implementationName="default"/>
+
+      </dependencies>
+      <messages>
+        <message name="implementationInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[GeronimoJTAContextFactory ${pom.version}]]></text>
+            <text language="de"><![CDATA[GeronimoJTAContextFactory ${pom.version}]]></text>
+          </template>
+        </message>
+      </messages>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.support.OpenJPAContextFactory"
+                    class="org.jomc.standalone.naming.support.OpenJPAContextFactory"
+                    name="Open JPA"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}"
+                    parent="org.jomc.standalone.naming.support.AbstractJPAContextFactory">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone OpenJPA JPA context factory.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.support.OpenJPAContextFactory"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
+                    implementationName="default"/>
+
+      </dependencies>
+      <messages>
+        <message name="implementationInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[OpenJPAContextFactory ${pom.version}]]></text>
+            <text language="de"><![CDATA[OpenJPAContextFactory ${pom.version}]]></text>
+          </template>
+        </message>
+      </messages>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.support.HibernateContextFactory"
+                    class="org.jomc.standalone.naming.support.HibernateContextFactory"
+                    name="Hibernate"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}"
+                    parent="org.jomc.standalone.naming.support.AbstractJPAContextFactory">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone Hibernate JPA context factory.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.support.HibernateContextFactory"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
+                    implementationName="default"/>
+
+      </dependencies>
+      <messages>
+        <message name="implementationInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[HibernateContextFactory ${pom.version}]]></text>
+            <text language="de"><![CDATA[HibernateContextFactory ${pom.version}]]></text>
+          </template>
+        </message>
+      </messages>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.support.TopLinkContextFactory"
+                    class="org.jomc.standalone.naming.support.TopLinkContextFactory"
+                    name="Toplink"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}"
+                    parent="org.jomc.standalone.naming.support.AbstractJPAContextFactory">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone Toplink JPA context factory.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.support.TopLinkContextFactory"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
+                    implementationName="default"/>
+
+      </dependencies>
+      <messages>
+        <message name="implementationInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[TopLinkContextFactory ${pom.version}]]></text>
+            <text language="de"><![CDATA[TopLinkContextFactory ${pom.version}]]></text>
+          </template>
+        </message>
+      </messages>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.support.TopLinkTransactionController"
+                    class="org.jomc.standalone.naming.support.TopLinkTransactionController"
+                    name="Toplink Transaction Controller"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone Toplink {@code ExternalTransactionController}.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.support.TopLinkTransactionController"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
+                    implementationName="default"/>
+
+      </dependencies>
+      <messages>
+        <message name="implementationInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[ToplinkTransactionController ${pom.version}]]></text>
+            <text language="de"><![CDATA[ToplinkTransactionController ${pom.version}]]></text>
+          </template>
+        </message>
+      </messages>
+    </implementation>
+
+    <!-- ******************************************************************* -->
+    <implementation identifier="org.jomc.standalone.naming.support.JotmContextFactory"
+                    class="org.jomc.standalone.naming.support.JotmContextFactory"
+                    name="JOTM"
+                    version="${pom.version}"
+                    vendor="${pom.organization.name}"
+                    parent="org.jomc.standalone.naming.support.AbstractContextFactory">
+
+      <documentation defaultLanguage="en">
+        <text language="en"><![CDATA[Standalone Jonas JTA context factory.]]></text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
+      </authors>
+      <dependencies>
+        <dependency name="Logger" identifier="org.jomc.logging.Logger"
+                    version="1.0">
+
+          <properties>
+            <property name="name" type="java.lang.String"
+                      value="org.jomc.standalone.naming.support.JotmContextFactory"/>
+          </properties>
+        </dependency>
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
+                    implementationName="default"/>
+
+      </dependencies>
+      <messages>
+        <message name="implementationInfo">
+          <template defaultLanguage="en">
+            <text language="en"><![CDATA[JotmContextFactory ${pom.version}]]></text>
+            <text language="de"><![CDATA[JotmContextFactory ${pom.version}]]></text>
+          </template>
+        </message>
+      </messages>
+    </implementation>
+  </implementations>
+</module>
