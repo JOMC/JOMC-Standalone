@@ -545,7 +545,7 @@ public class StandaloneContext implements Context
      * <p>This method returns any available object of the {@code org.jomc.logging.Logger} specification at specification level 1.0.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
-     * <dd>Property of type {@code $property.getType().value()} with value "org.jomc.standalone.naming.StandaloneContext".
+     * <dd>Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.StandaloneContext".
      * </dd>
      * </dl>
      * @return The {@code Logger} dependency.
