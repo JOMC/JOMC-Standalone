@@ -59,16 +59,15 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
 /**
  * Base JPA context factory.
  * <p><b>Specifications</b><ul>
- * <li>{@code javax.naming.spi.InitialContextFactory}<blockquote>
- * Object applies to Multiton scope.</blockquote></li>
+ * <li>{@code javax.naming.spi.InitialContextFactory}</li>
  * </ul></p>
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getLogger Logger}"<blockquote>
- * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 applying to Multiton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -79,7 +78,7 @@ import org.xml.sax.SAXException;
 @javax.annotation.Generated
 (
     value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
+    comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
 )
 // SECTION-END
 public abstract class AbstractJPAContextFactory extends AbstractContextFactory
@@ -357,11 +356,11 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
     // SECTION-END
     // SECTION-START[Constructors]
 
-    /** Default implementation constructor. */
+    /** Creates a new {@code AbstractJPAContextFactory} instance. */
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     public AbstractJPAContextFactory()
     {
@@ -377,7 +376,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
      * <p>This method returns any available object of the {@code org.jomc.logging.Logger} specification at specification level 1.0.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
-     * <dd>Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.support.AbstractJPAContextFactory".
+     * <dd>Property of type {@code $property.getType().value()} with value "org.jomc.standalone.naming.support.AbstractJPAContextFactory".
      * </dd>
      * </dl>
      * @return The {@code Logger} dependency.
@@ -386,7 +385,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private org.jomc.logging.Logger getLogger() throws org.jomc.ObjectManagementException
     {

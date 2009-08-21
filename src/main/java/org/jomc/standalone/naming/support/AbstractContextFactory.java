@@ -39,12 +39,11 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import org.jomc.standalone.Environment;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
 /**
  * Base context factory.
  * <p><b>Specifications</b><ul>
- * <li>{@code javax.naming.spi.InitialContextFactory}<blockquote>
- * Object applies to Multiton scope.</blockquote></li>
+ * <li>{@code javax.naming.spi.InitialContextFactory}</li>
  * </ul></p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -55,7 +54,7 @@ import org.jomc.standalone.Environment;
 @javax.annotation.Generated
 (
     value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
+    comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
 )
 // SECTION-END
 public abstract class AbstractContextFactory
@@ -84,11 +83,11 @@ public abstract class AbstractContextFactory
     // SECTION-END
     // SECTION-START[Constructors]
 
-    /** Default implementation constructor. */
+    /** Creates a new {@code AbstractContextFactory} instance. */
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     public AbstractContextFactory()
     {

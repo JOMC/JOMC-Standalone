@@ -39,26 +39,26 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
 /**
  * Standalone environment.
  * <p><b>Properties</b><ul>
- * <li>"{@link #getDefaultEntityManagerFactoryJndiName defaultEntityManagerFactoryJndiName}"<blockquote>
- * Property of type {@code java.lang.String} with value "java:comp/env/persistence/EntityManagerFactory".</blockquote></li>
- * <li>"{@link #getDefaultEntityManagerJndiName defaultEntityManagerJndiName}"<blockquote>
- * Property of type {@code java.lang.String} with value "java:comp/env/persistence/EntityManager".</blockquote></li>
- * <li>"{@link #getDefaultTransactionManagerJndiName defaultTransactionManagerJndiName}"<blockquote>
- * Property of type {@code java.lang.String} with value "java:comp/TransactionManager".</blockquote></li>
- * <li>"{@link #getDefaultUserTransactionJndiName defaultUserTransactionJndiName}"<blockquote>
- * Property of type {@code java.lang.String} with value "java:comp/UserTransaction".</blockquote></li>
- * <li>"{@link #getDefaultTransactionSynchronizationRegistryJndiName defaultTransactionSynchronizationRegistryJndiName}"<blockquote>
- * Property of type {@code java.lang.String} with value "java:comp/TransactionSynchronizationRegistry".</blockquote></li>
  * <li>"{@link #getDefaultDataSourceContextFactoryName defaultDataSourceContextFactoryName}"<blockquote>
  * Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.support.DataSourceContextFactory".</blockquote></li>
  * <li>"{@link #getDefaultDataSourceJndiName defaultDataSourceJndiName}"<blockquote>
  * Property of type {@code java.lang.String} with value "java:jdbc/jomc-standalone".</blockquote></li>
+ * <li>"{@link #getDefaultEntityManagerFactoryJndiName defaultEntityManagerFactoryJndiName}"<blockquote>
+ * Property of type {@code java.lang.String} with value "java:comp/env/persistence/EntityManagerFactory".</blockquote></li>
+ * <li>"{@link #getDefaultEntityManagerJndiName defaultEntityManagerJndiName}"<blockquote>
+ * Property of type {@code java.lang.String} with value "java:comp/env/persistence/EntityManager".</blockquote></li>
  * <li>"{@link #getDefaultJtaDataSourceJndiName defaultJtaDataSourceJndiName}"<blockquote>
  * Property of type {@code java.lang.String} with value "java:jta/jomc-standalone".</blockquote></li>
+ * <li>"{@link #getDefaultTransactionManagerJndiName defaultTransactionManagerJndiName}"<blockquote>
+ * Property of type {@code java.lang.String} with value "java:comp/TransactionManager".</blockquote></li>
+ * <li>"{@link #getDefaultTransactionSynchronizationRegistryJndiName defaultTransactionSynchronizationRegistryJndiName}"<blockquote>
+ * Property of type {@code java.lang.String} with value "java:comp/TransactionSynchronizationRegistry".</blockquote></li>
+ * <li>"{@link #getDefaultUserTransactionJndiName defaultUserTransactionJndiName}"<blockquote>
+ * Property of type {@code java.lang.String} with value "java:comp/UserTransaction".</blockquote></li>
  * </ul></p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -69,7 +69,7 @@ import java.util.Properties;
 @javax.annotation.Generated
 (
     value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
+    comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
 )
 // SECTION-END
 public class Environment
@@ -355,11 +355,11 @@ public class Environment
     // SECTION-END
     // SECTION-START[Constructors]
 
-    /** Default implementation constructor. */
+    /** Creates a new {@code Environment} instance. */
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     public Environment()
     {
@@ -380,7 +380,7 @@ public class Environment
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private java.lang.String getDefaultDataSourceContextFactoryName() throws org.jomc.ObjectManagementException
     {
@@ -395,7 +395,7 @@ public class Environment
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private java.lang.String getDefaultDataSourceJndiName() throws org.jomc.ObjectManagementException
     {
@@ -410,7 +410,7 @@ public class Environment
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private java.lang.String getDefaultEntityManagerFactoryJndiName() throws org.jomc.ObjectManagementException
     {
@@ -425,7 +425,7 @@ public class Environment
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private java.lang.String getDefaultEntityManagerJndiName() throws org.jomc.ObjectManagementException
     {
@@ -440,7 +440,7 @@ public class Environment
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private java.lang.String getDefaultJtaDataSourceJndiName() throws org.jomc.ObjectManagementException
     {
@@ -455,7 +455,7 @@ public class Environment
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private java.lang.String getDefaultTransactionManagerJndiName() throws org.jomc.ObjectManagementException
     {
@@ -470,7 +470,7 @@ public class Environment
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private java.lang.String getDefaultTransactionSynchronizationRegistryJndiName() throws org.jomc.ObjectManagementException
     {
@@ -485,7 +485,7 @@ public class Environment
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private java.lang.String getDefaultUserTransactionJndiName() throws org.jomc.ObjectManagementException
     {

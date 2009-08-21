@@ -45,18 +45,17 @@ import javax.naming.NamingException;
 import javax.naming.spi.InitialContextFactory;
 import org.jomc.standalone.Environment;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
 /**
  * Standalone data source context factory.
  * <p><b>Specifications</b><ul>
- * <li>{@code javax.naming.spi.InitialContextFactory}<blockquote>
- * Object applies to Multiton scope.</blockquote></li>
+ * <li>{@code javax.naming.spi.InitialContextFactory}</li>
  * </ul></p>
  * <p><b>Dependencies</b><ul>
- * <li>"{@link #getLogger Logger}"<blockquote>
- * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 applying to Multiton scope bound to an instance.</blockquote></li>
  * <li>"{@link #getLocale Locale}"<blockquote>
- * Dependency on {@code java.util.Locale} at specification level 1.1 applying to Multiton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
+ * <li>"{@link #getLogger Logger}"<blockquote>
+ * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
@@ -73,7 +72,7 @@ import org.jomc.standalone.Environment;
 @javax.annotation.Generated
 (
     value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
+    comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
 )
 // SECTION-END
 public class DataSourceContextFactory extends AbstractContextFactory implements InitialContextFactory
@@ -229,11 +228,11 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
     // SECTION-END
     // SECTION-START[Constructors]
 
-    /** Default implementation constructor. */
+    /** Creates a new {@code DataSourceContextFactory} instance. */
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     public DataSourceContextFactory()
     {
@@ -254,7 +253,7 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private java.util.Locale getLocale() throws org.jomc.ObjectManagementException
     {
@@ -266,7 +265,7 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
      * <p>This method returns any available object of the {@code org.jomc.logging.Logger} specification at specification level 1.0.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
-     * <dd>Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.support.DataSourceContextFactory".
+     * <dd>Property of type {@code $property.getType().value()} with value "org.jomc.standalone.naming.support.DataSourceContextFactory".
      * </dd>
      * </dl>
      * @return The {@code Logger} dependency.
@@ -275,7 +274,7 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private org.jomc.logging.Logger getLogger() throws org.jomc.ObjectManagementException
     {
@@ -300,7 +299,7 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private String getImplementationInfoMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
     {

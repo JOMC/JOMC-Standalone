@@ -38,14 +38,14 @@ import javax.transaction.TransactionManager;
 import oracle.toplink.essentials.transaction.JTATransactionController;
 import org.jomc.standalone.Environment;
 
-// SECTION-START[Implementation Comment]
+// SECTION-START[Documentation]
 /**
  * Standalone Toplink {@code ExternalTransactionController}.
  * <p><b>Dependencies</b><ul>
- * <li>"{@link #getLogger Logger}"<blockquote>
- * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 applying to Multiton scope bound to an instance.</blockquote></li>
  * <li>"{@link #getLocale Locale}"<blockquote>
- * Dependency on {@code java.util.Locale} at specification level 1.1 applying to Multiton scope bound to an instance.</blockquote></li>
+ * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
+ * <li>"{@link #getLogger Logger}"<blockquote>
+ * Dependency on {@code org.jomc.logging.Logger} at specification level 1.0 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
@@ -62,7 +62,7 @@ import org.jomc.standalone.Environment;
 @javax.annotation.Generated
 (
     value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc-tools"
+    comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
 )
 // SECTION-END
 public class TopLinkTransactionController extends JTATransactionController
@@ -92,11 +92,11 @@ public class TopLinkTransactionController extends JTATransactionController
     // SECTION-END
     // SECTION-START[Constructors]
 
-    /** Default implementation constructor. */
+    /** Creates a new {@code TopLinkTransactionController} instance. */
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     public TopLinkTransactionController()
     {
@@ -117,7 +117,7 @@ public class TopLinkTransactionController extends JTATransactionController
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private java.util.Locale getLocale() throws org.jomc.ObjectManagementException
     {
@@ -129,7 +129,7 @@ public class TopLinkTransactionController extends JTATransactionController
      * <p>This method returns any available object of the {@code org.jomc.logging.Logger} specification at specification level 1.0.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
-     * <dd>Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.support.TopLinkTransactionController".
+     * <dd>Property of type {@code $property.getType().value()} with value "org.jomc.standalone.naming.support.TopLinkTransactionController".
      * </dd>
      * </dl>
      * @return The {@code Logger} dependency.
@@ -138,7 +138,7 @@ public class TopLinkTransactionController extends JTATransactionController
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private org.jomc.logging.Logger getLogger() throws org.jomc.ObjectManagementException
     {
@@ -163,7 +163,7 @@ public class TopLinkTransactionController extends JTATransactionController
     @javax.annotation.Generated
     (
         value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc-tools"
+        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
     )
     private String getImplementationInfoMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
     {
