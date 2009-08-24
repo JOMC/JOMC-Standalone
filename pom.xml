@@ -378,6 +378,7 @@
         <artifactId>buildnumber-maven-plugin</artifactId>
       </plugin>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-remote-resources-plugin</artifactId>
         <executions>
           <execution>
@@ -756,25 +757,29 @@
       <build>
         <plugins>
           <plugin>
+            <groupId>org.jomc</groupId>
+            <artifactId>maven-jomc-plugin</artifactId>
+          </plugin>
+          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-scm-plugin</artifactId>
             <executions>
               <execution>
                 <id>update-workdir</id>
-                <phase>initialize</phase>
+                <phase>validate</phase>
                 <goals>
                   <goal>update</goal>
                 </goals>
               </execution>
               <execution>
-                <id>checkin-main</id>
+                <id>main-java-sources</id>
                 <phase>process-resources</phase>
                 <goals>
                   <goal>checkin</goal>
                 </goals>
               </execution>
               <execution>
-                <id>checkin-test</id>
+                <id>test-java-sources</id>
                 <phase>process-test-resources</phase>
                 <goals>
                   <goal>checkin</goal>
