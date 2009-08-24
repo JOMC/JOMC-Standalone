@@ -340,6 +340,16 @@
           <artifactId>maven-jboss-license-plugin</artifactId>
           <version>1.0.0</version>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-scm-plugin</artifactId>
+          <version>1.2</version>
+          <configuration>
+            <message>[maven-scm-plugin] Build ${buildNumber}</message>
+            <username>${jomc.scm.username}</username>
+            <password>${jomc.scm.password}</password>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
     <resources>
@@ -738,6 +748,43 @@
     </plugins>
   </reporting>
   <profiles>
+    <profile>
+      <id>ci</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-scm-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>update-workdir</id>
+                <phase>initialize</phase>
+                <goals>
+                  <goal>update</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>checkin-main</id>
+                <phase>process-resources</phase>
+                <goals>
+                  <goal>checkin</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>checkin-test</id>
+                <phase>process-test-resources</phase>
+                <goals>
+                  <goal>checkin</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <profile>
       <id>jomc-release</id>
       <activation>
