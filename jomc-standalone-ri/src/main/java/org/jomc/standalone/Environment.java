@@ -46,13 +46,13 @@ import java.util.Properties;
  * <li>"{@link #getDefaultDataSourceContextFactoryName defaultDataSourceContextFactoryName}"<blockquote>
  * Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.support.DataSourceContextFactory".</blockquote></li>
  * <li>"{@link #getDefaultDataSourceJndiName defaultDataSourceJndiName}"<blockquote>
- * Property of type {@code java.lang.String} with value "java:jdbc/jomc-standalone".</blockquote></li>
+ * Property of type {@code java.lang.String} with value "java:jdbc/jomc-standalone-ri".</blockquote></li>
  * <li>"{@link #getDefaultEntityManagerFactoryJndiName defaultEntityManagerFactoryJndiName}"<blockquote>
  * Property of type {@code java.lang.String} with value "java:comp/env/persistence/EntityManagerFactory".</blockquote></li>
  * <li>"{@link #getDefaultEntityManagerJndiName defaultEntityManagerJndiName}"<blockquote>
  * Property of type {@code java.lang.String} with value "java:comp/env/persistence/EntityManager".</blockquote></li>
  * <li>"{@link #getDefaultJtaDataSourceJndiName defaultJtaDataSourceJndiName}"<blockquote>
- * Property of type {@code java.lang.String} with value "java:jta/jomc-standalone".</blockquote></li>
+ * Property of type {@code java.lang.String} with value "java:jta/jomc-standalone-ri".</blockquote></li>
  * <li>"{@link #getDefaultTransactionManagerJndiName defaultTransactionManagerJndiName}"<blockquote>
  * Property of type {@code java.lang.String} with value "java:comp/TransactionManager".</blockquote></li>
  * <li>"{@link #getDefaultTransactionSynchronizationRegistryJndiName defaultTransactionSynchronizationRegistryJndiName}"<blockquote>

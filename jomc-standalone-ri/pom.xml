@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Copyright (c) 2009 The JOMC Project
+  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in
+      the documentation and/or other materials provided with the
+      distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE JOMC PROJECT AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JOMC PROJECT OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  $Id$
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>org.jomc.standalone</groupId>
+    <artifactId>jomc-standalone</artifactId>
+    <version>1.0-alpha-1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>jomc-standalone-ri</artifactId>
+  <packaging>jar</packaging>
+  <name>JOMC Standalone RI</name>
+  <description>JOMC standalone runtime environment.</description>
+  <build>
+    <resources>
+      <resource>
+        <filtering>true</filtering>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <filtering>true</filtering>
+        <directory>src/test/resources</directory>
+      </testResource>
+    </testResources>
+  </build>
+  <dependencies>
+    <!-- Compile -->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>jsr250-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.persistence</groupId>
+      <artifactId>persistence-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.transaction</groupId>
+      <artifactId>transaction-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.jms</groupId>
+      <artifactId>jms</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.resource</groupId>
+      <artifactId>connector-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jomc</groupId>
+      <artifactId>jomc-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jomc.logging</groupId>
+      <artifactId>jomc-logging-api</artifactId>
+    </dependency>
+
+    <!-- JBoss JTA -->
+    <dependency>
+      <groupId>org.jboss.transaction</groupId>
+      <artifactId>jboss-jta</artifactId>
+    </dependency>
+    <!-- Geronimo JTA -->
+    <dependency>
+      <groupId>org.apache.geronimo.components</groupId>
+      <artifactId>geronimo-transaction</artifactId>
+    </dependency>
+    
+    <!-- Jonas JTA -->
+    <dependency>
+      <groupId>org.ow2.jotm</groupId>
+      <artifactId>jotm-core</artifactId>
+    </dependency>
+
+    <!--  XAPool -->
+    <dependency>
+      <groupId>com.experlog</groupId>
+      <artifactId>xapool</artifactId>
+    </dependency>
+
+    <!-- Hibernate -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+    </dependency>
+
+    <!-- Open JPA -->
+    <dependency>
+      <groupId>org.apache.openjpa</groupId>
+      <artifactId>openjpa</artifactId>
+    </dependency>
+
+    <!-- Toplink -->
+    <dependency>
+      <groupId>toplink.essentials</groupId>
+      <artifactId>toplink-essentials</artifactId>
+    </dependency>
+
+    <!-- Runtime -->
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jomc</groupId>
+      <artifactId>jomc-ri</artifactId>
+    </dependency>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+  </dependencies>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.1.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.6</version>
+        <reportSets>
+          <reportSet>
+            <id>javadoc</id>
+            <inherited>true</inherited>
+            <reports>
+              <report>javadoc</report>
+              <report>test-javadoc</report>
+              <report>jar</report>
+              <report>test-jar</report>
+            </reports>
+            <configuration>
+              <breakiterator>true</breakiterator>
+              <charset>UTF-8</charset>
+              <docencoding>UTF-8</docencoding>
+              <encoding>UTF-8</encoding>
+              <keywords>true</keywords>
+              <linksource>true</linksource>
+              <serialwarn>true</serialwarn>
+              <show>public</show>
+              <nodeprecated>true</nodeprecated>
+              <source>1.5</source>
+              <doctitle>${pom.name} Specification ${pom.version}</doctitle>
+              <windowtitle>${pom.name} Specification ${pom.version}</windowtitle>
+            </configuration>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
+          <outputEncoding>${project.reporting.outputEncoding}</outputEncoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <targetJdk>1.5</targetJdk>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.4.3</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.3</version>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
