@@ -2,7 +2,7 @@
 <!--
 
   Copyright (c) 2009 The JOMC Project
-  Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -57,7 +57,7 @@
         <text language="en"><![CDATA[Standalone environment.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -140,7 +140,7 @@
         <text language="en"><![CDATA[Standalone {@code Context} implementation.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -230,7 +230,7 @@
         <text language="en"><![CDATA[Standalone {@code InitialContextFactory} implementation.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -277,7 +277,7 @@
         <text language="en"><![CDATA[Standalone context factory for the ''java'' URL scheme.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -318,7 +318,7 @@
         <text language="en"><![CDATA[Base context factory.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -339,7 +339,7 @@
         <text language="en"><![CDATA[Base JPA context factory.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -367,7 +367,7 @@
         <text language="en"><![CDATA[Standalone data source context factory.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -409,7 +409,7 @@
         <text language="en"><![CDATA[Standalone JBoss JTA context factory.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -458,7 +458,7 @@
         <text language="en"><![CDATA[Standalone Geronimo JTA context factory.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -500,7 +500,7 @@
         <text language="en"><![CDATA[Standalone OpenJPA JPA context factory.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -539,7 +539,7 @@
         <text language="en"><![CDATA[Standalone Hibernate JPA context factory.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -578,7 +578,7 @@
         <text language="en"><![CDATA[Standalone Toplink JPA context factory.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -616,7 +616,7 @@
         <text language="en"><![CDATA[Standalone Toplink {@code ExternalTransactionController}.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
@@ -655,7 +655,7 @@
         <text language="en"><![CDATA[Standalone Jonas JTA context factory.]]></text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
