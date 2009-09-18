@@ -126,6 +126,30 @@
             <text language="en"><![CDATA[The default JNDI name of the data source backing the standalone JTA implementation.]]></text>
           </documentation>
         </property>
+        <property name="defaultJtaContextFactoryName"
+                  type="java.lang.String"
+                  value="org.jomc.standalone.naming.support.JotmContextFactory">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default class name of the of the {@code InitialContextFactory} providing the JTA implementation backing the standalone environment.]]></text>
+          </documentation>
+        </property>
+        <property name="defaultJpaContextFactoryName"
+                  type="java.lang.String"
+                  value="org.jomc.standalone.naming.support.HibernateContextFactory">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default class name of the {@code InitialContextFactory} providing the JPA implementation backing the standalone environment.]]></text>
+          </documentation>
+        </property>
+        <property name="defaultDataSourceClassName"
+                  type="java.lang.String"
+                  value="org.enhydra.jdbc.standard.StandardXADataSource">
+
+          <documentation defaultLanguage="en">
+            <text language="en"><![CDATA[The default class name of the {@code DataSource} backing the standalone environment.]]></text>
+          </documentation>
+        </property>
       </properties>
     </implementation>
 

@@ -43,6 +43,8 @@ import java.util.Properties;
 /**
  * Standalone environment.
  * <p><b>Properties</b><ul>
+ * <li>"{@link #getDefaultDataSourceClassName defaultDataSourceClassName}"<blockquote>
+ * Property of type {@code java.lang.String} with value "org.enhydra.jdbc.standard.StandardXADataSource".</blockquote></li>
  * <li>"{@link #getDefaultDataSourceContextFactoryName defaultDataSourceContextFactoryName}"<blockquote>
  * Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.support.DataSourceContextFactory".</blockquote></li>
  * <li>"{@link #getDefaultDataSourceJndiName defaultDataSourceJndiName}"<blockquote>
@@ -51,6 +53,10 @@ import java.util.Properties;
  * Property of type {@code java.lang.String} with value "java:comp/env/persistence/EntityManagerFactory".</blockquote></li>
  * <li>"{@link #getDefaultEntityManagerJndiName defaultEntityManagerJndiName}"<blockquote>
  * Property of type {@code java.lang.String} with value "java:comp/env/persistence/EntityManager".</blockquote></li>
+ * <li>"{@link #getDefaultJpaContextFactoryName defaultJpaContextFactoryName}"<blockquote>
+ * Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.support.HibernateContextFactory".</blockquote></li>
+ * <li>"{@link #getDefaultJtaContextFactoryName defaultJtaContextFactoryName}"<blockquote>
+ * Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.support.JotmContextFactory".</blockquote></li>
  * <li>"{@link #getDefaultJtaDataSourceJndiName defaultJtaDataSourceJndiName}"<blockquote>
  * Property of type {@code java.lang.String} with value "java:jta/jomc-standalone-ri".</blockquote></li>
  * <li>"{@link #getDefaultTransactionManagerJndiName defaultTransactionManagerJndiName}"<blockquote>
@@ -66,11 +72,8 @@ import java.util.Properties;
  */
 // SECTION-END
 // SECTION-START[Annotations]
-@javax.annotation.Generated
-(
-    value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-)
+@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
 // SECTION-END
 public class Environment
 {
@@ -80,59 +83,59 @@ public class Environment
      * Constant for the name of the system property holding the JNDI name the standalone {@code EntityManager}
      * implementation is bound to.
      */
-    public static final String ENTITY_MANAGER_JNDI_NAME = "standalone.entityManagerJndiName";
+    public static final String ENTITY_MANAGER_JNDI_NAME = "jomc.standalone.entityManagerJndiName";
 
     /**
      * Constant for the name of the system property holding the JNDI name the standalone {@code EntityManagerFactory}
      * implementation is bound to.
      */
-    public static final String ENTITY_MANAGER_FACTORY_JNDI_NAME = "standalone.entityManagerFactoryJndiName";
+    public static final String ENTITY_MANAGER_FACTORY_JNDI_NAME = "jomc.standalone.entityManagerFactoryJndiName";
 
     /**
      * Constant for the name of the system property holding the JNDI name the standalone {@code TransactionManager}
      * implementation is bound to.
      */
-    public static final String TRANSACTION_MANAGER_JNDI_NAME = "standalone.transactionManagerJndiName";
+    public static final String TRANSACTION_MANAGER_JNDI_NAME = "jomc.standalone.transactionManagerJndiName";
 
     /**
      * Constant for the name of the system property holding the JNDI name the standalone {@code UserTransaction}
      * implementation is bound to.
      */
-    public static final String USER_TRANSACTION_JNDI_NAME = "standalone.userTransactionJndiName";
+    public static final String USER_TRANSACTION_JNDI_NAME = "jomc.standalone.userTransactionJndiName";
 
     /**
      * Constant for the name of the system property holding the JNDI name the standalone
      * {@code TransactionSynchronizationRegistry} implementation is bound to.
      */
     public static final String TRANSACTION_SYNCHRONIZATION_REGISTRY_JNDI_NAME =
-        "standalone.transactionSynchronizationRegistryJndiName";
+        "jomc.standalone.transactionSynchronizationRegistryJndiName";
 
     /**
      * Constant for the name of the system property holding the class name of the {@code InitialContextFactory}
      * providing the JPA implementation backing the standalone environment.
      */
-    public static final String JPA_CONTEXT_FACTORY_NAME = "standalone.jpaContextFactoryName";
+    public static final String JPA_CONTEXT_FACTORY_NAME = "jomc.standalone.jpaContextFactoryName";
 
     /**
      * Constant for the name of the system property holding the root URL of the persistence unit backing the
      * standalone environment.
      */
-    public static final String JPA_ROOT_URL = "standalone.jpaRootUrl";
+    public static final String JPA_ROOT_URL = "jomc.standalone.jpaRootUrl";
 
     /**
      * Constant for the name of the system property holding the class name of the {@code InitialContextFactory}
      * providing the JTA implementation backing the standalone environment.
      */
-    public static final String JTA_CONTEXT_FACTORY_NAME = "standalone.jtaContextFactoryName";
+    public static final String JTA_CONTEXT_FACTORY_NAME = "jomc.standalone.jtaContextFactoryName";
 
     /**
      * Constant for the name of the system property holding the JNDI name of the JTA aware {@code DataSource} backing
      * the standalone environment.
      */
-    public static final String JTA_DATA_SOURCE_JNDI_NAME = "standalone.jtaDataSourceJndiName";
+    public static final String JTA_DATA_SOURCE_JNDI_NAME = "jomc.standalone.jtaDataSourceJndiName";
 
     /** Constant for the prefix of data source properties of the standalone environment. */
-    public static final String DATA_SOURCE_PREFIX = "standalone.dataSource.";
+    public static final String DATA_SOURCE_PREFIX = "jomc.standalone.dataSource.";
 
     /**
      * Constant for the name of the system property holding the class name of the {@code InitialContextFactory}
@@ -225,7 +228,7 @@ public class Environment
      */
     public String getJpaContextFactoryName()
     {
-        return System.getProperty( JPA_CONTEXT_FACTORY_NAME );
+        return System.getProperty( JPA_CONTEXT_FACTORY_NAME, this.getDefaultJpaContextFactoryName() );
     }
 
     /**
@@ -251,8 +254,7 @@ public class Environment
             }
             else
             {
-                final File defaultRootUrl =
-                    new File( System.getProperty( "java.io.tmpdir" ), "jomc-standalone" );
+                final File defaultRootUrl = new File( System.getProperty( "java.io.tmpdir" ), "jomc-standalone" );
 
                 if ( !defaultRootUrl.exists() )
                 {
@@ -277,7 +279,7 @@ public class Environment
      */
     public String getJtaContextFactoryName()
     {
-        return System.getProperty( JTA_CONTEXT_FACTORY_NAME );
+        return System.getProperty( JTA_CONTEXT_FACTORY_NAME, this.getDefaultJtaContextFactoryName() );
     }
 
     /**
@@ -309,7 +311,7 @@ public class Environment
      */
     public String getDataSourceClassName()
     {
-        return System.getProperty( DATA_SOURCE_CLASS_NAME, "org.enhydra.jdbc.standard.StandardXADataSource" );
+        return System.getProperty( DATA_SOURCE_CLASS_NAME, this.getDefaultDataSourceClassName() );
     }
 
     /**
@@ -356,16 +358,13 @@ public class Environment
     // SECTION-START[Constructors]
 
     /** Creates a new {@code Environment} instance. */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-    )
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
     public Environment()
     {
         // SECTION-START[Default Constructor]
         super();
-    // SECTION-END
+        // SECTION-END
     }
     // SECTION-END
     // SECTION-START[Dependencies]
@@ -373,15 +372,24 @@ public class Environment
     // SECTION-START[Properties]
 
     /**
+     * Gets the value of the {@code defaultDataSourceClassName} property.
+     * @return The default class name of the {@code DataSource} backing the standalone environment.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
+    private java.lang.String getDefaultDataSourceClassName() throws org.jomc.ObjectManagementException
+    {
+        return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultDataSourceClassName" );
+    }
+
+    /**
      * Gets the value of the {@code defaultDataSourceContextFactoryName} property.
      * @return The default class name of the {@code InitialContextFactory} providing the standalone {@code DataSource}.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-    )
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
     private java.lang.String getDefaultDataSourceContextFactoryName() throws org.jomc.ObjectManagementException
     {
         return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultDataSourceContextFactoryName" );
@@ -392,11 +400,8 @@ public class Environment
      * @return The default JNDI name of the data source backing the standalone JPA implementation.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-    )
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
     private java.lang.String getDefaultDataSourceJndiName() throws org.jomc.ObjectManagementException
     {
         return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultDataSourceJndiName" );
@@ -407,11 +412,8 @@ public class Environment
      * @return The default JNDI name the standalone {@code EntityManagerFactory} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-    )
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
     private java.lang.String getDefaultEntityManagerFactoryJndiName() throws org.jomc.ObjectManagementException
     {
         return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultEntityManagerFactoryJndiName" );
@@ -422,14 +424,35 @@ public class Environment
      * @return The default JNDI name the standalone {@code EntityManager} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-    )
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
     private java.lang.String getDefaultEntityManagerJndiName() throws org.jomc.ObjectManagementException
     {
         return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultEntityManagerJndiName" );
+    }
+
+    /**
+     * Gets the value of the {@code defaultJpaContextFactoryName} property.
+     * @return The default class name of the {@code InitialContextFactory} providing the JPA implementation backing the standalone environment.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
+    private java.lang.String getDefaultJpaContextFactoryName() throws org.jomc.ObjectManagementException
+    {
+        return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultJpaContextFactoryName" );
+    }
+
+    /**
+     * Gets the value of the {@code defaultJtaContextFactoryName} property.
+     * @return The default class name of the of the {@code InitialContextFactory} providing the JTA implementation backing the standalone environment.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
+    private java.lang.String getDefaultJtaContextFactoryName() throws org.jomc.ObjectManagementException
+    {
+        return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultJtaContextFactoryName" );
     }
 
     /**
@@ -437,11 +460,8 @@ public class Environment
      * @return The default JNDI name of the data source backing the standalone JTA implementation.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-    )
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
     private java.lang.String getDefaultJtaDataSourceJndiName() throws org.jomc.ObjectManagementException
     {
         return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultJtaDataSourceJndiName" );
@@ -452,11 +472,8 @@ public class Environment
      * @return The default JNDI name the standalone {@code TransactionManager} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-    )
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
     private java.lang.String getDefaultTransactionManagerJndiName() throws org.jomc.ObjectManagementException
     {
         return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultTransactionManagerJndiName" );
@@ -467,11 +484,8 @@ public class Environment
      * @return The default JNDI name the standalone {@code TransactionSynchronizationRegistry} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-    )
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
     private java.lang.String getDefaultTransactionSynchronizationRegistryJndiName() throws org.jomc.ObjectManagementException
     {
         return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultTransactionSynchronizationRegistryJndiName" );
@@ -482,11 +496,8 @@ public class Environment
      * @return The default JNDI name the standalone {@code UserTransaction} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-    )
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
     private java.lang.String getDefaultUserTransactionJndiName() throws org.jomc.ObjectManagementException
     {
         return (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "defaultUserTransactionJndiName" );

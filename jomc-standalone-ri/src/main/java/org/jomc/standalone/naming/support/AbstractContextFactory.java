@@ -43,7 +43,7 @@ import org.jomc.standalone.Environment;
 /**
  * Base context factory.
  * <p><b>Specifications</b><ul>
- * <li>{@code javax.naming.spi.InitialContextFactory}</li>
+ * <li>{@code javax.naming.spi.InitialContextFactory} {@code Multiton}</li>
  * </ul></p>
  *
  * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
@@ -51,11 +51,8 @@ import org.jomc.standalone.Environment;
  */
 // SECTION-END
 // SECTION-START[Annotations]
-@javax.annotation.Generated
-(
-    value = "org.jomc.tools.JavaSources",
-    comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-)
+@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
 // SECTION-END
 public abstract class AbstractContextFactory
     implements
@@ -84,11 +81,8 @@ public abstract class AbstractContextFactory
     // SECTION-START[Constructors]
 
     /** Creates a new {@code AbstractContextFactory} instance. */
-    @javax.annotation.Generated
-    (
-        value = "org.jomc.tools.JavaSources",
-        comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools"
-    )
+    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
     public AbstractContextFactory()
     {
         // SECTION-START[Default Constructor]
