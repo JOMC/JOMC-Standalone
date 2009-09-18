@@ -48,7 +48,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.Environment"
                     class="org.jomc.standalone.Environment"
-                    name="${pom.name}"
+                    name="${pom.name} Environment"
                     version="${pom.version}"
                     vendor="${pom.organization.name}"
                     stateless="true">
@@ -156,7 +156,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.StandaloneContext"
                     class="org.jomc.standalone.naming.StandaloneContext"
-                    name="${pom.name}"
+                    name="${pom.name} StandaloneContext"
                     version="${pom.version}"
                     vendor="${pom.organization.name}">
 
@@ -246,7 +246,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.StandaloneContextFactory"
                     class="org.jomc.standalone.naming.StandaloneContextFactory"
-                    name="${pom.name}"
+                    name="${pom.name} StandaloneContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}">
 
@@ -293,7 +293,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.java.javaURLContextFactory"
                     class="org.jomc.standalone.naming.java.javaURLContextFactory"
-                    name="${pom.name}"
+                    name="${pom.name} javaURLContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}">
 
@@ -334,7 +334,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
                     class="org.jomc.standalone.naming.support.AbstractContextFactory"
-                    name="${pom.name}"
+                    name="${pom.name} AbstractContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}">
 
@@ -354,7 +354,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
                     class="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
-                    name="${pom.name}"
+                    name="${pom.name} AbstractJPAContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}"
                     parent="org.jomc.standalone.naming.support.AbstractContextFactory">
@@ -382,7 +382,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.DataSourceContextFactory"
                     class="org.jomc.standalone.naming.support.DataSourceContextFactory"
-                    name="JOMC DataSourceContextFactory"
+                    name="${pom.name} DataSourceContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}"
                     parent="org.jomc.standalone.naming.support.AbstractContextFactory">
@@ -424,7 +424,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.JBossJTAContextFactory"
                     class="org.jomc.standalone.naming.support.JBossJTAContextFactory"
-                    name="JBoss JTA"
+                    name="${pom.name} JBossJTAContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}"
                     parent="org.jomc.standalone.naming.support.AbstractContextFactory">
@@ -473,7 +473,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"
                     class="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"
-                    name="Geronimo JTA"
+                    name="${pom.name} GeronimoJTAContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}"
                     parent="org.jomc.standalone.naming.support.AbstractContextFactory">
@@ -515,7 +515,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.OpenJPAContextFactory"
                     class="org.jomc.standalone.naming.support.OpenJPAContextFactory"
-                    name="Open JPA"
+                    name="${pom.name} OpenJPAContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}"
                     parent="org.jomc.standalone.naming.support.AbstractJPAContextFactory">
@@ -554,7 +554,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.HibernateContextFactory"
                     class="org.jomc.standalone.naming.support.HibernateContextFactory"
-                    name="Hibernate"
+                    name="${pom.name} HibernateContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}"
                     parent="org.jomc.standalone.naming.support.AbstractJPAContextFactory">
@@ -593,7 +593,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.TopLinkContextFactory"
                     class="org.jomc.standalone.naming.support.TopLinkContextFactory"
-                    name="Toplink"
+                    name="${pom.name} TopLinkContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}"
                     parent="org.jomc.standalone.naming.support.AbstractJPAContextFactory">
@@ -632,7 +632,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.TopLinkTransactionController"
                     class="org.jomc.standalone.naming.support.TopLinkTransactionController"
-                    name="Toplink Transaction Controller"
+                    name="${pom.name} ToplinkTransactionController"
                     version="${pom.version}"
                     vendor="${pom.organization.name}">
 
@@ -670,7 +670,7 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.JotmContextFactory"
                     class="org.jomc.standalone.naming.support.JotmContextFactory"
-                    name="JOTM"
+                    name="${pom.name} JotmContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}"
                     parent="org.jomc.standalone.naming.support.AbstractContextFactory">
