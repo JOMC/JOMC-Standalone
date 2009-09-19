@@ -85,6 +85,13 @@
       <post>jomc-svn@lists.sourceforge.net</post>
       <archive>http://sourceforge.net/mailarchive/forum.php?forum=jomc-svn</archive>
     </mailingList>
+    <mailingList>
+      <name>jomc-notifications</name>
+      <subscribe>http://lists.sourceforge.net/lists/listinfo/jomc-notifications</subscribe>
+      <unsubscribe>http://lists.sourceforge.net/lists/listinfo/jomc-notifications</unsubscribe>
+      <post>jomc-notifications@lists.sourceforge.net</post>
+      <archive>http://sourceforge.net/mailarchive/forum.php?forum=jomc-notifications</archive>
+    </mailingList>
   </mailingLists>
   <scm>
     <connection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-standalone/trunk</connection>
