@@ -212,9 +212,11 @@ public class JBossJTAContextFactory extends AbstractContextFactory
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private java.util.Locale getLocale() throws org.jomc.ObjectManagementException
+    private java.util.Locale getLocale()
     {
-        return (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        assert _d != null : "'Locale' dependency not found.";
+        return _d;
     }
 
     /**
@@ -231,9 +233,11 @@ public class JBossJTAContextFactory extends AbstractContextFactory
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private org.jomc.logging.Logger getLogger() throws org.jomc.ObjectManagementException
+    private org.jomc.logging.Logger getLogger()
     {
-        return (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        assert _d != null : "'Logger' dependency not found.";
+        return _d;
     }
     // SECTION-END
     // SECTION-START[Properties]
@@ -245,9 +249,11 @@ public class JBossJTAContextFactory extends AbstractContextFactory
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private boolean isTransactionalDriverEnabled() throws org.jomc.ObjectManagementException
+    private boolean isTransactionalDriverEnabled()
     {
-        return ((java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "transactionalDriverEnabled" )).booleanValue();
+        final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "transactionalDriverEnabled" );
+        assert _p != null : "'transactionalDriverEnabled' property not found.";
+        return _p.booleanValue();
     }
     // SECTION-END
     // SECTION-START[Messages]
@@ -265,9 +271,11 @@ public class JBossJTAContextFactory extends AbstractContextFactory
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private String getImplementationInfoMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
+    private String getImplementationInfoMessage( final java.util.Locale locale )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "implementationInfo", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "implementationInfo", locale,  null );
+        assert _m != null : "'implementationInfo' message not found.";
+        return _m;
     }
     // SECTION-END
 }

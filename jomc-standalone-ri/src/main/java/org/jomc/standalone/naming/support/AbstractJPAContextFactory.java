@@ -379,9 +379,11 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private org.jomc.logging.Logger getLogger() throws org.jomc.ObjectManagementException
+    private org.jomc.logging.Logger getLogger()
     {
-        return (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        assert _d != null : "'Logger' dependency not found.";
+        return _d;
     }
     // SECTION-END
     // SECTION-START[Properties]

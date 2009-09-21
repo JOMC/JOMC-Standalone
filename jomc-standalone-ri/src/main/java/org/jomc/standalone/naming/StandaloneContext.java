@@ -527,9 +527,11 @@ public class StandaloneContext implements Context
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private java.util.Locale getLocale() throws org.jomc.ObjectManagementException
+    private java.util.Locale getLocale()
     {
-        return (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        assert _d != null : "'Locale' dependency not found.";
+        return _d;
     }
 
     /**
@@ -546,9 +548,11 @@ public class StandaloneContext implements Context
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private org.jomc.logging.Logger getLogger() throws org.jomc.ObjectManagementException
+    private org.jomc.logging.Logger getLogger()
     {
-        return (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        assert _d != null : "'Logger' dependency not found.";
+        return _d;
     }
     // SECTION-END
     // SECTION-START[Properties]
@@ -570,9 +574,11 @@ public class StandaloneContext implements Context
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private String getBindInfoMessage( final java.util.Locale locale, final java.lang.String name, final java.lang.String object ) throws org.jomc.ObjectManagementException
+    private String getBindInfoMessage( final java.util.Locale locale, final java.lang.String name, final java.lang.String object )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "bindInfo", locale, new Object[] { name, object, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "bindInfo", locale, new Object[] { name, object, null } );
+        assert _m != null : "'bindInfo' message not found.";
+        return _m;
     }
 
     /**
@@ -589,9 +595,11 @@ public class StandaloneContext implements Context
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private String getCreateSubcontextInfoMessage( final java.util.Locale locale, final java.lang.String contextName ) throws org.jomc.ObjectManagementException
+    private String getCreateSubcontextInfoMessage( final java.util.Locale locale, final java.lang.String contextName )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "createSubcontextInfo", locale, new Object[] { contextName, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "createSubcontextInfo", locale, new Object[] { contextName, null } );
+        assert _m != null : "'createSubcontextInfo' message not found.";
+        return _m;
     }
 
     /**
@@ -608,9 +616,11 @@ public class StandaloneContext implements Context
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private String getDestroySubcontextInfoMessage( final java.util.Locale locale, final java.lang.String contextName ) throws org.jomc.ObjectManagementException
+    private String getDestroySubcontextInfoMessage( final java.util.Locale locale, final java.lang.String contextName )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "destroySubcontextInfo", locale, new Object[] { contextName, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "destroySubcontextInfo", locale, new Object[] { contextName, null } );
+        assert _m != null : "'destroySubcontextInfo' message not found.";
+        return _m;
     }
 
     /**
@@ -629,9 +639,11 @@ public class StandaloneContext implements Context
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private String getRebindInfoMessage( final java.util.Locale locale, final java.lang.String name, final java.lang.String oldObject, final java.lang.String newObject ) throws org.jomc.ObjectManagementException
+    private String getRebindInfoMessage( final java.util.Locale locale, final java.lang.String name, final java.lang.String oldObject, final java.lang.String newObject )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "rebindInfo", locale, new Object[] { name, oldObject, newObject, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "rebindInfo", locale, new Object[] { name, oldObject, newObject, null } );
+        assert _m != null : "'rebindInfo' message not found.";
+        return _m;
     }
 
     /**
@@ -649,9 +661,11 @@ public class StandaloneContext implements Context
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private String getRenameInfoMessage( final java.util.Locale locale, final java.lang.String oldName, final java.lang.String newName ) throws org.jomc.ObjectManagementException
+    private String getRenameInfoMessage( final java.util.Locale locale, final java.lang.String oldName, final java.lang.String newName )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "renameInfo", locale, new Object[] { oldName, newName, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "renameInfo", locale, new Object[] { oldName, newName, null } );
+        assert _m != null : "'renameInfo' message not found.";
+        return _m;
     }
 
     /**
@@ -668,9 +682,11 @@ public class StandaloneContext implements Context
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private String getUnbindInfoMessage( final java.util.Locale locale, final java.lang.String name ) throws org.jomc.ObjectManagementException
+    private String getUnbindInfoMessage( final java.util.Locale locale, final java.lang.String name )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "unbindInfo", locale, new Object[] { name, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "unbindInfo", locale, new Object[] { name, null } );
+        assert _m != null : "'unbindInfo' message not found.";
+        return _m;
     }
     // SECTION-END
 }

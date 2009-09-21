@@ -190,9 +190,11 @@ public class StandaloneContextFactory implements InitialContextFactory
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private java.util.Locale getLocale() throws org.jomc.ObjectManagementException
+    private java.util.Locale getLocale()
     {
-        return (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        assert _d != null : "'Locale' dependency not found.";
+        return _d;
     }
 
     /**
@@ -209,9 +211,11 @@ public class StandaloneContextFactory implements InitialContextFactory
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private org.jomc.logging.Logger getLogger() throws org.jomc.ObjectManagementException
+    private org.jomc.logging.Logger getLogger()
     {
-        return (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        assert _d != null : "'Logger' dependency not found.";
+        return _d;
     }
     // SECTION-END
     // SECTION-START[Properties]
@@ -232,9 +236,11 @@ public class StandaloneContextFactory implements InitialContextFactory
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private String getCompletedInitializationMessage( final java.util.Locale locale, final java.lang.Number startMillis ) throws org.jomc.ObjectManagementException
+    private String getCompletedInitializationMessage( final java.util.Locale locale, final java.lang.Number startMillis )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "completedInitialization", locale, new Object[] { startMillis, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "completedInitialization", locale, new Object[] { startMillis, null } );
+        assert _m != null : "'completedInitialization' message not found.";
+        return _m;
     }
 
     /**
@@ -250,9 +256,11 @@ public class StandaloneContextFactory implements InitialContextFactory
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-1-SNAPSHOT/jomc-tools" )
-    private String getImplementationInfoMessage( final java.util.Locale locale ) throws org.jomc.ObjectManagementException
+    private String getImplementationInfoMessage( final java.util.Locale locale )
     {
-        return org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "implementationInfo", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "implementationInfo", locale,  null );
+        assert _m != null : "'implementationInfo' message not found.";
+        return _m;
     }
     // SECTION-END
 }
