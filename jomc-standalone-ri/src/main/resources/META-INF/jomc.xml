@@ -538,7 +538,7 @@
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
+                    version="1.0" override="true">
 
           <properties>
             <property name="name" type="java.lang.String"
@@ -580,7 +580,7 @@
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
+                    version="1.0" override="true">
 
           <properties>
             <property name="name" type="java.lang.String"
@@ -622,7 +622,7 @@
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
+                    version="1.0" override="true">
 
           <properties>
             <property name="name" type="java.lang.String"
