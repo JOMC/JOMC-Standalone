@@ -336,7 +336,8 @@
                     class="org.jomc.standalone.naming.support.AbstractContextFactory"
                     name="${pom.name} AbstractContextFactory"
                     version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    vendor="${pom.organization.name}"
+                    abstract="true">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Base context factory.]]></text>
@@ -357,7 +358,7 @@
                     name="${pom.name} AbstractJPAContextFactory"
                     version="${pom.version}"
                     vendor="${pom.organization.name}"
-                    parent="org.jomc.standalone.naming.support.AbstractContextFactory">
+                    abstract="true">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Base JPA context factory.]]></text>
@@ -367,6 +368,10 @@
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
+      <implementations>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
+                   version="${pom.version}"/>
+      </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
                     version="1.0">
@@ -384,8 +389,7 @@
                     class="org.jomc.standalone.naming.support.DataSourceContextFactory"
                     name="${pom.name} DataSourceContextFactory"
                     version="${pom.version}"
-                    vendor="${pom.organization.name}"
-                    parent="org.jomc.standalone.naming.support.AbstractContextFactory">
+                    vendor="${pom.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone data source context factory.]]></text>
@@ -395,9 +399,10 @@
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
-      <specifications>
-        <reference identifier="javax.naming.spi.InitialContextFactory"/>
-      </specifications>
+      <implementations>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
+                   version="${pom.version}"/>
+      </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
                     version="1.0">
@@ -426,8 +431,7 @@
                     class="org.jomc.standalone.naming.support.JBossJTAContextFactory"
                     name="${pom.name} JBossJTAContextFactory"
                     version="${pom.version}"
-                    vendor="${pom.organization.name}"
-                    parent="org.jomc.standalone.naming.support.AbstractContextFactory">
+                    vendor="${pom.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone JBoss JTA context factory.]]></text>
@@ -437,9 +441,10 @@
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
-      <specifications>
-        <reference identifier="javax.naming.spi.InitialContextFactory"/>
-      </specifications>
+      <implementations>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
+                   version="${pom.version}"/>
+      </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
                     version="1.0">
@@ -475,8 +480,7 @@
                     class="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"
                     name="${pom.name} GeronimoJTAContextFactory"
                     version="${pom.version}"
-                    vendor="${pom.organization.name}"
-                    parent="org.jomc.standalone.naming.support.AbstractContextFactory">
+                    vendor="${pom.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone Geronimo JTA context factory.]]></text>
@@ -486,9 +490,10 @@
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
-      <specifications>
-        <reference identifier="javax.naming.spi.InitialContextFactory"/>
-      </specifications>
+      <implementations>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
+                   version="${pom.version}"/>
+      </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
                     version="1.0">
@@ -517,8 +522,7 @@
                     class="org.jomc.standalone.naming.support.OpenJPAContextFactory"
                     name="${pom.name} OpenJPAContextFactory"
                     version="${pom.version}"
-                    vendor="${pom.organization.name}"
-                    parent="org.jomc.standalone.naming.support.AbstractJPAContextFactory">
+                    vendor="${pom.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone OpenJPA JPA context factory.]]></text>
@@ -528,6 +532,10 @@
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
+      <implementations>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
+                   version="${pom.version}"/>
+      </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
                     version="1.0">
@@ -556,8 +564,7 @@
                     class="org.jomc.standalone.naming.support.HibernateContextFactory"
                     name="${pom.name} HibernateContextFactory"
                     version="${pom.version}"
-                    vendor="${pom.organization.name}"
-                    parent="org.jomc.standalone.naming.support.AbstractJPAContextFactory">
+                    vendor="${pom.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone Hibernate JPA context factory.]]></text>
@@ -567,6 +574,10 @@
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
+      <implementations>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
+                   version="${pom.version}"/>
+      </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
                     version="1.0">
@@ -595,8 +606,7 @@
                     class="org.jomc.standalone.naming.support.TopLinkContextFactory"
                     name="${pom.name} TopLinkContextFactory"
                     version="${pom.version}"
-                    vendor="${pom.organization.name}"
-                    parent="org.jomc.standalone.naming.support.AbstractJPAContextFactory">
+                    vendor="${pom.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone Toplink JPA context factory.]]></text>
@@ -606,6 +616,10 @@
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
+      <implementations>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
+                   version="${pom.version}"/>
+      </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
                     version="1.0">
@@ -672,8 +686,7 @@
                     class="org.jomc.standalone.naming.support.JotmContextFactory"
                     name="${pom.name} JotmContextFactory"
                     version="${pom.version}"
-                    vendor="${pom.organization.name}"
-                    parent="org.jomc.standalone.naming.support.AbstractContextFactory">
+                    vendor="${pom.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone Jonas JTA context factory.]]></text>
@@ -683,6 +696,10 @@
                 createDate="2005-07-25T19:56:45Z"/>
 
       </authors>
+      <implementations>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
+                   version="${pom.version}"/>
+      </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
                     version="1.0">
