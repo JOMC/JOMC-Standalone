@@ -60,7 +60,7 @@ import org.jomc.standalone.Environment;
 // SECTION-END
 // SECTION-START[Annotations]
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
 // SECTION-END
 public class TopLinkTransactionController extends JTATransactionController
 {
@@ -91,7 +91,7 @@ public class TopLinkTransactionController extends JTATransactionController
 
     /** Creates a new {@code TopLinkTransactionController} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
     public TopLinkTransactionController()
     {
         // SECTION-START[Default Constructor]
@@ -110,7 +110,7 @@ public class TopLinkTransactionController extends JTATransactionController
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
@@ -124,14 +124,14 @@ public class TopLinkTransactionController extends JTATransactionController
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
-     * <dd>Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.support.TopLinkTransactionController".
+     * <dd>Property of type {@code java.lang.String}.
      * </dd>
      * </dl>
      * @return The {@code Logger} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
@@ -155,7 +155,7 @@ public class TopLinkTransactionController extends JTATransactionController
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
     private String getImplementationInfoMessage( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "implementationInfo", locale,  null );

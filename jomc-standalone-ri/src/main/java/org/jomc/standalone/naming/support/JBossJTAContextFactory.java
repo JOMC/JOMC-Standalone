@@ -56,8 +56,10 @@ import javax.sql.DataSource;
  * <li>{@code javax.naming.spi.InitialContextFactory} {@code Multiton}</li>
  * </ul></p>
  * <p><b>Properties</b><ul>
- * <li>"{@link #isTransactionalDriverEnabled transactionalDriverEnabled}"<blockquote>
- * Property of type {@code boolean} with value "true".</blockquote></li>
+ * <li>"{@link #isTransactionalDriverEnabled transactionalDriverEnabled}"
+ * <blockquote>Property of type {@code boolean}.
+ * <p>{@code true} to enable ArjunaJTA's transactional JDBC driver (no JDBC3 support); {@code false} to disable ArjunaJTA's transactional JDBC driver.</p>
+ * </blockquote></li>
  * </ul></p>
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getLocale Locale}"<blockquote>
@@ -78,7 +80,7 @@ import javax.sql.DataSource;
 // SECTION-END
 // SECTION-START[Annotations]
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
 // SECTION-END
 public class JBossJTAContextFactory extends AbstractContextFactory
 {
@@ -192,7 +194,7 @@ public class JBossJTAContextFactory extends AbstractContextFactory
 
     /** Creates a new {@code JBossJTAContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
     public JBossJTAContextFactory()
     {
         // SECTION-START[Default Constructor]
@@ -211,7 +213,7 @@ public class JBossJTAContextFactory extends AbstractContextFactory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
@@ -225,14 +227,14 @@ public class JBossJTAContextFactory extends AbstractContextFactory
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * <p><b>Properties</b><dl>
      * <dt>"{@code name}"</dt>
-     * <dd>Property of type {@code java.lang.String} with value "org.jomc.standalone.naming.support.JBossJTAContextFactory".
+     * <dd>Property of type {@code java.lang.String}.
      * </dd>
      * </dl>
      * @return The {@code Logger} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
@@ -248,7 +250,7 @@ public class JBossJTAContextFactory extends AbstractContextFactory
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
     private boolean isTransactionalDriverEnabled()
     {
         final java.lang.Boolean _p = (java.lang.Boolean) org.jomc.ObjectManagerFactory.getObjectManager().getProperty( this, "transactionalDriverEnabled" );
@@ -270,7 +272,7 @@ public class JBossJTAContextFactory extends AbstractContextFactory
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
     private String getImplementationInfoMessage( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "implementationInfo", locale,  null );
