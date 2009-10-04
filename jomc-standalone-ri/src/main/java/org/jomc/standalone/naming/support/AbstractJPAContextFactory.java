@@ -76,7 +76,7 @@ import org.xml.sax.SAXException;
 // SECTION-END
 // SECTION-START[Annotations]
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-4/jomc-tools" )
 // SECTION-END
 public abstract class AbstractJPAContextFactory extends AbstractContextFactory
 {
@@ -355,7 +355,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
 
     /** Creates a new {@code AbstractJPAContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-4/jomc-tools" )
     public AbstractJPAContextFactory()
     {
         // SECTION-START[Default Constructor]
@@ -378,7 +378,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-3/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-4/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
