@@ -39,5 +39,8 @@
     <title>Changelog</title>
     <author email="cs@jomc.org">Christian Schulte</author>
   </properties>
-  <body/>
+  <body>
+    <!-- ******************************************************************* -->
+    <release version="1.0-alpha-1" date="2009-10-04"/>
+  </body>
 </document>
