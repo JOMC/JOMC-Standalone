@@ -38,16 +38,18 @@
          name="JOMC Standalone">
   <skin>
     <groupId>org.apache.maven.skins</groupId>
-    <artifactId>maven-default-skin</artifactId>
+    <artifactId>maven-classic-skin</artifactId>
     <version>1.0</version>
   </skin>
   <body>
-    <menu name="Sourceforge">
-      <item name="Project Summary" href="http://sourceforge.net/projects/jomc/"/>
-      <item name="Downloads" href="http://sourceforge.net/project/showfiles.php?group_id=257507"/>
-    </menu>
     <menu ref="parent" />
     <menu ref="modules" />
+    <menu name="Sourceforge">
+      <item name="Project Summary" href="http://sourceforge.net/projects/jomc/"/>
+      <item name="Support" href="http://sourceforge.net/projects/jomc/support/"/>
+      <item name="Files" href="http://sourceforge.net/projects/jomc/files/"/>
+      <item name="Issues" href="http://sourceforge.net/apps/mantisbt/jomc/"/>
+    </menu>
     <menu ref="reports" />
   </body>
 </project>
