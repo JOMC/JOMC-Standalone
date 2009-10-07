@@ -274,14 +274,14 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[StandaloneContextFactory ${pom.version}]]></text>
-            <text language="de"><![CDATA[StandaloneContextFactory ${pom.version}]]></text>
+            <text language="en"><![CDATA[StandaloneContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[StandaloneContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
           </template>
         </message>
         <message name="completedInitialization">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[StandaloneContextFactory ${pom.version} - started in {0}ms.]]></text>
-            <text language="de"><![CDATA[StandaloneContextFactory ${pom.version} - gestartet in {0}ms.]]></text>
+            <text language="en"><![CDATA[StandaloneContextFactory Version ${pom.version} Build ${buildNumber} - started in {0}ms.]]></text>
+            <text language="de"><![CDATA[StandaloneContextFactory Version ${pom.version} Build ${buildNumber} - gestartet in {0}ms.]]></text>
           </template>
           <arguments>
             <argument index="0" name="startMillis" type="Number"/>
@@ -324,8 +324,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[javaContextFactory ${pom.version}]]></text>
-            <text language="de"><![CDATA[javaContextFactory ${pom.version}]]></text>
+            <text language="en"><![CDATA[javaContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[javaContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -419,8 +419,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[DataSourceContextFactory ${pom.version}]]></text>
-            <text language="de"><![CDATA[DataSourceContextFactory ${pom.version}]]></text>
+            <text language="en"><![CDATA[DataSourceContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[DataSourceContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -468,8 +468,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[JBossJTAContextFactory ${pom.version}]]></text>
-            <text language="de"><![CDATA[JBossJTAContextFactory ${pom.version}]]></text>
+            <text language="en"><![CDATA[JBossJTAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[JBossJTAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -510,8 +510,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[GeronimoJTAContextFactory ${pom.version}]]></text>
-            <text language="de"><![CDATA[GeronimoJTAContextFactory ${pom.version}]]></text>
+            <text language="en"><![CDATA[GeronimoJTAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[GeronimoJTAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -552,8 +552,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[OpenJPAContextFactory ${pom.version}]]></text>
-            <text language="de"><![CDATA[OpenJPAContextFactory ${pom.version}]]></text>
+            <text language="en"><![CDATA[OpenJPAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[OpenJPAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -594,8 +594,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[HibernateContextFactory ${pom.version}]]></text>
-            <text language="de"><![CDATA[HibernateContextFactory ${pom.version}]]></text>
+            <text language="en"><![CDATA[HibernateContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[HibernateContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -636,8 +636,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[TopLinkContextFactory ${pom.version}]]></text>
-            <text language="de"><![CDATA[TopLinkContextFactory ${pom.version}]]></text>
+            <text language="en"><![CDATA[TopLinkContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[TopLinkContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -674,8 +674,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[ToplinkTransactionController ${pom.version}]]></text>
-            <text language="de"><![CDATA[ToplinkTransactionController ${pom.version}]]></text>
+            <text language="en"><![CDATA[ToplinkTransactionController Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[ToplinkTransactionController Version ${pom.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -716,8 +716,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[JotmContextFactory ${pom.version}]]></text>
-            <text language="de"><![CDATA[JotmContextFactory ${pom.version}]]></text>
+            <text language="en"><![CDATA[JotmContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[JotmContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
