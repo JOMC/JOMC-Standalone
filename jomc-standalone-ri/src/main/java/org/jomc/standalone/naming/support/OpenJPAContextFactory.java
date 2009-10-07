@@ -51,8 +51,8 @@ import org.apache.openjpa.persistence.PersistenceProviderImpl;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>OpenJPAContextFactory 1.0-alpha-2-SNAPSHOT</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>OpenJPAContextFactory 1.0-alpha-2-SNAPSHOT</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-07T02:02:48+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-07T02:02:48+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -133,8 +133,8 @@ public class OpenJPAContextFactory extends AbstractJPAContextFactory
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>OpenJPAContextFactory 1.0-alpha-2-SNAPSHOT</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>OpenJPAContextFactory 1.0-alpha-2-SNAPSHOT</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-07T02:02:48+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-07T02:02:48+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
