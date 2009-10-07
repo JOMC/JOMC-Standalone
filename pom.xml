@@ -209,16 +209,12 @@
           <version>2.6</version>
           <configuration>
             <breakiterator>true</breakiterator>
-            <charset>${project.reporting.outputEncoding}</charset>
-            <docencoding>${project.reporting.outputEncoding}</docencoding>
-            <encoding>${project.build.sourceEncoding}</encoding>
             <keywords>true</keywords>
             <linksource>true</linksource>
             <serialwarn>true</serialwarn>
-            <show>private</show>
             <source>1.5</source>
-            <doctitle>${pom.name} ${pom.version} Documentation</doctitle>
-            <windowtitle>${pom.name} ${pom.version} Documentation</windowtitle>
+            <doctitle>${pom.name} Specification ${pom.version}</doctitle>
+            <windowtitle>${pom.name} Specification ${pom.version}</windowtitle>
             <archive>
               <index>true</index>
               <addMavenDescriptor>false</addMavenDescriptor>
@@ -512,19 +508,12 @@
             <reports>
               <report>javadoc</report>
               <report>test-javadoc</report>
-              <report>jar</report>
-              <report>test-jar</report>
             </reports>
             <configuration>
               <breakiterator>true</breakiterator>
-              <charset>${project.reporting.outputEncoding}</charset>
-              <docencoding>${project.reporting.outputEncoding}</docencoding>
-              <encoding>${project.build.sourceEncoding}</encoding>
               <keywords>true</keywords>
               <linksource>true</linksource>
               <serialwarn>true</serialwarn>
-              <show>public</show>
-              <nodeprecated>true</nodeprecated>
               <source>1.5</source>
               <doctitle>${pom.name} Specification ${pom.version}</doctitle>
               <windowtitle>${pom.name} Specification ${pom.version}</windowtitle>
