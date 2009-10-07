@@ -139,7 +139,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
                     {
                         return (DataSource) getContext().lookup( getEnvironment().getJtaDataSourceJndiName() );
                     }
-                    catch ( NamingException e )
+                    catch ( final NamingException e )
                     {
                         getLogger().fatal( e );
                         throw new RuntimeException( e );
@@ -165,7 +165,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
 
                             final DocumentBuilder documentBuilder = factory.newDocumentBuilder();
 
-                            for ( Enumeration<URL> e = this.getNewTempClassLoader().getResources(
+                            for ( final Enumeration<URL> e = this.getNewTempClassLoader().getResources(
                                 "META-INF/persistence.xml" ); e.hasMoreElements(); )
                             {
                                 final URL url = e.nextElement();
@@ -193,17 +193,17 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
 
                         return this.mappingFileNames;
                     }
-                    catch ( SAXException e )
+                    catch ( final SAXException e )
                     {
                         getLogger().fatal( e );
                         throw new RuntimeException( e );
                     }
-                    catch ( IOException e )
+                    catch ( final IOException e )
                     {
                         getLogger().fatal( e );
                         throw new RuntimeException( e );
                     }
-                    catch ( ParserConfigurationException e )
+                    catch ( final ParserConfigurationException e )
                     {
                         getLogger().fatal( e );
                         throw new RuntimeException( e );
@@ -215,7 +215,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
                     try
                     {
                         final List<URL> jarFileUrls = new LinkedList<URL>();
-                        for ( Enumeration<URL> unitUrls = this.getClassLoader().getResources(
+                        for ( final Enumeration<URL> unitUrls = this.getClassLoader().getResources(
                             "META-INF/persistence.xml" ); unitUrls.hasMoreElements(); )
                         {
                             final URL unitUrl = unitUrls.nextElement();
@@ -226,7 +226,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
 
                         return jarFileUrls;
                     }
-                    catch ( IOException e )
+                    catch ( final IOException e )
                     {
                         getLogger().fatal( e );
                         throw new RuntimeException( e.getMessage(), e );
@@ -251,7 +251,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
 
                             final DocumentBuilder documentBuilder = factory.newDocumentBuilder();
 
-                            for ( Enumeration<URL> e = this.getNewTempClassLoader().getResources(
+                            for ( final Enumeration<URL> e = this.getNewTempClassLoader().getResources(
                                 "META-INF/persistence.xml" ); e.hasMoreElements(); )
                             {
                                 final URL url = e.nextElement();
@@ -279,17 +279,17 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
 
                         return this.managedClasses;
                     }
-                    catch ( SAXException e )
+                    catch ( final SAXException e )
                     {
                         getLogger().fatal( e );
                         throw new RuntimeException( e );
                     }
-                    catch ( IOException e )
+                    catch ( final IOException e )
                     {
                         getLogger().fatal( e );
                         throw new RuntimeException( e );
                     }
-                    catch ( ParserConfigurationException e )
+                    catch ( final ParserConfigurationException e )
                     {
                         getLogger().fatal( e );
                         throw new RuntimeException( e );

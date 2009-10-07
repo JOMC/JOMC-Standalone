@@ -83,22 +83,22 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
             this.bindDataSource();
             return null;
         }
-        catch ( ClassNotFoundException e )
+        catch ( final ClassNotFoundException e )
         {
             this.getLogger().fatal( e );
             throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
         }
-        catch ( InstantiationException e )
+        catch ( final InstantiationException e )
         {
             this.getLogger().fatal( e );
             throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
         }
-        catch ( IllegalAccessException e )
+        catch ( final IllegalAccessException e )
         {
             this.getLogger().fatal( e );
             throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
         }
-        catch ( InvocationTargetException e )
+        catch ( final InvocationTargetException e )
         {
             this.getLogger().fatal( e );
             throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
@@ -149,7 +149,7 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
                     propertyType = getter.getReturnType();
                 }
 
-                Method setter = this.getMethod( dataSource.getClass(), "set" + propertyName, new Class[]
+                final Method setter = this.getMethod( dataSource.getClass(), "set" + propertyName, new Class[]
                     {
                         propertyType
                     } );
@@ -211,11 +211,11 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
         {
             return clazz.getMethod( name, arguments );
         }
-        catch ( NoSuchMethodException e )
+        catch ( final NoSuchMethodException e )
         {
             return null;
         }
-        catch ( SecurityException e )
+        catch ( final SecurityException e )
         {
             this.getLogger().fatal( e );
             throw (NamingException) new NamingException( e.getMessage() ).initCause( e );

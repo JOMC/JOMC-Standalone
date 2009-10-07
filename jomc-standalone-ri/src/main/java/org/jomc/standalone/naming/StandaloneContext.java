@@ -114,7 +114,7 @@ public class StandaloneContext implements Context
         {
             return NamingManager.getObjectInstance( this.getObjectMap().get( name ), name, this, this.getEnvironment() );
         }
-        catch ( Exception e )
+        catch ( final Exception e )
         {
             final NamingException n = new NamingException( e.getMessage() );
             n.setRootCause( e );
@@ -211,8 +211,11 @@ public class StandaloneContext implements Context
                     throw new NamingException();
                 }
 
+                final NameClassPair nameClassPair =
+                    new NameClassPair( name.toString(), this.next.getClass().getName() );
+
                 this.next = null;
-                return new NameClassPair( name.toString(), this.next.getClass().getName() );
+                return nameClassPair;
             }
 
             public boolean hasMore() throws NamingException
@@ -231,7 +234,7 @@ public class StandaloneContext implements Context
                 {
                     return this.hasMore();
                 }
-                catch ( NamingException e )
+                catch ( final NamingException e )
                 {
                     throw new AssertionError( e );
                 }
@@ -243,7 +246,7 @@ public class StandaloneContext implements Context
                 {
                     return this.next();
                 }
-                catch ( NamingException e )
+                catch ( final NamingException e )
                 {
                     throw new AssertionError( e );
                 }
@@ -271,8 +274,9 @@ public class StandaloneContext implements Context
                     throw new NamingException();
                 }
 
+                final Binding binding = new Binding( name.toString(), this.next );
                 this.next = null;
-                return new Binding( name.toString(), this.next );
+                return binding;
             }
 
             public boolean hasMore() throws NamingException
@@ -291,7 +295,7 @@ public class StandaloneContext implements Context
                 {
                     return this.hasMore();
                 }
-                catch ( NamingException e )
+                catch ( final NamingException e )
                 {
                     throw new AssertionError( e );
                 }
@@ -303,7 +307,7 @@ public class StandaloneContext implements Context
                 {
                     return this.next();
                 }
-                catch ( NamingException e )
+                catch ( final NamingException e )
                 {
                     throw new AssertionError( e );
                 }
@@ -452,8 +456,7 @@ public class StandaloneContext implements Context
 
     // SECTION-END
     // SECTION-START[StandaloneContext]
-
-    /** Subcontexts of the instance. */
+    /** Sub-contexts of the instance. */
     private Map<Name, Context> contextMap;
 
     /** Objects of the instance. */

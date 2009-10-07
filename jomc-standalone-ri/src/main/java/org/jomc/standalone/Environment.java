@@ -262,7 +262,7 @@ public class Environment
     {
         try
         {
-            String sysRootUrl = System.getProperty( JPA_ROOT_URL );
+            final String sysRootUrl = System.getProperty( JPA_ROOT_URL );
 
             if ( sysRootUrl != null )
             {
@@ -286,7 +286,7 @@ public class Environment
                 return defaultRootUrl.toURI().toURL();
             }
         }
-        catch ( MalformedURLException e )
+        catch ( final MalformedURLException e )
         {
             throw new AssertionError( e );
         }

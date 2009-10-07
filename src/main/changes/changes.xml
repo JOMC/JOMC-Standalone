@@ -42,5 +42,21 @@
   <body>
     <!-- ******************************************************************* -->
     <release version="1.0-alpha-1" date="2009-10-04"/>
+
+    <!-- ******************************************************************* -->
+    <release version="1.0-alpha-2" date="2009-10-06">
+      <action dev="schulte2005" type="fix"><![CDATA[
+      Corrected a NullPointerException thrown by method <code>next()</code>
+      of the <code>NamingEnumeration</code> returned by method
+      <code>list(Name)</code> of class
+      <code>org.jomc.standalone.naming.StandaloneContext</code>.]]>
+      </action>
+      <action dev="schulte2005" type="fix"><![CDATA[
+      Corrected an illegal Binding returned by method <code>next()</code>
+      of the <code>NamingEnumeration</code> returned by method
+      <code>listBindings(Name)</code> of class
+      <code>org.jomc.standalone.naming.StandaloneContext</code>.]]>
+      </action>
+    </release>
   </body>
 </document>

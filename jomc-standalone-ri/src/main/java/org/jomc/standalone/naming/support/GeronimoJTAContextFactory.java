@@ -82,7 +82,7 @@ public class GeronimoJTAContextFactory extends AbstractContextFactory implements
             this.getContext().bind( this.getEnvironment().getTransactionSynchronizationRegistryJndiName(), txManager );
             return null;
         }
-        catch ( XAException e )
+        catch ( final XAException e )
         {
             this.getLogger().fatal( e );
             throw (NamingException) new NamingException( e.getMessage() ).initCause( e );

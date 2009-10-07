@@ -75,7 +75,7 @@ public class StandaloneContextFactory implements InitialContextFactory
 
     private static Context instance;
 
-    public synchronized Context getInitialContext( final Hashtable environment ) throws NamingException
+    public synchronized Context getInitialContext( final Hashtable env ) throws NamingException
     {
         try
         {
@@ -85,31 +85,31 @@ public class StandaloneContextFactory implements InitialContextFactory
                 this.getLogger().info( this.getImplementationInfoMessage( this.getLocale() ) );
                 instance = new StandaloneContext();
 
-                if ( environment != null )
+                if ( env != null )
                 {
-                    System.getProperties().putAll( environment );
-                    instance.getEnvironment().putAll( environment );
+                    System.getProperties().putAll( env );
+                    instance.getEnvironment().putAll( env );
 
                     if ( this.getEnvironment().getDataSourceContextFactoryName() != null )
                     {
                         final InitialContextFactory dataSourceContextFactory = (InitialContextFactory) Class.forName(
                             this.getEnvironment().getDataSourceContextFactoryName() ).newInstance();
 
-                        dataSourceContextFactory.getInitialContext( environment );
+                        dataSourceContextFactory.getInitialContext( env );
                     }
                     if ( this.getEnvironment().getJtaContextFactoryName() != null )
                     {
                         final InitialContextFactory jtaContextFactory = (InitialContextFactory) Class.forName(
                             this.getEnvironment().getJtaContextFactoryName() ).newInstance();
 
-                        jtaContextFactory.getInitialContext( environment );
+                        jtaContextFactory.getInitialContext( env );
                     }
                     if ( this.getEnvironment().getJpaContextFactoryName() != null )
                     {
                         final InitialContextFactory jpaContextFactory = (InitialContextFactory) Class.forName(
                             this.getEnvironment().getJpaContextFactoryName() ).newInstance();
 
-                        jpaContextFactory.getInitialContext( environment );
+                        jpaContextFactory.getInitialContext( env );
                     }
 
                     try
@@ -121,7 +121,7 @@ public class StandaloneContextFactory implements InitialContextFactory
 
                         helperMethod.invoke( null, this.getEnvironment(), instance );
                     }
-                    catch ( Exception e )
+                    catch ( final Exception e )
                     {
                         this.getLogger().debug( e );
                     }
@@ -134,17 +134,17 @@ public class StandaloneContextFactory implements InitialContextFactory
 
             return instance;
         }
-        catch ( InstantiationException e )
+        catch ( final InstantiationException e )
         {
             this.getLogger().fatal( e );
             throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
         }
-        catch ( IllegalAccessException e )
+        catch ( final IllegalAccessException e )
         {
             this.getLogger().fatal( e );
             throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
         }
-        catch ( ClassNotFoundException e )
+        catch ( final ClassNotFoundException e )
         {
             this.getLogger().fatal( e );
             throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
@@ -153,7 +153,6 @@ public class StandaloneContextFactory implements InitialContextFactory
 
     // SECTION-END
     // SECTION-START[StandaloneContextFactory]
-
     private Environment environment;
 
     public Environment getEnvironment()
