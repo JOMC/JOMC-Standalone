@@ -59,8 +59,8 @@ import org.jomc.standalone.Environment;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>DataSourceContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-07T17:16:05+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>DataSourceContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-07T17:16:05+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>DataSourceContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-08T01:09:57+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>DataSourceContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-08T01:09:57+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -70,7 +70,7 @@ import org.jomc.standalone.Environment;
 // SECTION-END
 // SECTION-START[Annotations]
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-5/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-6/jomc-tools" )
 // SECTION-END
 public class DataSourceContextFactory extends AbstractContextFactory implements InitialContextFactory
 {
@@ -227,7 +227,7 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
 
     /** Creates a new {@code DataSourceContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-5/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-6/jomc-tools" )
     public DataSourceContextFactory()
     {
         // SECTION-START[Default Constructor]
@@ -246,7 +246,7 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-5/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-6/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
@@ -267,7 +267,7 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-5/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-6/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
@@ -282,8 +282,8 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>DataSourceContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-07T17:16:05+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>DataSourceContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-07T17:16:05+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>DataSourceContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-08T01:09:57+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>DataSourceContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-10-08T01:09:57+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
@@ -291,7 +291,7 @@ public class DataSourceContextFactory extends AbstractContextFactory implements 
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-5/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-6/jomc-tools" )
     private String getImplementationInfoMessage( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "implementationInfo", locale,  null );
