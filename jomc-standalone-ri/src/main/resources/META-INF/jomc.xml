@@ -35,22 +35,22 @@
 <module xmlns="http://jomc.org/model"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://jomc.org/model http://jomc.org/model/jomc-1.0.xsd"
-        name="${pom.name}"
-        version="${pom.version}"
-        vendor="${pom.organization.name}"
+        name="${project.name}"
+        version="${project.version}"
+        vendor="${project.organization.name}"
         modelVersion="1.0">
 
   <documentation defaultLanguage="en">
-    <text language="en"><![CDATA[${pom.description}]]></text>
+    <text language="en"><![CDATA[${project.description}]]></text>
   </documentation>
 
   <implementations>
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.Environment"
                     class="org.jomc.standalone.Environment"
-                    name="${pom.name} Environment"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}"
+                    name="${project.name} Environment"
+                    version="${project.version}"
+                    vendor="${project.organization.name}"
                     stateless="true">
 
       <documentation defaultLanguage="en">
@@ -112,7 +112,7 @@
         </property>
         <property name="defaultDataSourceJndiName"
                   type="java.lang.String"
-                  value="java:jdbc/${pom.artifactId}">
+                  value="java:jdbc/${project.artifactId}">
 
           <documentation defaultLanguage="en">
             <text language="en"><![CDATA[The default JNDI name of the data source backing the standalone JPA implementation.]]></text>
@@ -120,7 +120,7 @@
         </property>
         <property name="defaultJtaDataSourceJndiName"
                   type="java.lang.String"
-                  value="java:jta/${pom.artifactId}">
+                  value="java:jta/${project.artifactId}">
 
           <documentation defaultLanguage="en">
             <text language="en"><![CDATA[The default JNDI name of the data source backing the standalone JTA implementation.]]></text>
@@ -156,9 +156,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.StandaloneContext"
                     class="org.jomc.standalone.naming.StandaloneContext"
-                    name="${pom.name} StandaloneContext"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} StandaloneContext"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone {@code Context} implementation.]]></text>
@@ -246,9 +246,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.StandaloneContextFactory"
                     class="org.jomc.standalone.naming.StandaloneContextFactory"
-                    name="${pom.name} StandaloneContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} StandaloneContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone {@code InitialContextFactory} implementation.]]></text>
@@ -274,14 +274,14 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[StandaloneContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[StandaloneContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="en"><![CDATA[StandaloneContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[StandaloneContextFactory Version ${project.version} Build ${buildNumber}]]></text>
           </template>
         </message>
         <message name="completedInitialization">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[StandaloneContextFactory Version ${pom.version} Build ${buildNumber} - started in {0}ms.]]></text>
-            <text language="de"><![CDATA[StandaloneContextFactory Version ${pom.version} Build ${buildNumber} - gestartet in {0}ms.]]></text>
+            <text language="en"><![CDATA[StandaloneContextFactory Version ${project.version} Build ${buildNumber} - started in {0}ms.]]></text>
+            <text language="de"><![CDATA[StandaloneContextFactory Version ${project.version} Build ${buildNumber} - gestartet in {0}ms.]]></text>
           </template>
           <arguments>
             <argument index="0" name="startMillis" type="Number"/>
@@ -293,9 +293,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.java.javaURLContextFactory"
                     class="org.jomc.standalone.naming.java.javaURLContextFactory"
-                    name="${pom.name} javaURLContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} javaURLContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone context factory for the ''java'' URL scheme.]]></text>
@@ -324,8 +324,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[javaContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[javaContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="en"><![CDATA[javaContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[javaContextFactory Version ${project.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -334,9 +334,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
                     class="org.jomc.standalone.naming.support.AbstractContextFactory"
-                    name="${pom.name} AbstractContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}"
+                    name="${project.name} AbstractContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}"
                     abstract="true">
 
       <documentation defaultLanguage="en">
@@ -355,9 +355,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
                     class="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
-                    name="${pom.name} AbstractJPAContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}"
+                    name="${project.name} AbstractJPAContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}"
                     abstract="true">
 
       <documentation defaultLanguage="en">
@@ -370,7 +370,7 @@
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                   version="${pom.version}"/>
+                   version="${project.version}"/>
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
@@ -387,9 +387,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.DataSourceContextFactory"
                     class="org.jomc.standalone.naming.support.DataSourceContextFactory"
-                    name="${pom.name} DataSourceContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} DataSourceContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone data source context factory.]]></text>
@@ -401,7 +401,7 @@
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                   version="${pom.version}"/>
+                   version="${project.version}"/>
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
@@ -419,8 +419,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[DataSourceContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[DataSourceContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="en"><![CDATA[DataSourceContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[DataSourceContextFactory Version ${project.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -429,9 +429,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.JBossJTAContextFactory"
                     class="org.jomc.standalone.naming.support.JBossJTAContextFactory"
-                    name="${pom.name} JBossJTAContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} JBossJTAContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone JBoss JTA context factory.]]></text>
@@ -443,7 +443,7 @@
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                   version="${pom.version}"/>
+                   version="${project.version}"/>
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
@@ -468,8 +468,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[JBossJTAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[JBossJTAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="en"><![CDATA[JBossJTAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[JBossJTAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -478,9 +478,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"
                     class="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"
-                    name="${pom.name} GeronimoJTAContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} GeronimoJTAContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone Geronimo JTA context factory.]]></text>
@@ -492,7 +492,7 @@
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                   version="${pom.version}"/>
+                   version="${project.version}"/>
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
@@ -510,8 +510,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[GeronimoJTAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[GeronimoJTAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="en"><![CDATA[GeronimoJTAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[GeronimoJTAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -520,9 +520,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.OpenJPAContextFactory"
                     class="org.jomc.standalone.naming.support.OpenJPAContextFactory"
-                    name="${pom.name} OpenJPAContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} OpenJPAContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone OpenJPA JPA context factory.]]></text>
@@ -534,7 +534,7 @@
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
-                   version="${pom.version}"/>
+                   version="${project.version}"/>
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
@@ -552,8 +552,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[OpenJPAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[OpenJPAContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="en"><![CDATA[OpenJPAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[OpenJPAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -562,9 +562,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.HibernateContextFactory"
                     class="org.jomc.standalone.naming.support.HibernateContextFactory"
-                    name="${pom.name} HibernateContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} HibernateContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone Hibernate JPA context factory.]]></text>
@@ -576,7 +576,7 @@
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
-                   version="${pom.version}"/>
+                   version="${project.version}"/>
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
@@ -594,8 +594,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[HibernateContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[HibernateContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="en"><![CDATA[HibernateContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[HibernateContextFactory Version ${project.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -604,9 +604,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.TopLinkContextFactory"
                     class="org.jomc.standalone.naming.support.TopLinkContextFactory"
-                    name="${pom.name} TopLinkContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} TopLinkContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone Toplink JPA context factory.]]></text>
@@ -618,7 +618,7 @@
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
-                   version="${pom.version}"/>
+                   version="${project.version}"/>
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
@@ -636,8 +636,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[TopLinkContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[TopLinkContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="en"><![CDATA[TopLinkContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[TopLinkContextFactory Version ${project.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -646,9 +646,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.TopLinkTransactionController"
                     class="org.jomc.standalone.naming.support.TopLinkTransactionController"
-                    name="${pom.name} ToplinkTransactionController"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} ToplinkTransactionController"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone Toplink {@code ExternalTransactionController}.]]></text>
@@ -674,8 +674,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[ToplinkTransactionController Version ${pom.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[ToplinkTransactionController Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="en"><![CDATA[ToplinkTransactionController Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[ToplinkTransactionController Version ${project.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
@@ -684,9 +684,9 @@
     <!-- ******************************************************************* -->
     <implementation identifier="org.jomc.standalone.naming.support.JotmContextFactory"
                     class="org.jomc.standalone.naming.support.JotmContextFactory"
-                    name="${pom.name} JotmContextFactory"
-                    version="${pom.version}"
-                    vendor="${pom.organization.name}">
+                    name="${project.name} JotmContextFactory"
+                    version="${project.version}"
+                    vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
         <text language="en"><![CDATA[Standalone Jonas JTA context factory.]]></text>
@@ -698,7 +698,7 @@
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                   version="${pom.version}"/>
+                   version="${project.version}"/>
       </implementations>
       <dependencies>
         <dependency name="Logger" identifier="org.jomc.logging.Logger"
@@ -716,8 +716,8 @@
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[JotmContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[JotmContextFactory Version ${pom.version} Build ${buildNumber}]]></text>
+            <text language="en"><![CDATA[JotmContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="de"><![CDATA[JotmContextFactory Version ${project.version} Build ${buildNumber}]]></text>
           </template>
         </message>
       </messages>
