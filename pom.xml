@@ -143,7 +143,6 @@
           <executions>
             <execution>
               <id>create-buildnumber</id>
-              <inherited>false</inherited>
               <phase>validate</phase>
               <goals>
                 <goal>create</goal>
@@ -248,7 +247,7 @@
         <plugin>
           <groupId>org.jomc</groupId>
           <artifactId>maven-jomc-plugin</artifactId>
-          <version>1.0-alpha-7</version>
+          <version>1.0-alpha-8</version>
           <executions>
             <execution>
               <id>main-java-sources</id>
@@ -398,12 +397,12 @@
       <dependency>
         <groupId>org.jomc</groupId>
         <artifactId>jomc-api</artifactId>
-        <version>1.0-alpha-7</version>
+        <version>1.0-alpha-8</version>
       </dependency>
       <dependency>
         <groupId>org.jomc</groupId>
         <artifactId>jomc-ri</artifactId>
-        <version>1.0-alpha-7</version>
+        <version>1.0-alpha-8</version>
       </dependency>
       <dependency>
         <groupId>org.jomc.logging</groupId>
