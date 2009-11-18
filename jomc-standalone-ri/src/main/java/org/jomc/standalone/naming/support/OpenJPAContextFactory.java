@@ -1,4 +1,5 @@
 // SECTION-START[License Header]
+// <editor-fold defaultstate="collapsed" desc=" Generated License ">
 /*
  *   Copyright (c) 2009 The JOMC Project
  *   Copyright (c) 2005 Christian Schulte <cs@jomc.org>
@@ -31,6 +32,7 @@
  *   $Id$
  *
  */
+// </editor-fold>
 // SECTION-END
 package org.jomc.standalone.naming.support;
 
@@ -38,6 +40,7 @@ import javax.persistence.spi.PersistenceProvider;
 import org.apache.openjpa.persistence.PersistenceProviderImpl;
 
 // SECTION-START[Documentation]
+// <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Standalone OpenJPA JPA context factory.
  * <p><b>Specifications</b><ul>
@@ -51,18 +54,21 @@ import org.apache.openjpa.persistence.PersistenceProviderImpl;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
  * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
  */
+// </editor-fold>
 // SECTION-END
 // SECTION-START[Annotations]
+// <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
+// </editor-fold>
 // SECTION-END
 public class OpenJPAContextFactory extends AbstractJPAContextFactory
 {
@@ -75,10 +81,11 @@ public class OpenJPAContextFactory extends AbstractJPAContextFactory
 
     // SECTION-END
     // SECTION-START[Constructors]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code OpenJPAContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
     public OpenJPAContextFactory()
     {
         // SECTION-START[Default Constructor]
@@ -86,8 +93,10 @@ public class OpenJPAContextFactory extends AbstractJPAContextFactory
         this.getLogger().info( this.getImplementationInfoMessage( this.getLocale() ) );
         // SECTION-END
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Dependencies]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
 
     /**
      * Gets the {@code Locale} dependency.
@@ -97,10 +106,10 @@ public class OpenJPAContextFactory extends AbstractJPAContextFactory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
     private java.util.Locale getLocale()
     {
-        final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
         assert _d != null : "'Locale' dependency not found.";
         return _d;
     }
@@ -118,23 +127,25 @@ public class OpenJPAContextFactory extends AbstractJPAContextFactory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
-        final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
         assert _d != null : "'Logger' dependency not found.";
         return _d;
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Properties]
     // SECTION-END
     // SECTION-START[Messages]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>OpenJPAContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
@@ -142,12 +153,13 @@ public class OpenJPAContextFactory extends AbstractJPAContextFactory
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
     private String getImplementationInfoMessage( final java.util.Locale locale )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "implementationInfo", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "implementationInfo", locale,  null );
         assert _m != null : "'implementationInfo' message not found.";
         return _m;
     }
+    // </editor-fold>
     // SECTION-END
 }

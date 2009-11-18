@@ -1,4 +1,5 @@
 // SECTION-START[License Header]
+// <editor-fold defaultstate="collapsed" desc=" Generated License ">
 /*
  *   Copyright (c) 2009 The JOMC Project
  *   Copyright (c) 2005 Christian Schulte <cs@jomc.org>
@@ -31,6 +32,7 @@
  *   $Id$
  *
  */
+// </editor-fold>
 // SECTION-END
 package org.jomc.standalone.naming;
 
@@ -42,6 +44,7 @@ import javax.naming.spi.InitialContextFactory;
 import org.jomc.standalone.Environment;
 
 // SECTION-START[Documentation]
+// <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Standalone {@code InitialContextFactory} implementation.
  * <p><b>Dependencies</b><ul>
@@ -52,22 +55,25 @@ import org.jomc.standalone.Environment;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getCompletedInitializationMessage completedInitialization}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000 - started in {0}ms.</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000 - gestartet in {0}ms.</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000 - started in {0}ms.</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000 - gestartet in {0}ms.</pre></td></tr>
  * </table>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
  * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
  */
+// </editor-fold>
 // SECTION-END
 // SECTION-START[Annotations]
+// <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
+// </editor-fold>
 // SECTION-END
 public class StandaloneContextFactory implements InitialContextFactory
 {
@@ -167,18 +173,21 @@ public class StandaloneContextFactory implements InitialContextFactory
 
     // SECTION-END
     // SECTION-START[Constructors]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code StandaloneContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
     public StandaloneContextFactory()
     {
         // SECTION-START[Default Constructor]
         super();
         // SECTION-END
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Dependencies]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
 
     /**
      * Gets the {@code Locale} dependency.
@@ -188,10 +197,10 @@ public class StandaloneContextFactory implements InitialContextFactory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
     private java.util.Locale getLocale()
     {
-        final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Locale" );
+        final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
         assert _d != null : "'Locale' dependency not found.";
         return _d;
     }
@@ -209,23 +218,25 @@ public class StandaloneContextFactory implements InitialContextFactory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
-        final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager().getDependency( this, "Logger" );
+        final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
         assert _d != null : "'Logger' dependency not found.";
         return _d;
     }
+    // </editor-fold>
     // SECTION-END
     // SECTION-START[Properties]
     // SECTION-END
     // SECTION-START[Messages]
+    // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
      * Gets the text of the {@code completedInitialization} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000 - started in {0}ms.</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000 - gestartet in {0}ms.</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000 - started in {0}ms.</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000 - gestartet in {0}ms.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param startMillis Format argument.
@@ -234,10 +245,10 @@ public class StandaloneContextFactory implements InitialContextFactory
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
     private String getCompletedInitializationMessage( final java.util.Locale locale, final java.lang.Number startMillis )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "completedInitialization", locale, new Object[] { startMillis, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "completedInitialization", locale, new Object[] { startMillis, null } );
         assert _m != null : "'completedInitialization' message not found.";
         return _m;
     }
@@ -245,8 +256,8 @@ public class StandaloneContextFactory implements InitialContextFactory
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-15T00:13:42+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-3-SNAPSHOT Build 2009-11-18T07:09:43+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
@@ -254,12 +265,13 @@ public class StandaloneContextFactory implements InitialContextFactory
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-7/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
     private String getImplementationInfoMessage( final java.util.Locale locale )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager().getMessage( this, "implementationInfo", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "implementationInfo", locale,  null );
         assert _m != null : "'implementationInfo' message not found.";
         return _m;
     }
+    // </editor-fold>
     // SECTION-END
 }
