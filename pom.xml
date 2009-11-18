@@ -36,7 +36,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jomc.standalone</groupId>
   <artifactId>jomc-standalone</artifactId>
-  <version>1.0-alpha-3-SNAPSHOT</version>
+  <version>1.0-alpha-3</version>
   <packaging>pom</packaging>
   <name>JOMC Standalone</name>
   <description>JOMC standalone environment.</description>
@@ -92,9 +92,9 @@
     </mailingList>
   </mailingLists>
   <scm>
-    <connection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-standalone/trunk</connection>
-    <developerConnection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-standalone/trunk</developerConnection>
-    <url>http://jomc.svn.sourceforge.net/viewvc/jomc/jomc-standalone/trunk/</url>
+    <connection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-standalone/tags/jomc-standalone-1.0-alpha-3</connection>
+    <developerConnection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-standalone/tags/jomc-standalone-1.0-alpha-3</developerConnection>
+    <url>http://jomc.svn.sourceforge.net/viewvc/jomc/jomc-standalone/tags/jomc-standalone-1.0-alpha-3</url>
   </scm>
   <build>
     <extensions>
