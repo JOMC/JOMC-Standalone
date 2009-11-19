@@ -69,5 +69,15 @@
       </action>
     </release>
 
+    <!-- ******************************************************************* -->
+    <release version="1.0-alpha-3" date="2009-11-20">
+      <action dev="schulte2005" type="update"><![CDATA[
+      Maven POM updates.<ul>
+      <li>Updated JOMC dependencies to 1.0-alpha-9.</li>
+      <li>Updated JOMC Logging dependencies to 1.0-alpha-6.</li>
+      </ul>]]>
+      </action>
+    </release>
+
   </body>
 </document>

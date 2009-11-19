@@ -58,8 +58,8 @@ import org.apache.geronimo.transaction.manager.GeronimoTransactionManager;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-18T08:23:17+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-18T08:23:17+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -71,10 +71,10 @@ import org.apache.geronimo.transaction.manager.GeronimoTransactionManager;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-9/jomc-tools" )
 // </editor-fold>
 // SECTION-END
-public class GeronimoJTAContextFactory extends AbstractContextFactory implements InitialContextFactory
+public class GeronimoJTAContextFactory extends AbstractContextFactory
 {
     // SECTION-START[GeronimoJTAContextFactory]
 
@@ -101,13 +101,13 @@ public class GeronimoJTAContextFactory extends AbstractContextFactory implements
 
     /** Creates a new {@code GeronimoJTAContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-9/jomc-tools" )
     public GeronimoJTAContextFactory()
     {
         // SECTION-START[Default Constructor]
         super();
         this.getLogger().info( this.getImplementationInfoMessage( this.getLocale() ) );
-    // SECTION-END
+        // SECTION-END
     }
     // </editor-fold>
     // SECTION-END
@@ -122,7 +122,7 @@ public class GeronimoJTAContextFactory extends AbstractContextFactory implements
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-9/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -143,7 +143,7 @@ public class GeronimoJTAContextFactory extends AbstractContextFactory implements
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-9/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
@@ -160,8 +160,8 @@ public class GeronimoJTAContextFactory extends AbstractContextFactory implements
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-18T08:23:17+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-18T08:23:17+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
@@ -169,7 +169,7 @@ public class GeronimoJTAContextFactory extends AbstractContextFactory implements
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-8/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-9/jomc-tools" )
     private String getImplementationInfoMessage( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "implementationInfo", locale,  null );
