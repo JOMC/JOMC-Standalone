@@ -39,7 +39,6 @@ package org.jomc.standalone.naming.support;
 import java.util.Hashtable;
 import javax.naming.Context;
 import javax.naming.NamingException;
-import javax.naming.spi.InitialContextFactory;
 import javax.transaction.xa.XAException;
 import org.apache.geronimo.transaction.manager.GeronimoTransactionManager;
 
