@@ -55,12 +55,12 @@ import org.jomc.standalone.Environment;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getCompletedInitializationMessage completedInitialization}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000 - started in {0}ms.</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000 - gestartet in {0}ms.</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-11-19T14:20:40+0000 - started in {0}ms.</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-11-19T14:20:40+0000 - gestartet in {0}ms.</pre></td></tr>
  * </table>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-11-19T14:20:40+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-11-19T14:20:40+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -235,8 +235,8 @@ public class StandaloneContextFactory implements InitialContextFactory
     /**
      * Gets the text of the {@code completedInitialization} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000 - started in {0}ms.</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000 - gestartet in {0}ms.</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-11-19T14:20:40+0000 - started in {0}ms.</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-11-19T14:20:40+0000 - gestartet in {0}ms.</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param startMillis Format argument.
@@ -256,8 +256,8 @@ public class StandaloneContextFactory implements InitialContextFactory
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-4-SNAPSHOT Build 2009-11-19T02:32:19+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-11-19T14:20:40+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>StandaloneContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-11-19T14:20:40+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
