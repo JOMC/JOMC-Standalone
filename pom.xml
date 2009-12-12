@@ -407,7 +407,7 @@
       <dependency>
         <groupId>org.jomc.logging</groupId>
         <artifactId>jomc-logging-api</artifactId>
-        <version>1.0-alpha-6</version>
+        <version>${jomc-logging.version}</version>
       </dependency>
       <dependency>
         <groupId>org.jboss.transaction</groupId>
@@ -693,5 +693,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <jomc.version>1.0-alpha-12</jomc.version>
+    <jomc-logging.version>1.0-alpha-7</jomc-logging.version>
   </properties>
 </project>
