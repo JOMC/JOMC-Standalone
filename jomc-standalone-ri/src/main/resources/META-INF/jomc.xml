@@ -35,157 +35,109 @@
 <module xmlns="http://jomc.org/model"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://jomc.org/model http://jomc.org/model/jomc-1.0.xsd"
-        name="${project.name}"
-        version="${project.version}"
-        vendor="${project.organization.name}"
-        modelVersion="1.0">
+        name="${project.name}" version="${project.version}" vendor="${project.organization.name}" modelVersion="1.0">
 
   <documentation defaultLanguage="en">
     <text language="en"><![CDATA[${project.description}]]></text>
   </documentation>
 
   <implementations>
-    <!-- ******************************************************************* -->
-    <implementation identifier="org.jomc.standalone.Environment"
-                    class="org.jomc.standalone.Environment"
-                    name="${project.name} Environment"
-                    version="${project.version}"
-                    vendor="${project.organization.name}"
-                    stateless="true">
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.standalone.Environment" class="org.jomc.standalone.Environment"
+                    classDeclaration="true" name="${project.name} Environment" version="${project.version}"
+                    vendor="${project.organization.name}" stateless="true">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone environment.]]></text>
+        <text language="en">Standalone environment.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <properties>
-        <property name="defaultEntityManagerFactoryJndiName"
-                  type="java.lang.String"
-                  value="java:comp/env/persistence/EntityManagerFactory">
-
+        <property name="defaultEntityManagerFactoryJndiName" value="java:comp/env/persistence/EntityManagerFactory">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default JNDI name the standalone {@code EntityManagerFactory} is bound to.]]></text>
+            <text language="en">The default JNDI name the standalone {@code EntityManagerFactory} is bound to.</text>
           </documentation>
         </property>
-        <property name="defaultEntityManagerJndiName"
-                  type="java.lang.String"
-                  value="java:comp/env/persistence/EntityManager">
-
+        <property name="defaultEntityManagerJndiName" value="java:comp/env/persistence/EntityManager">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default JNDI name the standalone {@code EntityManager} is bound to.]]></text>
+            <text language="en">The default JNDI name the standalone {@code EntityManager} is bound to.</text>
           </documentation>
         </property>
-        <property name="defaultTransactionManagerJndiName"
-                  type="java.lang.String"
-                  value="java:comp/TransactionManager">
-
+        <property name="defaultTransactionManagerJndiName" value="java:comp/TransactionManager">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default JNDI name the standalone {@code TransactionManager} is bound to.]]></text>
+            <text language="en">The default JNDI name the standalone {@code TransactionManager} is bound to.</text>
           </documentation>
         </property>
-        <property name="defaultUserTransactionJndiName"
-                  type="java.lang.String"
-                  value="java:comp/UserTransaction">
-
+        <property name="defaultUserTransactionJndiName" value="java:comp/UserTransaction">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default JNDI name the standalone {@code UserTransaction} is bound to.]]></text>
+            <text language="en">The default JNDI name the standalone {@code UserTransaction} is bound to.</text>
           </documentation>
         </property>
-        <property name="defaultTransactionSynchronizationRegistryJndiName"
-                  type="java.lang.String"
-                  value="java:comp/TransactionSynchronizationRegistry">
-
+        <property name="defaultTransactionSynchronizationRegistryJndiName" value="java:comp/TransactionSynchronizationRegistry">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default JNDI name the standalone {@code TransactionSynchronizationRegistry} is bound to.]]></text>
+            <text language="en">The default JNDI name the standalone {@code TransactionSynchronizationRegistry} is bound to.</text>
           </documentation>
         </property>
-        <property name="defaultDataSourceContextFactoryName"
-                  type="java.lang.String"
-                  value="org.jomc.standalone.naming.support.DataSourceContextFactory">
-
+        <property name="defaultDataSourceContextFactoryName" value="org.jomc.standalone.naming.support.DataSourceContextFactory">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default class name of the {@code InitialContextFactory} providing the standalone {@code DataSource}.]]></text>
+            <text language="en">The default class name of the {@code InitialContextFactory} providing the standalone {@code DataSource}.</text>
           </documentation>
         </property>
-        <property name="defaultDataSourceJndiName"
-                  type="java.lang.String"
-                  value="java:jdbc/${project.artifactId}">
-
+        <property name="defaultDataSourceJndiName" value="java:jdbc/${project.artifactId}">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default JNDI name of the data source backing the standalone JPA implementation.]]></text>
+            <text language="en">The default JNDI name of the data source backing the standalone JPA implementation.</text>
           </documentation>
         </property>
-        <property name="defaultJtaDataSourceJndiName"
-                  type="java.lang.String"
-                  value="java:jta/${project.artifactId}">
-
+        <property name="defaultJtaDataSourceJndiName" value="java:jta/${project.artifactId}">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default JNDI name of the data source backing the standalone JTA implementation.]]></text>
+            <text language="en">The default JNDI name of the data source backing the standalone JTA implementation.</text>
           </documentation>
         </property>
-        <property name="defaultJtaContextFactoryName"
-                  type="java.lang.String"
-                  value="org.jomc.standalone.naming.support.JotmContextFactory">
-
+        <property name="defaultJtaContextFactoryName" value="org.jomc.standalone.naming.support.JotmContextFactory">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default class name of the of the {@code InitialContextFactory} providing the JTA implementation backing the standalone environment.]]></text>
+            <text language="en">The default class name of the of the {@code InitialContextFactory} providing the JTA implementation backing the standalone environment.</text>
           </documentation>
         </property>
-        <property name="defaultJpaContextFactoryName"
-                  type="java.lang.String"
-                  value="org.jomc.standalone.naming.support.HibernateContextFactory">
-
+        <property name="defaultJpaContextFactoryName" value="org.jomc.standalone.naming.support.HibernateContextFactory">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default class name of the {@code InitialContextFactory} providing the JPA implementation backing the standalone environment.]]></text>
+            <text language="en">The default class name of the {@code InitialContextFactory} providing the JPA implementation backing the standalone environment.</text>
           </documentation>
         </property>
-        <property name="defaultDataSourceClassName"
-                  type="java.lang.String"
-                  value="org.enhydra.jdbc.standard.StandardXADataSource">
-
+        <property name="defaultDataSourceClassName" value="org.enhydra.jdbc.standard.StandardXADataSource">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[The default class name of the {@code DataSource} backing the standalone environment.]]></text>
+            <text language="en">The default class name of the {@code DataSource} backing the standalone environment.</text>
           </documentation>
         </property>
       </properties>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.StandaloneContext"
-                    class="org.jomc.standalone.naming.StandaloneContext"
-                    name="${project.name} StandaloneContext"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.StandaloneContext" classDeclaration="true"
+                    name="${project.name} StandaloneContext" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone {@code Context} implementation.]]></text>
+        <text language="en">Standalone {@code Context} implementation.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.StandaloneContext"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.StandaloneContext"
+                      override="true"/>
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale"
-                    version="1.1" implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
         <message name="bindInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[''{0}'', ''{1}'']]></text>
-            <text language="de"><![CDATA[''{0}'',  ''{1}'']]></text>
+            <text language="en">''{0}'', ''{1}''</text>
+            <text language="de">''{0}'', ''{1}''</text>
           </template>
           <arguments>
             <argument index="0" name="name"/>
@@ -194,8 +146,8 @@
         </message>
         <message name="rebindInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[''{0}'', ''{1}'']]></text>
-            <text language="de"><![CDATA[''{0}'',  ''{1}'']]></text>
+            <text language="en">''{0}'', ''{1}''</text>
+            <text language="de">''{0}'', ''{1}''</text>
           </template>
           <arguments>
             <argument index="0" name="name"/>
@@ -205,8 +157,8 @@
         </message>
         <message name="unbindInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[''{0}'', ''{1}'']]></text>
-            <text language="de"><![CDATA[''{0}'',  ''{1}'']]></text>
+            <text language="en">''{0}'', ''{1}''</text>
+            <text language="de">''{0}'', ''{1}''</text>
           </template>
           <arguments>
             <argument index="0" name="name"/>
@@ -214,8 +166,8 @@
         </message>
         <message name="renameInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[''{0}'', ''{1}'']]></text>
-            <text language="de"><![CDATA[''{0}'',  ''{1}'']]></text>
+            <text language="en">''{0}'', ''{1}''</text>
+            <text language="de">''{0}'', ''{1}''</text>
           </template>
           <arguments>
             <argument index="0" name="oldName"/>
@@ -224,8 +176,8 @@
         </message>
         <message name="createSubcontextInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[''{0}'']]></text>
-            <text language="de"><![CDATA[''{0}'']]></text>
+            <text language="en">''{0}''</text>
+            <text language="de">''{0}''</text>
           </template>
           <arguments>
             <argument index="0" name="contextName"/>
@@ -233,8 +185,8 @@
         </message>
         <message name="destroySubcontextInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[''{0}'']]></text>
-            <text language="de"><![CDATA[''{0}'']]></text>
+            <text language="en">''{0}''</text>
+            <text language="de">''{0}''</text>
           </template>
           <arguments>
             <argument index="0" name="contextName"/>
@@ -242,46 +194,39 @@
         </message>
       </messages>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.StandaloneContextFactory"
-                    class="org.jomc.standalone.naming.StandaloneContextFactory"
-                    name="${project.name} StandaloneContextFactory"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.StandaloneContextFactory" classDeclaration="true"
+                    name="${project.name} StandaloneContextFactory" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone {@code InitialContextFactory} implementation.]]></text>
+        <text language="en">Standalone {@code InitialContextFactory} implementation.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.StandaloneContextFactory"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.StandaloneContextFactory"
+                      override="true" />
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale"
-                    version="1.1" implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[StandaloneContextFactory Version ${project.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[StandaloneContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="en">StandaloneContextFactory Version ${project.version} Build ${buildNumber}</text>
+            <text language="de">StandaloneContextFactory Version ${project.version} Build ${buildNumber}</text>
           </template>
         </message>
         <message name="completedInitialization">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[StandaloneContextFactory Version ${project.version} Build ${buildNumber} - started in {0}ms.]]></text>
-            <text language="de"><![CDATA[StandaloneContextFactory Version ${project.version} Build ${buildNumber} - gestartet in {0}ms.]]></text>
+            <text language="en">StandaloneContextFactory Version ${project.version} Build ${buildNumber} - started in {0}ms.</text>
+            <text language="de">StandaloneContextFactory Version ${project.version} Build ${buildNumber} - gestartet in {0}ms.</text>
           </template>
           <arguments>
             <argument index="0" name="startMillis" type="Number"/>
@@ -289,435 +234,353 @@
         </message>
       </messages>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.java.javaURLContextFactory"
-                    class="org.jomc.standalone.naming.java.javaURLContextFactory"
-                    name="${project.name} javaURLContextFactory"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.java.javaURLContextFactory" classDeclaration="true"
+                    name="${project.name} javaURLContextFactory" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone context factory for the ''java'' URL scheme.]]></text>
+        <text language="en">Standalone context factory for the ''java'' URL scheme.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <specifications>
         <reference identifier="javax.naming.spi.InitialContextFactory"/>
       </specifications>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.java.javaURLContextFactory"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.java.javaURLContextFactory"
+                      override="true"/>
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale"
-                    version="1.1" implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[javaContextFactory Version ${project.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[javaContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="en">javaContextFactory Version ${project.version} Build ${buildNumber}</text>
+            <text language="de">javaContextFactory Version ${project.version} Build ${buildNumber}</text>
           </template>
         </message>
       </messages>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                    class="org.jomc.standalone.naming.support.AbstractContextFactory"
-                    name="${project.name} AbstractContextFactory"
-                    version="${project.version}"
-                    vendor="${project.organization.name}"
-                    abstract="true">
+                    class="org.jomc.standalone.naming.support.AbstractContextFactory" classDeclaration="true"
+                    name="${project.name} AbstractContextFactory" version="${project.version}"
+                    vendor="${project.organization.name}" abstract="true">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Base context factory.]]></text>
+        <text language="en">Base context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <specifications>
         <reference identifier="javax.naming.spi.InitialContextFactory"/>
       </specifications>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
-                    class="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
-                    name="${project.name} AbstractJPAContextFactory"
-                    version="${project.version}"
-                    vendor="${project.organization.name}"
-                    abstract="true">
+                    class="org.jomc.standalone.naming.support.AbstractJPAContextFactory" classDeclaration="true"
+                    name="${project.name} AbstractJPAContextFactory" version="${project.version}"
+                    vendor="${project.organization.name}" abstract="true">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Base JPA context factory.]]></text>
+        <text language="en">Base JPA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <implementations>
-        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                   version="${project.version}"/>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory" version="${project.version}"/>
       </implementations>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.support.AbstractJPAContextFactory"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
+                      override="true"/>
+
           </properties>
         </dependency>
       </dependencies>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.support.DataSourceContextFactory"
-                    class="org.jomc.standalone.naming.support.DataSourceContextFactory"
-                    name="${project.name} DataSourceContextFactory"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.support.DataSourceContextFactory" classDeclaration="true"
+                    name="${project.name} DataSourceContextFactory" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone data source context factory.]]></text>
+        <text language="en">Standalone data source context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <implementations>
-        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                   version="${project.version}"/>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory" version="${project.version}"/>
       </implementations>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.support.DataSourceContextFactory"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.support.DataSourceContextFactory"
+                      override="true"/>
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
-                    implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[DataSourceContextFactory Version ${project.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[DataSourceContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="en">DataSourceContextFactory Version ${project.version} Build ${buildNumber}</text>
+            <text language="de">DataSourceContextFactory Version ${project.version} Build ${buildNumber}</text>
           </template>
         </message>
       </messages>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.support.JBossJTAContextFactory"
-                    class="org.jomc.standalone.naming.support.JBossJTAContextFactory"
-                    name="${project.name} JBossJTAContextFactory"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.support.JBossJTAContextFactory" classDeclaration="true"
+                    name="${project.name} JBossJTAContextFactory" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone JBoss JTA context factory.]]></text>
+        <text language="en">Standalone JBoss JTA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <implementations>
-        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                   version="${project.version}"/>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory" version="${project.version}"/>
       </implementations>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="1.0">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.support.JBossJTAContextFactory"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.support.JBossJTAContextFactory"
+                      override="true"/>
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
-                    implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <properties>
         <property name="transactionalDriverEnabled" type="boolean" value="true">
           <documentation defaultLanguage="en">
-            <text language="en"><![CDATA[{@code true} to enable ArjunaJTA's transactional JDBC driver (no JDBC3 support); {@code false} to disable ArjunaJTA's transactional JDBC driver.]]></text>
+            <text language="en">{@code true} to enable ArjunaJTA's transactional JDBC driver (no JDBC3 support); {@code false} to disable ArjunaJTA's transactional JDBC driver.</text>
           </documentation>
         </property>
       </properties>
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[JBossJTAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[JBossJTAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="en">JBossJTAContextFactory Version ${project.version} Build ${buildNumber}</text>
+            <text language="de">JBossJTAContextFactory Version ${project.version} Build ${buildNumber}</text>
           </template>
         </message>
       </messages>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"
-                    class="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"
-                    name="${project.name} GeronimoJTAContextFactory"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.support.GeronimoJTAContextFactory" classDeclaration="true"
+                    name="${project.name} GeronimoJTAContextFactory" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone Geronimo JTA context factory.]]></text>
+        <text language="en">Standalone Geronimo JTA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <implementations>
-        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                   version="${project.version}"/>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory" version="${project.version}"/>
       </implementations>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.support.GeronimoJTAContextFactory"
+                      override="true"/>
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
-                    implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[GeronimoJTAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[GeronimoJTAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="en">GeronimoJTAContextFactory Version ${project.version} Build ${buildNumber}</text>
+            <text language="de">GeronimoJTAContextFactory Version ${project.version} Build ${buildNumber}</text>
           </template>
         </message>
       </messages>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.support.OpenJPAContextFactory"
-                    class="org.jomc.standalone.naming.support.OpenJPAContextFactory"
-                    name="${project.name} OpenJPAContextFactory"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.support.OpenJPAContextFactory" classDeclaration="true"
+                    name="${project.name} OpenJPAContextFactory" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone OpenJPA JPA context factory.]]></text>
+        <text language="en">Standalone OpenJPA JPA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <implementations>
-        <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
-                   version="${project.version}"/>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory" version="${project.version}"/>
       </implementations>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0" override="true">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}" override="true">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.support.OpenJPAContextFactory"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.support.OpenJPAContextFactory"
+                      override="true"/>
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
-                    implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[OpenJPAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[OpenJPAContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="en">OpenJPAContextFactory Version ${project.version} Build ${buildNumber}</text>
+            <text language="de">OpenJPAContextFactory Version ${project.version} Build ${buildNumber}</text>
           </template>
         </message>
       </messages>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.support.HibernateContextFactory"
-                    class="org.jomc.standalone.naming.support.HibernateContextFactory"
-                    name="${project.name} HibernateContextFactory"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.support.HibernateContextFactory" classDeclaration="true"
+                    name="${project.name} HibernateContextFactory" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone Hibernate JPA context factory.]]></text>
+        <text language="en">Standalone Hibernate JPA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <implementations>
-        <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
-                   version="${project.version}"/>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory" version="${project.version}"/>
       </implementations>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0" override="true">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}" override="true">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.support.HibernateContextFactory"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.support.HibernateContextFactory"
+                      override="true"/>
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
-                    implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[HibernateContextFactory Version ${project.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[HibernateContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="en">HibernateContextFactory Version ${project.version} Build ${buildNumber}</text>
+            <text language="de">HibernateContextFactory Version ${project.version} Build ${buildNumber}</text>
           </template>
         </message>
       </messages>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.support.TopLinkContextFactory"
-                    class="org.jomc.standalone.naming.support.TopLinkContextFactory"
-                    name="${project.name} TopLinkContextFactory"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.support.TopLinkContextFactory" classDeclaration="true"
+                    name="${project.name} TopLinkContextFactory" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone Toplink JPA context factory.]]></text>
+        <text language="en">Standalone Toplink JPA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <implementations>
-        <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory"
-                   version="${project.version}"/>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractJPAContextFactory" version="${project.version}"/>
       </implementations>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0" override="true">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}" override="true">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.support.TopLinkContextFactory"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.support.TopLinkContextFactory"
+                      override="true"/>
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
-                    implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[TopLinkContextFactory Version ${project.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[TopLinkContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="en">TopLinkContextFactory Version ${project.version} Build ${buildNumber}</text>
+            <text language="de">TopLinkContextFactory Version ${project.version} Build ${buildNumber}</text>
           </template>
         </message>
       </messages>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.support.TopLinkTransactionController"
-                    class="org.jomc.standalone.naming.support.TopLinkTransactionController"
-                    name="${project.name} ToplinkTransactionController"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.support.TopLinkTransactionController" classDeclaration="true"
+                    name="${project.name} ToplinkTransactionController" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone Toplink {@code ExternalTransactionController}.]]></text>
+        <text language="en">Standalone Toplink {@code ExternalTransactionController}.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.support.TopLinkTransactionController"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.support.TopLinkTransactionController"
+                      override="true"/>
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
-                    implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[ToplinkTransactionController Version ${project.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[ToplinkTransactionController Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="en">ToplinkTransactionController Version ${project.version} Build ${buildNumber}</text>
+            <text language="de">ToplinkTransactionController Version ${project.version} Build ${buildNumber}</text>
           </template>
         </message>
       </messages>
     </implementation>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.naming.support.JotmContextFactory"
-                    class="org.jomc.standalone.naming.support.JotmContextFactory"
-                    name="${project.name} JotmContextFactory"
-                    version="${project.version}"
+                    class="org.jomc.standalone.naming.support.JotmContextFactory" classDeclaration="true"
+                    name="${project.name} JotmContextFactory" version="${project.version}"
                     vendor="${project.organization.name}">
 
       <documentation defaultLanguage="en">
-        <text language="en"><![CDATA[Standalone Jonas JTA context factory.]]></text>
+        <text language="en">Standalone Jonas JTA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org"
-                createDate="2005-07-25T19:56:45Z"/>
-
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <implementations>
-        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory"
-                   version="${project.version}"/>
+        <reference identifier="org.jomc.standalone.naming.support.AbstractContextFactory" version="${project.version}"/>
       </implementations>
       <dependencies>
-        <dependency name="Logger" identifier="org.jomc.logging.Logger"
-                    version="1.0">
-
+        <dependency name="Logger" identifier="org.jomc.logging.Logger" version="${logger.specification.version}">
           <properties>
-            <property name="name" type="java.lang.String"
-                      value="org.jomc.standalone.naming.support.JotmContextFactory"/>
+            <property name="name" type="java.lang.String" value="org.jomc.standalone.naming.support.JotmContextFactory"
+                      override="true"/>
+
           </properties>
         </dependency>
-        <dependency name="Locale" identifier="java.util.Locale" version="1.1"
-                    implementationName="default"/>
-
+        <dependency name="Locale" identifier="java.util.Locale" version="1.1" implementationName="default"/>
       </dependencies>
       <messages>
         <message name="implementationInfo">
           <template defaultLanguage="en">
-            <text language="en"><![CDATA[JotmContextFactory Version ${project.version} Build ${buildNumber}]]></text>
-            <text language="de"><![CDATA[JotmContextFactory Version ${project.version} Build ${buildNumber}]]></text>
+            <text language="en">JotmContextFactory Version ${project.version} Build ${buildNumber}</text>
+            <text language="de">JotmContextFactory Version ${project.version} Build ${buildNumber}</text>
           </template>
         </message>
       </messages>
