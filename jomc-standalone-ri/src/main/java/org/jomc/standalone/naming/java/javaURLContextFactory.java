@@ -58,8 +58,8 @@ import org.jomc.standalone.naming.StandaloneContext;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>javaContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-12T09:20:09+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>javaContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-12T09:20:09+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>javaContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-15T20:04:05+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>javaContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-15T20:04:05+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -71,7 +71,7 @@ import org.jomc.standalone.naming.StandaloneContext;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class javaURLContextFactory implements ObjectFactory
@@ -116,7 +116,7 @@ public class javaURLContextFactory implements ObjectFactory
 
     /** Creates a new {@code javaURLContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     public javaURLContextFactory()
     {
         // SECTION-START[Default Constructor]
@@ -136,7 +136,7 @@ public class javaURLContextFactory implements ObjectFactory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -157,7 +157,7 @@ public class javaURLContextFactory implements ObjectFactory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
@@ -174,8 +174,8 @@ public class javaURLContextFactory implements ObjectFactory
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>javaContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-12T09:20:09+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>javaContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-12T09:20:09+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>javaContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-15T20:04:05+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>javaContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-15T20:04:05+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
@@ -183,7 +183,7 @@ public class javaURLContextFactory implements ObjectFactory
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private String getImplementationInfoMessage( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "implementationInfo", locale,  null );

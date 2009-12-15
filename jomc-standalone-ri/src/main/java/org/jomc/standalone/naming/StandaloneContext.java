@@ -68,7 +68,7 @@ import javax.naming.spi.NamingManager;
  * <p><b>Messages</b><ul>
  * <li>"{@link #getBindInfoMessage bindInfo}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'',  ''{1}''</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
  * </table>
  * <li>"{@link #getCreateSubcontextInfoMessage createSubcontextInfo}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>''{0}''</pre></td></tr>
@@ -80,15 +80,15 @@ import javax.naming.spi.NamingManager;
  * </table>
  * <li>"{@link #getRebindInfoMessage rebindInfo}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'',  ''{1}''</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
  * </table>
  * <li>"{@link #getRenameInfoMessage renameInfo}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'',  ''{1}''</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
  * </table>
  * <li>"{@link #getUnbindInfoMessage unbindInfo}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'',  ''{1}''</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -100,7 +100,7 @@ import javax.naming.spi.NamingManager;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class StandaloneContext implements Context
@@ -518,7 +518,7 @@ public class StandaloneContext implements Context
 
     /** Creates a new {@code StandaloneContext} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     public StandaloneContext()
     {
         // SECTION-START[Default Constructor]
@@ -538,7 +538,7 @@ public class StandaloneContext implements Context
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -559,7 +559,7 @@ public class StandaloneContext implements Context
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
@@ -577,7 +577,7 @@ public class StandaloneContext implements Context
      * Gets the text of the {@code bindInfo} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'',  ''{1}''</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param name Format argument.
@@ -587,7 +587,7 @@ public class StandaloneContext implements Context
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private String getBindInfoMessage( final java.util.Locale locale, final java.lang.String name, final java.lang.String object )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "bindInfo", locale, new Object[] { name, object, null } );
@@ -608,7 +608,7 @@ public class StandaloneContext implements Context
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private String getCreateSubcontextInfoMessage( final java.util.Locale locale, final java.lang.String contextName )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "createSubcontextInfo", locale, new Object[] { contextName, null } );
@@ -629,7 +629,7 @@ public class StandaloneContext implements Context
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private String getDestroySubcontextInfoMessage( final java.util.Locale locale, final java.lang.String contextName )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "destroySubcontextInfo", locale, new Object[] { contextName, null } );
@@ -641,7 +641,7 @@ public class StandaloneContext implements Context
      * Gets the text of the {@code rebindInfo} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'',  ''{1}''</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param name Format argument.
@@ -652,7 +652,7 @@ public class StandaloneContext implements Context
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private String getRebindInfoMessage( final java.util.Locale locale, final java.lang.String name, final java.lang.String oldObject, final java.lang.String newObject )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "rebindInfo", locale, new Object[] { name, oldObject, newObject, null } );
@@ -664,7 +664,7 @@ public class StandaloneContext implements Context
      * Gets the text of the {@code renameInfo} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'',  ''{1}''</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param oldName Format argument.
@@ -674,7 +674,7 @@ public class StandaloneContext implements Context
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private String getRenameInfoMessage( final java.util.Locale locale, final java.lang.String oldName, final java.lang.String newName )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "renameInfo", locale, new Object[] { oldName, newName, null } );
@@ -686,7 +686,7 @@ public class StandaloneContext implements Context
      * Gets the text of the {@code unbindInfo} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'',  ''{1}''</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>''{0}'', ''{1}''</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @param name Format argument.
@@ -695,7 +695,7 @@ public class StandaloneContext implements Context
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-12/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-13-SNAPSHOT/jomc-tools" )
     private String getUnbindInfoMessage( final java.util.Locale locale, final java.lang.String name )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "unbindInfo", locale, new Object[] { name, null } );
