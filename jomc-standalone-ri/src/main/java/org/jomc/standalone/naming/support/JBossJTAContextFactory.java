@@ -1,7 +1,7 @@
 // SECTION-START[License Header]
 // <editor-fold defaultstate="collapsed" desc=" Generated License ">
 /*
- *   Copyright (c) 2009 The JOMC Project
+ *   Copyright (c) 2010 The JOMC Project
  *   Copyright (c) 2005 Christian Schulte <cs@jomc.org>
  *   All rights reserved.
  *
@@ -72,8 +72,8 @@ import javax.sql.DataSource;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>JBossJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-30T10:22:15+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>JBossJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-30T10:22:15+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>JBossJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-01T03:19:00+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>JBossJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-01T03:19:00+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -276,8 +276,8 @@ public class JBossJTAContextFactory extends AbstractContextFactory
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>JBossJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-30T10:22:15+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>JBossJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2009-12-30T10:22:15+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>JBossJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-01T03:19:00+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>JBossJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-01T03:19:00+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
