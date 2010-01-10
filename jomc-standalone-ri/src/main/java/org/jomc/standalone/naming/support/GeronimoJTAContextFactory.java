@@ -57,8 +57,8 @@ import org.apache.geronimo.transaction.manager.GeronimoTransactionManager;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-10T03:28:11+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-10T03:28:11+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-10T19:24:43+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-10T19:24:43+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -159,8 +159,8 @@ public class GeronimoJTAContextFactory extends AbstractContextFactory
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-10T03:28:11+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-10T03:28:11+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-10T19:24:43+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>GeronimoJTAContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-10T19:24:43+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
