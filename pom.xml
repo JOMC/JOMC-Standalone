@@ -101,7 +101,7 @@
       <extension>
         <groupId>org.jomc.build</groupId>
         <artifactId>jomc-build-resources</artifactId>
-        <version>1.2</version>
+        <version>${jomc-build.version}</version>
       </extension>
     </extensions>
     <pluginManagement>
@@ -122,6 +122,7 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <version>2.0.1</version>
+          <!-- version>2.1</version Plugin requires Maven version 2.1.0 -->
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -240,7 +241,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.4</version>
+          <version>2.5</version>
         </plugin>
         <plugin>
           <groupId>org.jomc</groupId>
@@ -278,7 +279,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.2-beta-4</version>
+          <version>2.2-beta-5</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -323,12 +324,116 @@
             <password>${jomc.scm.password}</password>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>xml-maven-plugin</artifactId>
+          <version>1.0-beta-3</version>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>unpack</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.jomc.build</groupId>
+                  <artifactId>jomc-build-resources</artifactId>
+                  <version>${jomc-build.version}</version>
+                  <outputDirectory>${project.build.directory}/jomc-build-resources</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>xml-maven-plugin</artifactId>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>transform</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>transform</goal>
+            </goals>
+            <configuration>
+              <transformationSets>
+                <transformationSet>
+                  <stylesheet>${project.build.directory}/jomc-build-resources/org/jomc/build/resources/changes-report-1.0.0.xslt</stylesheet>
+                  <dir>src/main/changes</dir>
+                  <includes>
+                    <include>changes.xml</include>
+                  </includes>
+                  <parameters>
+                    <parameter>
+                      <name>project.name</name>
+                      <value>${project.name}</value>
+                    </parameter>
+                    <parameter>
+                      <name>project.version</name>
+                      <value>${project.version}</value>
+                    </parameter>
+                    <parameter>
+                      <name>build.number</name>
+                      <value>${buildNumber}</value>
+                    </parameter>
+                  </parameters>
+                </transformationSet>
+              </transformationSets>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
+        <!--
+
+        Selectively inheriting executions not working. See http://jira.codehaus.org/browse/MNG-3959
+        Workaround: inherited="false" in this pom and a copy of the plugin in all child poms to stop maven from
+                    executing the "attach" execution in the child poms.
+
+        -->
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>attach</id>
+            <inherited>false</inherited> <!-- Ignored. MNG-3959 -->
+            <goals>
+              <goal>attach-artifact</goal>
+            </goals>
+            <configuration>
+              <artifacts>
+                <artifact>
+                  <file>src/main/changes/changes.xml</file>
+                  <type>xml</type>
+                  <classifier>changes</classifier>
+                </artifact>
+                <artifact>
+                  <file>${basedir}/LICENSE.txt</file>
+                  <type>txt</type>
+                  <classifier>license</classifier>
+                </artifact>
+                <artifact>
+                  <file>${project.build.directory}/generated-resources/xml/xslt/changes.xml</file>
+                  <type>xhtml</type>
+                  <classifier>changes</classifier>
+                </artifact>
+              </artifacts>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -345,7 +450,7 @@
             </goals>
             <configuration>
               <resourceBundles>
-                <resourceBundle>org.jomc.build:jomc-build-resources:1.2</resourceBundle>
+                <resourceBundle>org.jomc.build:jomc-build-resources:${jomc-build.version}</resourceBundle>
               </resourceBundles>
               <properties>
                 <buildNumber>${buildNumber}</buildNumber>
@@ -420,7 +525,7 @@
       <dependency>
         <groupId>org.ow2.jotm</groupId>
         <artifactId>jotm-core</artifactId>
-        <version>2.1.5</version>
+        <version>2.1.8</version>
       </dependency>
       <dependency>
         <groupId>com.experlog</groupId>
@@ -690,8 +795,9 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <jomc.version>1.0-alpha-13-SNAPSHOT</jomc.version>
+    <jomc.version>1.0-alpha-14-SNAPSHOT</jomc.version>
     <jomc-logging.version>1.0-alpha-8-SNAPSHOT</jomc-logging.version>
+    <jomc-build.version>1.3</jomc-build.version>
     <logger.specification.version>1.0</logger.specification.version>
   </properties>
 </project>
