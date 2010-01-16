@@ -52,8 +52,8 @@ import org.jomc.standalone.Environment;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>ToplinkTransactionController Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T08:27:00+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>ToplinkTransactionController Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T08:27:00+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>ToplinkTransactionController Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T12:32:12+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>ToplinkTransactionController Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T12:32:12+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -157,8 +157,8 @@ public class TopLinkTransactionController extends JTATransactionController
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>ToplinkTransactionController Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T08:27:00+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>ToplinkTransactionController Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T08:27:00+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>ToplinkTransactionController Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T12:32:12+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>ToplinkTransactionController Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T12:32:12+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
