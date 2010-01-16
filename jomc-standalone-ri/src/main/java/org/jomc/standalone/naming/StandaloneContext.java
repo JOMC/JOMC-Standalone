@@ -590,7 +590,7 @@ public class StandaloneContext implements Context
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14-SNAPSHOT/jomc-tools" )
     private String getBindInfoMessage( final java.util.Locale locale, final java.lang.String name, final java.lang.String object )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "bindInfo", locale, new Object[] { name, object, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "bindInfo", locale, name, object );
         assert _m != null : "'bindInfo' message not found.";
         return _m;
     }
@@ -611,7 +611,7 @@ public class StandaloneContext implements Context
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14-SNAPSHOT/jomc-tools" )
     private String getCreateSubcontextInfoMessage( final java.util.Locale locale, final java.lang.String contextName )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "createSubcontextInfo", locale, new Object[] { contextName, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "createSubcontextInfo", locale, contextName );
         assert _m != null : "'createSubcontextInfo' message not found.";
         return _m;
     }
@@ -632,7 +632,7 @@ public class StandaloneContext implements Context
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14-SNAPSHOT/jomc-tools" )
     private String getDestroySubcontextInfoMessage( final java.util.Locale locale, final java.lang.String contextName )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "destroySubcontextInfo", locale, new Object[] { contextName, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "destroySubcontextInfo", locale, contextName );
         assert _m != null : "'destroySubcontextInfo' message not found.";
         return _m;
     }
@@ -655,7 +655,7 @@ public class StandaloneContext implements Context
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14-SNAPSHOT/jomc-tools" )
     private String getRebindInfoMessage( final java.util.Locale locale, final java.lang.String name, final java.lang.String oldObject, final java.lang.String newObject )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "rebindInfo", locale, new Object[] { name, oldObject, newObject, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "rebindInfo", locale, name, oldObject, newObject );
         assert _m != null : "'rebindInfo' message not found.";
         return _m;
     }
@@ -677,7 +677,7 @@ public class StandaloneContext implements Context
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14-SNAPSHOT/jomc-tools" )
     private String getRenameInfoMessage( final java.util.Locale locale, final java.lang.String oldName, final java.lang.String newName )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "renameInfo", locale, new Object[] { oldName, newName, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "renameInfo", locale, oldName, newName );
         assert _m != null : "'renameInfo' message not found.";
         return _m;
     }
@@ -698,7 +698,7 @@ public class StandaloneContext implements Context
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14-SNAPSHOT/jomc-tools" )
     private String getUnbindInfoMessage( final java.util.Locale locale, final java.lang.String name )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "unbindInfo", locale, new Object[] { name, null } );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "unbindInfo", locale, name );
         assert _m != null : "'unbindInfo' message not found.";
         return _m;
     }

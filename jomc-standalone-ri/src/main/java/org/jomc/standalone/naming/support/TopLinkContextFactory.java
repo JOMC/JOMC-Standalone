@@ -53,8 +53,8 @@ import javax.persistence.spi.PersistenceProvider;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T12:32:12+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T12:32:12+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T13:29:24+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T13:29:24+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -143,8 +143,8 @@ public class TopLinkContextFactory extends AbstractJPAContextFactory
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T12:32:12+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T12:32:12+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T13:29:24+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T13:29:24+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
@@ -155,7 +155,7 @@ public class TopLinkContextFactory extends AbstractJPAContextFactory
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14-SNAPSHOT/jomc-tools" )
     private String getImplementationInfoMessage( final java.util.Locale locale )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "implementationInfo", locale,  null );
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "implementationInfo", locale );
         assert _m != null : "'implementationInfo' message not found.";
         return _m;
     }
