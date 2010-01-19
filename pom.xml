@@ -800,7 +800,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <jomc.version>1.0-alpha-14</jomc.version>
+    <jomc.version>1.0-alpha-15</jomc.version>
     <jomc-logging.version>1.0-alpha-8</jomc-logging.version>
     <jomc-build.version>1.3</jomc-build.version>
     <logger.specification.version>1.0</logger.specification.version>
