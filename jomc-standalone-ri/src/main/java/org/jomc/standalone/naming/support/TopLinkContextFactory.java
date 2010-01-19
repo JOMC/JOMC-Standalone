@@ -53,8 +53,8 @@ import javax.persistence.spi.PersistenceProvider;
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getImplementationInfoMessage implementationInfo}"<table>
- * <tr><td valign="top">English:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T22:25:03+0000</pre></td></tr>
- * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T22:25:03+0000</pre></td></tr>
+ * <tr><td valign="top">English:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-19T14:24:16+0000</pre></td></tr>
+ * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-19T14:24:16+0000</pre></td></tr>
  * </table>
  * </ul></p>
  *
@@ -66,7 +66,7 @@ import javax.persistence.spi.PersistenceProvider;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-15/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class TopLinkContextFactory extends AbstractJPAContextFactory
@@ -84,7 +84,7 @@ public class TopLinkContextFactory extends AbstractJPAContextFactory
 
     /** Creates a new {@code TopLinkContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-15/jomc-tools" )
     public TopLinkContextFactory()
     {
         // SECTION-START[Default Constructor]
@@ -105,7 +105,7 @@ public class TopLinkContextFactory extends AbstractJPAContextFactory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-15/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -126,7 +126,7 @@ public class TopLinkContextFactory extends AbstractJPAContextFactory
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-15/jomc-tools" )
     private org.jomc.logging.Logger getLogger()
     {
         final org.jomc.logging.Logger _d = (org.jomc.logging.Logger) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Logger" );
@@ -143,8 +143,8 @@ public class TopLinkContextFactory extends AbstractJPAContextFactory
     /**
      * Gets the text of the {@code implementationInfo} message.
      * <p><b>Templates</b><br/><table>
-     * <tr><td valign="top">English:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T22:25:03+0000</pre></td></tr>
-     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-16T22:25:03+0000</pre></td></tr>
+     * <tr><td valign="top">English:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-19T14:24:16+0000</pre></td></tr>
+     * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>TopLinkContextFactory Version 1.0-alpha-5-SNAPSHOT Build 2010-01-19T14:24:16+0000</pre></td></tr>
      * </table></p>
      * @param locale The locale of the message to return.
      * @return The text of the {@code implementationInfo} message.
@@ -152,7 +152,7 @@ public class TopLinkContextFactory extends AbstractJPAContextFactory
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-14/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-15/jomc-tools" )
     private String getImplementationInfoMessage( final java.util.Locale locale )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "implementationInfo", locale );
