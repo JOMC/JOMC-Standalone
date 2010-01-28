@@ -114,17 +114,6 @@ public class JBossJTAContextFactory extends AbstractContextFactory
 
         }
 
-        Runtime.getRuntime().addShutdownHook( new Thread()
-        {
-
-            @Override
-            public void run()
-            {
-                recoveryManager.stop();
-            }
-
-        } );
-
         return null;
     }
 
