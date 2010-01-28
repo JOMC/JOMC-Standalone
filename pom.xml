@@ -952,7 +952,6 @@
     <jomc-build.version>1.3</jomc-build.version>
     <surefire.version>2.5</surefire.version>
     <emma-maven-plugin.version>1.0-alpha-2</emma-maven-plugin.version>
-    <logger.specification.version>1.0</logger.specification.version>
     <invoker.specification.version>1.0</invoker.specification.version>
   </properties>
 </project>
