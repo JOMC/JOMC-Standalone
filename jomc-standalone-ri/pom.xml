@@ -42,7 +42,7 @@
   <artifactId>jomc-standalone-ri</artifactId>
   <packaging>jar</packaging>
   <name>JOMC Standalone RI</name>
-  <description>JOMC standalone runtime environment.</description>
+  <description>Standalone environment reference implementation.</description>
   <build>
     <resources>
       <resource>
@@ -84,43 +84,58 @@
   <dependencies>
     <dependency>
       <groupId>org.jomc</groupId>
+      <artifactId>jomc-util</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jomc</groupId>
+      <artifactId>jomc-model</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jomc</groupId>
       <artifactId>jomc-api</artifactId>
-      <scope>provided</scope>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jomc</groupId>
+      <artifactId>jomc-spi</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jomc</groupId>
+      <artifactId>jomc-ri</artifactId>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.jomc.logging</groupId>
       <artifactId>jomc-logging-api</artifactId>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>jsr250-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.xml.bind</groupId>
-      <artifactId>jaxb-api</artifactId>
-      <scope>provided</scope>
+      <groupId>org.jomc.standalone</groupId>
+      <artifactId>jomc-standalone-model</artifactId>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>javax.persistence</groupId>
       <artifactId>persistence-api</artifactId>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>javax.transaction</groupId>
       <artifactId>transaction-api</artifactId>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>javax.jms</groupId>
       <artifactId>jms</artifactId>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>javax.resource</groupId>
       <artifactId>connector-api</artifactId>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.jboss.transaction</groupId>
@@ -194,14 +209,9 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.sun.xml.bind</groupId>
-      <artifactId>jaxb-impl</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jomc</groupId>
-      <artifactId>jomc-ri</artifactId>
-      <scope>provided</scope>
+      <groupId>org.jomc.logging</groupId>
+      <artifactId>jomc-logging-jdk-logging</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

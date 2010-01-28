@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Copyright (c) 2009 The JOMC Project
+  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in
+      the documentation and/or other materials provided with the
+      distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE JOMC PROJECT AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JOMC PROJECT OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  $Id$
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:standalone="http://jomc.org/standalone/model"
+            targetNamespace="http://jomc.org/standalone/model"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en"><![CDATA[
+
+  Copyright (c) 2009 The JOMC Project
+  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in
+      the documentation and/or other materials provided with the
+      distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE JOMC PROJECT AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JOMC PROJECT OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  $Id$
+
+]]>
+    </xsd:documentation>
+  </xsd:annotation>
+  <!-- ************************************************************************************************************* -->
+  <xsd:element name="methods" type="standalone:MethodsType">
+    <xsd:key name="method-key">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">Method name key of a method.</xsd:documentation>
+      </xsd:annotation>
+      <xsd:selector xpath="standalone:method"/>
+      <xsd:field xpath="@name"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="MethodsType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">List of methods.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="standalone:method" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element ref="standalone:transaction" minOccurs="0" maxOccurs="1"/>
+      <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xsd:sequence>
+    <xsd:attribute name="system-exception" type="xsd:string" use="optional"/>
+    <xsd:anyAttribute namespace="##any" processContents="lax"/>
+  </xsd:complexType>
+  <!-- ************************************************************************************************************* -->
+  <xsd:element name="method" type="standalone:MethodType"/>
+  <xsd:complexType name="MethodType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+Model of a method.
+
+The 'MethodType' type defines attributes 'name' and 'system-exception'. Attribute 'name' holds a name methods are
+matched against. Attribute 'system-exception' holds the name of an exception type to throw on unexpected error
+conditions during execution of the method.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="parameters" minOccurs="0" maxOccurs="1" type="standalone:ParametersType"/>
+      <xsd:element ref="standalone:transaction" minOccurs="0" maxOccurs="1"/>
+      <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="system-exception" type="xsd:string" use="optional"/>
+    <xsd:anyAttribute namespace="##any" processContents="lax"/>
+  </xsd:complexType>
+  <!-- ************************************************************************************************************* -->
+  <xsd:element name="parameters" type="standalone:ParametersType"/>
+  <xsd:complexType name="ParametersType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">List of method parameters.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="parameter" minOccurs="0" maxOccurs="unbounded" type="standalone:ParameterType"/>
+      <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##any" processContents="lax"/>
+  </xsd:complexType>
+  <!-- ************************************************************************************************************* -->
+  <xsd:element name="parameter" type="standalone:ParameterType"/>
+  <xsd:complexType name="ParameterType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+Method parameter.
+
+The 'ParameterType' type defines attribute 'type' holding the type of the method parameter.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xsd:sequence>
+    <xsd:attribute name="type" type="xsd:string" use="required"/>
+    <xsd:anyAttribute namespace="##any" processContents="lax"/>
+  </xsd:complexType>
+  <!-- ************************************************************************************************************* -->
+  <xsd:element name="transaction" type="standalone:TransactionType"/>
+  <xsd:complexType name="TransactionType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+Model of a transaction.
+
+The 'TransactionType' type defines attribute 'type' holding the type of the transaction.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xsd:sequence>
+    <xsd:attribute name="type" type="standalone:TransactionAttributeType" use="required"/>
+    <xsd:anyAttribute namespace="##any" processContents="lax"/>
+  </xsd:complexType>
+  <!-- ************************************************************************************************************* -->
+  <xsd:simpleType name="String">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <!-- ************************************************************************************************************* -->
+  <xsd:simpleType name="Identifier">
+    <xsd:restriction base="xsd:token"/>
+  </xsd:simpleType>
+  <!-- ************************************************************************************************************* -->
+  <xsd:simpleType name="TransactionAttributeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NotSupported"/>
+      <xsd:enumeration value="Supports"/>
+      <xsd:enumeration value="Required"/>
+      <xsd:enumeration value="RequiresNew"/>
+      <xsd:enumeration value="Mandatory"/>
+      <xsd:enumeration value="Never"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

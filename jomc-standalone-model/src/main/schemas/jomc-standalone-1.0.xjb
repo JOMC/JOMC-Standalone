@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Copyright (c) 2009 The JOMC Project
+  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in
+      the documentation and/or other materials provided with the
+      distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE JOMC PROJECT AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE JOMC PROJECT OR
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  $Id$
+
+-->
+<jaxb:bindings xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:standalone="http://jomc.org/standalone/model"
+               xmlns:ci="http://jaxb.dev.java.net/plugin/code-injector"
+               jaxb:version="2.0">
+
+  <jaxb:bindings schemaLocation="jomc-standalone-1.0.xsd">
+    <!-- *********************************************************************************************************** -->
+    <jaxb:bindings node="xs:complexType[@name='MethodsType']">
+      <ci:code><![CDATA[
+    /**
+     * Gets a method for a given name and arguments from this list of methods.
+     *
+     * @param name The name of the method to return.
+     * @param arguments The arguments of the method to return or {@code null}.
+     *
+     * @return The method matching {@code name} and {@code arguments} from this list or {@code null} if no method
+     * matching {@code name} and {@code arguments} is found.
+     *
+     * @throws NullPointerException if {@code name} is {@code null}.
+     */
+    public MethodType getMethod( final String name, final Object[] arguments )
+    {
+        if ( name == null )
+        {
+            throw new NullPointerException( "name" );
+        }
+
+        for ( MethodType m : this.getMethod() )
+        {
+            if ( name.equals( m.getName() ) )
+            {
+                if ( m.getParameters() != null && m.getParameters().matches( arguments ) )
+                {
+                    return m;
+                }
+                if ( m.getParameters() == null && ( arguments == null || arguments.length == 0 ) )
+                {
+                    return m;
+                }
+            }
+        }
+
+        return null;
+    }
+      ]]>
+      </ci:code>
+    </jaxb:bindings>
+    <!-- *********************************************************************************************************** -->
+    <jaxb:bindings node="xs:complexType[@name='MethodType']/xs:attribute[@name='name']">
+      <jaxb:property>
+        <jaxb:javadoc>The name of the method.</jaxb:javadoc>
+      </jaxb:property>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='MethodType']/xs:attribute[@name='system-exception']">
+      <jaxb:property>
+        <jaxb:javadoc>Class name of an exception to throw on unexpected errors.</jaxb:javadoc>
+      </jaxb:property>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='MethodType']/xs:sequence/xs:element[@name='parameters']">
+      <jaxb:property>
+        <jaxb:javadoc>Parameters of the method.</jaxb:javadoc>
+      </jaxb:property>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='MethodType']/xs:sequence/xs:element[@ref='standalone:transaction']">
+      <jaxb:property>
+        <jaxb:javadoc>Transaction attribute of the method.</jaxb:javadoc>
+      </jaxb:property>
+    </jaxb:bindings>
+    <!-- *********************************************************************************************************** -->
+    <jaxb:bindings node="xs:complexType[@name='ParametersType']">
+      <ci:code><![CDATA[
+    /**
+     * Tests whether this list of formal method parameters matches the types of a given object array.
+     *
+     * @param objects An array of objects to match this list of formal method parameters against or {@code null}.
+     *
+     * @return {@code true} if {@code objects} matches this list of formal method parameters; {@code false} if not.
+     */
+    public boolean matches( final Object[] objects )
+    {
+        boolean matches = ( objects == null || objects.length == 0 ) && this.getParameter().isEmpty();
+
+        if ( !matches && objects != null )
+        {
+            for ( int i = objects.length - 1; i >= 0; i-- )
+            {
+                matches = objects[i].getClass().getName().equals( this.getParameter().get( i ).getType() );
+                if ( !matches )
+                {
+                    break;
+                }
+            }
+        }
+
+        return matches;
+    }
+
+    /**
+     * Tests whether this list of formal method parameters matches a given class array.
+     *
+     * @param classes An array of classes to match this list of formal method parameters against or {@code null}.
+     *
+     * @return {@code true} if {@code classes} matches this list of formal method parameters; {@code false} if not.
+     */
+    public boolean matches( final Class[] classes )
+    {
+        boolean matches = ( classes == null || classes.length == 0 ) && this.getParameter().isEmpty();
+
+        if ( !matches && classes != null )
+        {
+            for ( int i = classes.length - 1; i >= 0; i-- )
+            {
+                matches = classes[i].getClass().getName().equals( this.getParameter().get( i ).getType() );
+                if ( !matches )
+                {
+                    break;
+                }
+            }
+        }
+
+        return matches;
+    }
+      ]]>
+      </ci:code>
+    </jaxb:bindings>
+    <!-- *********************************************************************************************************** -->
+    <jaxb:bindings node="xs:complexType[@name='ParameterType']/xs:attribute[@name='type']">
+      <jaxb:property>
+        <jaxb:javadoc>Type of the parameter.</jaxb:javadoc>
+      </jaxb:property>
+    </jaxb:bindings>
+    <!-- *********************************************************************************************************** -->
+    <jaxb:bindings node="xs:complexType[@name='TransactionType']/xs:attribute[@name='type']">
+      <jaxb:property>
+        <jaxb:javadoc>Type of the transaction.</jaxb:javadoc>
+      </jaxb:property>
+    </jaxb:bindings>
+  </jaxb:bindings>
+</jaxb:bindings>

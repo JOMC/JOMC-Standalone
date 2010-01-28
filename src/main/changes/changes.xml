@@ -40,26 +40,20 @@
     <author email="cs@jomc.org">Christian Schulte</author>
   </properties>
   <body>
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <release version="1.0-alpha-1" date="2009-10-04"/>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <release version="1.0-alpha-2" date="2009-10-06">
-      <action dev="schulte2005" type="fix"><![CDATA[
-      Corrected a NullPointerException thrown by method <code>next()</code>
-      of the <code>NamingEnumeration</code> returned by method
-      <code>list(Name)</code> of class
+      <action dev="schulte2005" type="fix"><![CDATA[Corrected a NullPointerException thrown by method <code>next()</code>
+      of the <code>NamingEnumeration</code> returned by method <code>list(Name)</code> of class
       <code>org.jomc.standalone.naming.StandaloneContext</code>.]]>
       </action>
-      <action dev="schulte2005" type="fix"><![CDATA[
-      Corrected an illegal Binding returned by method <code>next()</code>
-      of the <code>NamingEnumeration</code> returned by method
-      <code>listBindings(Name)</code> of class
+      <action dev="schulte2005" type="fix"><![CDATA[Corrected an illegal Binding returned by method <code>next()</code>
+      of the <code>NamingEnumeration</code> returned by method <code>listBindings(Name)</code> of class
       <code>org.jomc.standalone.naming.StandaloneContext</code>.]]>
       </action>
     </release>
-
-    <!-- ******************************************************************* -->
+    <!-- *********************************************************************************************************** -->
     <release version="1.0-alpha-3" date="2009-11-18">
       <action dev="schulte2005" type="update"><![CDATA[
       Maven POM updates.<ul>
@@ -68,9 +62,8 @@
       </ul>]]>
       </action>
     </release>
-
-    <!-- ******************************************************************* -->
-    <release version="1.0-alpha-3" date="2009-11-20">
+    <!-- *********************************************************************************************************** -->
+    <release version="1.0-alpha-4" date="2009-11-20">
       <action dev="schulte2005" type="update"><![CDATA[
       Maven POM updates.<ul>
       <li>Updated JOMC dependencies to 1.0-alpha-9.</li>
@@ -78,6 +71,12 @@
       </ul>]]>
       </action>
     </release>
-
+    <!-- *********************************************************************************************************** -->
+    <release version="1.0-alpha-5" date="2010-01-30">
+      <action dev="schulte2005" type="update"><![CDATA[
+      Added <code>jomc-standalone-model</code> artifact declaring types used for basic declarative transaction
+      support.]]>
+      </action>
+    </release>
   </body>
 </document>
