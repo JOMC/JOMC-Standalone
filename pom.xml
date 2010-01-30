@@ -574,17 +574,6 @@
       </dependency>
 
       <dependency>
-        <groupId>org.jomc.logging</groupId>
-        <artifactId>jomc-logging-api</artifactId>
-        <version>${jomc-logging.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.jomc.logging</groupId>
-        <artifactId>jomc-logging-jdk-logging</artifactId>
-        <version>${jomc-logging.version}</version>
-      </dependency>
-
-      <dependency>
         <groupId>org.jboss.transaction</groupId>
         <artifactId>jboss-jta</artifactId>
         <version>4.2.3.SP7</version>
@@ -965,7 +954,6 @@
     <xjcOutputDirectory>${project.build.directory}/generated-sources/jaxb</xjcOutputDirectory>
     <remoteResourcesOutputDirectory>${project.build.directory}/maven-shared-archive-resources</remoteResourcesOutputDirectory>
     <jomc.version>1.0-alpha-16-SNAPSHOT</jomc.version>
-    <jomc-logging.version>1.0-alpha-9-SNAPSHOT</jomc-logging.version>
     <jomc-build.version>1.3</jomc-build.version>
     <surefire.version>2.5</surefire.version>
     <emma-maven-plugin.version>1.0-alpha-2</emma-maven-plugin.version>
