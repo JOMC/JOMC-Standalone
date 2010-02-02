@@ -205,6 +205,7 @@
           <version>${surefire.version}</version>
           <configuration>
             <forkMode>once</forkMode>
+            <redirectTestOutputToFile>true</redirectTestOutputToFile>
           </configuration>
         </plugin>
         <plugin>
