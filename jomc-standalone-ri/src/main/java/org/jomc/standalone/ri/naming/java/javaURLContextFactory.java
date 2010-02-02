@@ -59,7 +59,7 @@ import org.jomc.standalone.ri.naming.StandaloneContext;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class javaURLContextFactory implements ObjectFactory
@@ -103,7 +103,7 @@ public class javaURLContextFactory implements ObjectFactory
 
     /** Creates a new {@code javaURLContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
     public javaURLContextFactory()
     {
         // SECTION-START[Default Constructor]
