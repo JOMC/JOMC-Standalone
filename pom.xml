@@ -206,6 +206,11 @@
           <configuration>
             <forkMode>once</forkMode>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
+            <systemPropertyVariables>
+              <org.jomc.model.ModelContext.defaultLogLevel>ALL</org.jomc.model.ModelContext.defaultLogLevel>
+              <org.jomc.ri.DefaultObjectManager.defaultLogLevel>ALL</org.jomc.ri.DefaultObjectManager.defaultLogLevel>
+              <java.util.logging.config.file>${project.build.testOutputDirectory}/logging.properties</java.util.logging.config.file>
+            </systemPropertyVariables>
           </configuration>
         </plugin>
         <plugin>
@@ -682,6 +687,12 @@
         <groupId>org.jomc.standalone</groupId>
         <artifactId>jomc-standalone-ri</artifactId>
         <version>1.0-alpha-6-SNAPSHOT</version>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.7</version>
       </dependency>
 
     </dependencies>

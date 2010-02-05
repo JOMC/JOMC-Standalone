@@ -41,6 +41,11 @@
 
   <jaxb:bindings schemaLocation="jomc-standalone-1.0.xsd">
     <!-- *********************************************************************************************************** -->
+    <jaxb:bindings node="xs:complexType[@name='MethodsType']/xs:sequence/xs:element[@ref='standalone:transaction']">
+      <jaxb:property>
+        <jaxb:javadoc>Transaction to apply to all methods of the list.</jaxb:javadoc>
+      </jaxb:property>
+    </jaxb:bindings>
     <jaxb:bindings node="xs:complexType[@name='MethodsType']">
       <ci:code><![CDATA[
     /**
@@ -77,8 +82,7 @@
         }
 
         return null;
-    }
-      ]]>
+    }]]>
       </ci:code>
     </jaxb:bindings>
     <!-- *********************************************************************************************************** -->
@@ -87,19 +91,14 @@
         <jaxb:javadoc>The name of the method.</jaxb:javadoc>
       </jaxb:property>
     </jaxb:bindings>
-    <jaxb:bindings node="xs:complexType[@name='MethodType']/xs:attribute[@name='system-exception']">
-      <jaxb:property>
-        <jaxb:javadoc>Class name of an exception to throw on unexpected errors.</jaxb:javadoc>
-      </jaxb:property>
-    </jaxb:bindings>
-    <jaxb:bindings node="xs:complexType[@name='MethodType']/xs:sequence/xs:element[@name='parameters']">
+    <jaxb:bindings node="xs:complexType[@name='MethodType']/xs:sequence/xs:element[@ref='standalone:parameters']">
       <jaxb:property>
         <jaxb:javadoc>Parameters of the method.</jaxb:javadoc>
       </jaxb:property>
     </jaxb:bindings>
     <jaxb:bindings node="xs:complexType[@name='MethodType']/xs:sequence/xs:element[@ref='standalone:transaction']">
       <jaxb:property>
-        <jaxb:javadoc>Transaction attribute of the method.</jaxb:javadoc>
+        <jaxb:javadoc>Transaction of the method.</jaxb:javadoc>
       </jaxb:property>
     </jaxb:bindings>
     <!-- *********************************************************************************************************** -->
@@ -155,8 +154,7 @@
         }
 
         return matches;
-    }
-      ]]>
+    }]]>
       </ci:code>
     </jaxb:bindings>
     <!-- *********************************************************************************************************** -->
@@ -170,6 +168,48 @@
       <jaxb:property>
         <jaxb:javadoc>Type of the transaction.</jaxb:javadoc>
       </jaxb:property>
+    </jaxb:bindings>
+    <!-- *********************************************************************************************************** -->
+    <jaxb:bindings node="xs:complexType[@name='ExceptionsType']/xs:sequence/xs:element[@ref='standalone:exception']">
+      <jaxb:property>
+        <jaxb:javadoc>Exceptions to handle.</jaxb:javadoc>
+      </jaxb:property>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='ExceptionsType']/xs:sequence/xs:element[@name='default-exception']">
+      <jaxb:property>
+        <jaxb:javadoc>Exception to throw for any unhandled exceptions.</jaxb:javadoc>
+      </jaxb:property>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='ExceptionsType']">
+      <ci:code><![CDATA[
+    /**
+     * Gets an exception for a given class name from this list of exceptions.
+     *
+     * @param clazz The class of the exception to return.
+     *
+     * @return The exception matching {@code clazz} from this list or {@code null} if no exception matching
+     * {@code clazz} is found.
+     *
+     * @throws NullPointerException if {@code clazz} is {@code null}.
+     */
+    public ExceptionType getException( final String clazz )
+    {
+        if ( clazz == null )
+        {
+            throw new NullPointerException( "clazz" );
+        }
+
+        for ( ExceptionType e : this.getException() )
+        {
+            if ( clazz.equals( e.getClazz() ) )
+            {
+                return e;
+            }
+        }
+
+        return null;
+    }]]>
+      </ci:code>
     </jaxb:bindings>
   </jaxb:bindings>
 </jaxb:bindings>

@@ -33,9 +33,11 @@
 
 -->
 <module xmlns="http://jomc.org/model"
+        xmlns:sdk="http://jomc.org/sdk/model"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://jomc.org/model http://jomc.org/model/jomc-1.0.xsd"
-        name="${project.name} Tests" version="${project.version}" vendor="${project.organization.name}"
+        xsi:schemaLocation="http://jomc.org/model http://jomc.org/model/jomc-1.0.xsd
+                            http://jomc.org/standalone/model http://jomc.org/standalone/model/jomc-standalone-1.0.xsd"
+        name="${project.name} Testsuite" version="${project.version}" vendor="${project.organization.name}"
         modelVersion="1.0">
 
   <documentation defaultLanguage="en">
@@ -43,17 +45,18 @@
   </documentation>
 
   <implementations>
-    <!-- *********************************************************************************************************** -->
-    <implementation identifier="org.jomc.standalone.model.support.test.StandaloneModelValidatorTest"
-                    class="org.jomc.standalone.model.support.test.StandaloneModelValidatorTest"
-                    classDeclaration="true" name="${project.name}" version="${project.version}"
-                    vendor="${project.organization.name}">
-      <documentation defaultLanguage="en">
-        <text language="en">Test cases for class {@code org.jomc.standalone.model.support.StandaloneModelValidator}.</text>
-      </documentation>
-      <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
-      </authors>
+    <implementation identifier="${project.name} Testsuite Implementation" name="${project.name} Testsuite Implementation">
+      <methods xmlns="http://jomc.org/standalone/model">
+        <exceptions>
+          <default-exception class="Class" target-class="Target Class"/>
+        </exceptions>
+        <method name="Method">
+          <exceptions>
+            <default-exception class="Class" target-class="Target Class"/>
+          </exceptions>
+        </method>
+        <method name="Method"/>
+      </methods>
     </implementation>
   </implementations>
 </module>

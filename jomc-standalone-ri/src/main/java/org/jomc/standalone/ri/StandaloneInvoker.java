@@ -41,8 +41,6 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceException;
-import javax.transaction.HeuristicCommitException;
 import javax.transaction.HeuristicMixedException;
 import javax.transaction.HeuristicRollbackException;
 import javax.transaction.InvalidTransactionException;
@@ -53,7 +51,6 @@ import javax.transaction.SystemException;
 import javax.transaction.Transaction;
 import javax.transaction.TransactionManager;
 import javax.transaction.TransactionRequiredException;
-import javax.transaction.TransactionRolledbackException;
 import javax.xml.bind.JAXB;
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
@@ -74,6 +71,8 @@ import static org.jomc.standalone.model.TransactionAttributeType.REQUIRES_NEW;
 import static org.jomc.standalone.model.TransactionAttributeType.SUPPORTS;
 import org.jomc.standalone.model.TransactionType;
 import org.jomc.spi.Invocation;
+import org.jomc.standalone.model.ExceptionType;
+import org.jomc.standalone.model.ExceptionsType;
 import org.w3c.dom.Element;
 
 // SECTION-START[Documentation]
@@ -136,12 +135,22 @@ public class StandaloneInvoker extends DefaultInvoker
     {
         try
         {
-            final FrameState frame = CURRENT.get().getFrames().push( this.createFrameState( invocation ) );
-            invocation.getContext().put( FrameState.class, frame );
+            final FrameState currentFrame = this.createFrameState( invocation );
+            invocation.getContext().put( FrameState.class, currentFrame );
+
+            final FrameState previousFrame =
+                CURRENT.get().getFrames().isEmpty() ? null : CURRENT.get().getFrames().peek();
+
+            if ( previousFrame != null )
+            {
+                currentFrame.setRollback( previousFrame.isRollback() );
+            }
+
+            CURRENT.get().getFrames().push( currentFrame );
 
             final int status = this.getTransactionManager().getStatus();
 
-            switch ( frame.getMethodType().getTransaction().getType() )
+            switch ( currentFrame.getMethodType().getTransaction().getType() )
             {
                 case MANDATORY:
                     if ( status != Status.STATUS_ACTIVE )
@@ -170,7 +179,7 @@ public class StandaloneInvoker extends DefaultInvoker
                 case NOT_SUPPORTED:
                     if ( status == Status.STATUS_ACTIVE )
                     {
-                        frame.setSuspendedTransaction( this.getTransactionManager().suspend() );
+                        currentFrame.setSuspendedTransaction( this.getTransactionManager().suspend() );
                     }
 
                     break;
@@ -179,7 +188,7 @@ public class StandaloneInvoker extends DefaultInvoker
                     if ( status == Status.STATUS_NO_TRANSACTION )
                     {
                         this.getTransactionManager().begin();
-                        frame.setTransactionInitiator( true );
+                        currentFrame.setTransactionInitiator( true );
                         this.getEntityManager().joinTransaction();
                     }
                     else if ( status != Status.STATUS_ACTIVE )
@@ -196,7 +205,7 @@ public class StandaloneInvoker extends DefaultInvoker
                 case REQUIRES_NEW:
                     if ( status == Status.STATUS_ACTIVE )
                     {
-                        frame.setSuspendedTransaction( this.getTransactionManager().suspend() );
+                        currentFrame.setSuspendedTransaction( this.getTransactionManager().suspend() );
                     }
                     else if ( status != Status.STATUS_NO_TRANSACTION )
                     {
@@ -208,7 +217,7 @@ public class StandaloneInvoker extends DefaultInvoker
                     }
 
                     this.getTransactionManager().begin();
-                    frame.setTransactionInitiator( true );
+                    currentFrame.setTransactionInitiator( true );
                     this.getEntityManager().joinTransaction();
                     break;
 
@@ -218,7 +227,7 @@ public class StandaloneInvoker extends DefaultInvoker
                 default:
                     final SystemException e = new SystemException( this.getUnsupportedTransactionMessage(
                         this.getLocale(), invocation.getMethod().getName(),
-                        frame.getMethodType().getTransaction().getType().toString() ) );
+                        currentFrame.getMethodType().getTransaction().getType().toString() ) );
 
                     e.fillInStackTrace();
                     invocation.setResult( e );
@@ -250,7 +259,7 @@ public class StandaloneInvoker extends DefaultInvoker
         {
             if ( frame.isTransactionInitiator() )
             {
-                if ( invocation.getResult() instanceof Throwable )
+                if ( frame.isRollback() )
                 {
                     this.getTransactionManager().rollback();
                 }
@@ -311,59 +320,83 @@ public class StandaloneInvoker extends DefaultInvoker
     {
         super.handleException( invocation, t );
 
-        if ( invocation.getResult() instanceof PersistenceException ||
-             invocation.getResult() instanceof HeuristicCommitException ||
-             invocation.getResult() instanceof HeuristicMixedException ||
-             invocation.getResult() instanceof HeuristicRollbackException ||
-             invocation.getResult() instanceof InvalidTransactionException ||
-             invocation.getResult() instanceof NotSupportedException ||
-             invocation.getResult() instanceof RollbackException || invocation.getResult() instanceof SystemException ||
-             invocation.getResult() instanceof TransactionRequiredException ||
-             invocation.getResult() instanceof TransactionRolledbackException ||
-             invocation.getResult() instanceof NamingException )
+        final FrameState frameState = (FrameState) invocation.getContext().get( FrameState.class );
+        final ClassLoader classLoader = (ClassLoader) invocation.getContext().get( DefaultInvocation.CLASSLOADER_KEY );
+
+        try
         {
-            final MethodType methodType =
-                ( (FrameState) invocation.getContext().get( FrameState.class ) ).getMethodType();
+            ExceptionType handledException =
+                frameState.getMethodType().getExceptions().getException( invocation.getResult().getClass().getName() );
 
-            if ( methodType.getSystemException() != null )
+            if ( handledException == null )
             {
-                try
+                for ( ExceptionType e : frameState.getMethodType().getExceptions().getException() )
                 {
-                    final ClassLoader classLoader =
-                        (ClassLoader) invocation.getContext().get( DefaultInvocation.CLASSLOADER_KEY );
+                    final Class handledExceptionClass = Class.forName( e.getClazz(), true, classLoader );
 
-                    final Throwable systemException =
-                        (Throwable) Class.forName( methodType.getSystemException(), true, classLoader ).newInstance();
-
-                    systemException.initCause( t );
-                    systemException.fillInStackTrace();
-                    invocation.setResult( systemException );
-                }
-                catch ( final InstantiationException e )
-                {
-                    final ObjectManagementException oe = new ObjectManagementException( e );
-                    oe.fillInStackTrace();
-                    invocation.setResult( oe );
-                }
-                catch ( final IllegalAccessException e )
-                {
-                    final ObjectManagementException oe = new ObjectManagementException( e );
-                    oe.fillInStackTrace();
-                    invocation.setResult( oe );
-                }
-                catch ( final ClassNotFoundException e )
-                {
-                    final ObjectManagementException oe = new ObjectManagementException( e );
-                    oe.fillInStackTrace();
-                    invocation.setResult( oe );
+                    if ( handledExceptionClass.isAssignableFrom( invocation.getResult().getClass() ) )
+                    {
+                        handledException = e;
+                        break;
+                    }
                 }
             }
-            else
+
+            if ( handledException != null )
             {
-                final ObjectManagementException oe = new ObjectManagementException( t );
-                oe.fillInStackTrace();
-                invocation.setResult( oe );
+                if ( !frameState.isRollback() )
+                {
+                    frameState.setRollback( handledException.isRollback() );
+                }
+
+                if ( handledException.getTargetClass() != null )
+                {
+                    final Throwable targetException =
+                        (Throwable) Class.forName( handledException.getTargetClass(), true, classLoader ).newInstance();
+
+                    targetException.initCause( (Throwable) invocation.getResult() );
+                    targetException.fillInStackTrace();
+                    invocation.setResult( targetException );
+                }
             }
+            else if ( frameState.getMethodType().getExceptions().getDefaultException() != null )
+            {
+                final Throwable defaultException = (Throwable) Class.forName(
+                    frameState.getMethodType().getExceptions().getDefaultException().getClazz(), true, classLoader ).
+                    newInstance();
+
+                defaultException.initCause( (Throwable) invocation.getResult() );
+                defaultException.fillInStackTrace();
+                invocation.setResult( defaultException );
+
+                if ( !frameState.isRollback() )
+                {
+                    frameState.setRollback(
+                        frameState.getMethodType().getExceptions().getDefaultException().isRollback() );
+
+                }
+            }
+        }
+        catch ( final InstantiationException e )
+        {
+            final ObjectManagementException oe = new ObjectManagementException( e );
+            oe.fillInStackTrace();
+            invocation.setResult( oe );
+            frameState.setRollback( true );
+        }
+        catch ( final IllegalAccessException e )
+        {
+            final ObjectManagementException oe = new ObjectManagementException( e );
+            oe.fillInStackTrace();
+            invocation.setResult( oe );
+            frameState.setRollback( true );
+        }
+        catch ( final ClassNotFoundException e )
+        {
+            final ObjectManagementException oe = new ObjectManagementException( e );
+            oe.fillInStackTrace();
+            invocation.setResult( oe );
+            frameState.setRollback( true );
         }
     }
 
@@ -372,7 +405,7 @@ public class StandaloneInvoker extends DefaultInvoker
         MethodType methodType = null;
         final Instance instance = (Instance) invocation.getContext().get( DefaultInvocation.INSTANCE_KEY );
 
-        String defaultSystemException = ObjectManagementException.class.getName();
+        ExceptionsType defaultExceptions = new ExceptionsType();
         TransactionType defaultTransaction = new TransactionType();
         defaultTransaction.setType( SUPPORTS );
 
@@ -406,13 +439,13 @@ public class StandaloneInvoker extends DefaultInvoker
 
             if ( methodsType != null )
             {
-                if ( methodsType.getSystemException() != null )
-                {
-                    defaultSystemException = methodsType.getSystemException();
-                }
                 if ( methodsType.getTransaction() != null )
                 {
                     defaultTransaction = methodsType.getTransaction();
+                }
+                if ( methodsType.getExceptions() != null )
+                {
+                    defaultExceptions = methodsType.getExceptions();
                 }
 
                 methodType = methodsType.getMethod(
@@ -421,12 +454,38 @@ public class StandaloneInvoker extends DefaultInvoker
             }
         }
 
-        if ( methodType == null )
+        if ( methodType != null )
+        {
+            if ( methodType.getTransaction() == null )
+            {
+                methodType.setTransaction( defaultTransaction );
+            }
+            if ( methodType.getExceptions() == null )
+            {
+                methodType.setExceptions( defaultExceptions );
+            }
+            else
+            {
+                for ( ExceptionType e : defaultExceptions.getException() )
+                {
+                    if ( methodType.getExceptions().getException( e.getClazz() ) == null )
+                    {
+                        methodType.getExceptions().getException().add( e );
+                    }
+                }
+
+                if ( methodType.getExceptions().getDefaultException() == null )
+                {
+                    methodType.getExceptions().setDefaultException( defaultExceptions.getDefaultException() );
+                }
+            }
+        }
+        else
         {
             methodType = new MethodType();
             methodType.setName( invocation.getMethod().getName() );
-            methodType.setSystemException( defaultSystemException );
             methodType.setTransaction( defaultTransaction );
+            methodType.setExceptions( defaultExceptions );
 
             final ParametersType parametersType = new ParametersType();
 
@@ -636,6 +695,8 @@ class FrameState
 
     private boolean transactionInitiator;
 
+    private boolean rollback;
+
     public MethodType getMethodType()
     {
         return this.methodType;
@@ -664,6 +725,16 @@ class FrameState
     public void setTransactionInitiator( final boolean value )
     {
         this.transactionInitiator = value;
+    }
+
+    public boolean isRollback()
+    {
+        return this.rollback;
+    }
+
+    public void setRollback( final boolean value )
+    {
+        this.rollback = value;
     }
 
 }

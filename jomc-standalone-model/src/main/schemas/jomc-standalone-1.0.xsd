@@ -89,31 +89,25 @@
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element ref="standalone:method" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element ref="standalone:exceptions" minOccurs="0" maxOccurs="1"/>
       <xsd:element ref="standalone:transaction" minOccurs="0" maxOccurs="1"/>
       <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
     </xsd:sequence>
-    <xsd:attribute name="system-exception" type="xsd:string" use="optional"/>
     <xsd:anyAttribute namespace="##any" processContents="lax"/>
   </xsd:complexType>
   <!-- ************************************************************************************************************* -->
   <xsd:element name="method" type="standalone:MethodType"/>
   <xsd:complexType name="MethodType">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-Model of a method.
-
-The 'MethodType' type defines attributes 'name' and 'system-exception'. Attribute 'name' holds a name methods are
-matched against. Attribute 'system-exception' holds the name of an exception type to throw on unexpected error
-conditions during execution of the method.
-      </xsd:documentation>
+      <xsd:documentation xml:lang="en">Model of a method.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="parameters" minOccurs="0" maxOccurs="1" type="standalone:ParametersType"/>
+      <xsd:element ref="standalone:parameters" minOccurs="0" maxOccurs="1"/>
+      <xsd:element ref="standalone:exceptions" minOccurs="0" maxOccurs="1"/>
       <xsd:element ref="standalone:transaction" minOccurs="0" maxOccurs="1"/>
       <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
     </xsd:sequence>
     <xsd:attribute name="name" type="xsd:string" use="required"/>
-    <xsd:attribute name="system-exception" type="xsd:string" use="optional"/>
     <xsd:anyAttribute namespace="##any" processContents="lax"/>
   </xsd:complexType>
   <!-- ************************************************************************************************************* -->
@@ -132,16 +126,54 @@ conditions during execution of the method.
   <xsd:element name="parameter" type="standalone:ParameterType"/>
   <xsd:complexType name="ParameterType">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-Method parameter.
-
-The 'ParameterType' type defines attribute 'type' holding the type of the method parameter.
-      </xsd:documentation>
+      <xsd:documentation xml:lang="en">Model of a method parameter.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
     </xsd:sequence>
     <xsd:attribute name="type" type="xsd:string" use="required"/>
+    <xsd:anyAttribute namespace="##any" processContents="lax"/>
+  </xsd:complexType>
+  <!-- ************************************************************************************************************* -->
+  <xsd:element name="exceptions" type="standalone:ExceptionsType">
+    <xsd:key name="exception-key">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">Exception class key of an exception.</xsd:documentation>
+      </xsd:annotation>
+      <xsd:selector xpath="standalone:exception"/>
+      <xsd:field xpath="@class"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="ExceptionsType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">List of exceptions.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="standalone:exception" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="default-exception" type="standalone:ExceptionType" minOccurs="0" maxOccurs="1"/>
+      <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##any" processContents="lax"/>
+  </xsd:complexType>
+  <!-- ************************************************************************************************************* -->
+  <xsd:element name="exception" type="standalone:ExceptionType"/>
+  <xsd:complexType name="ExceptionType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+Model of an exception.
+
+The 'ExceptionType' type defines attributes 'class', 'target-class' and 'rollback'. The 'class' attribute holds the
+name of the exception class. The 'target-class' attribute holds the name of a class to throw an instance of when
+handling the exception. The 'rollback' attribute holds a flag indicating that a possibly active transaction is to be
+rolled back when handling the exception.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xsd:sequence>
+    <xsd:attribute name="class" type="xsd:string" use="required"/>
+    <xsd:attribute name="target-class" type="xsd:string" use="optional"/>
+    <xsd:attribute name="rollback" type="xsd:boolean" use="optional" default="false"/>
     <xsd:anyAttribute namespace="##any" processContents="lax"/>
   </xsd:complexType>
   <!-- ************************************************************************************************************* -->

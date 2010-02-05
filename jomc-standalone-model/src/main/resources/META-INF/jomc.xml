@@ -41,4 +41,19 @@
   <documentation defaultLanguage="en">
     <text language="en">${project.description}</text>
   </documentation>
+  <implementations>
+    <!-- *********************************************************************************************************** -->
+    <implementation identifier="org.jomc.standalone.model.support.StandaloneModelValidator"
+                    class="org.jomc.standalone.model.support.StandaloneModelValidator"
+                    classDeclaration="true" name="${project.name}" version="${project.version}"
+                    vendor="${project.organization.name}" stateless="true">
+
+      <documentation defaultLanguage="en">
+        <text language="en">Standalone 'ModelValidator' implementation.</text>
+      </documentation>
+      <authors>
+        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+      </authors>
+    </implementation>
+  </implementations>
 </module>

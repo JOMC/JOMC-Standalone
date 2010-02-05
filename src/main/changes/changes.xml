@@ -78,5 +78,16 @@
       support.]]>
       </action>
     </release>
+    <!-- *********************************************************************************************************** -->
+    <release version="1.0-alpha-6" date="2010-02-06">
+      <action dev="schulte2005" type="update"><![CDATA[
+      Added <code>ExceptionsType</code> and <code>ExceptionType</code> complex types to the
+      <code>jomc-standalone-1.0.xsd</code> schema to support declarative exception handling.]]>
+      </action>
+      <action dev="schulte2005" type="fix"><![CDATA[
+      Updated class <code>org.jomc.standalone.ri.StandaloneInvoker</code> to correctly rollback transactions
+      when a non-initiating frame marked an invocation for rollback.]]>
+      </action>
+    </release>
   </body>
 </document>

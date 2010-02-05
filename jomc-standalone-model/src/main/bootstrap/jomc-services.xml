@@ -32,28 +32,10 @@
   $Id$
 
 -->
-<module xmlns="http://jomc.org/model"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://jomc.org/model http://jomc.org/model/jomc-1.0.xsd"
-        name="${project.name} Tests" version="${project.version}" vendor="${project.organization.name}"
-        modelVersion="1.0">
+<services xmlns="http://jomc.org/model/bootstrap"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://jomc.org/model/bootstrap http://jomc.org/model/bootstrap/jomc-bootstrap-1.0.xsd">
 
-  <documentation defaultLanguage="en">
-    <text language="en">${project.description}</text>
-  </documentation>
+  <service ordinal="2000" identifier="org.jomc.model.ModelValidator" class="org.jomc.standalone.model.support.StandaloneModelValidator"/>
 
-  <implementations>
-    <!-- *********************************************************************************************************** -->
-    <implementation identifier="org.jomc.standalone.model.support.test.StandaloneModelValidatorTest"
-                    class="org.jomc.standalone.model.support.test.StandaloneModelValidatorTest"
-                    classDeclaration="true" name="${project.name}" version="${project.version}"
-                    vendor="${project.organization.name}">
-      <documentation defaultLanguage="en">
-        <text language="en">Test cases for class {@code org.jomc.standalone.model.support.StandaloneModelValidator}.</text>
-      </documentation>
-      <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
-      </authors>
-    </implementation>
-  </implementations>
-</module>
+</services>
