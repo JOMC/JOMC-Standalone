@@ -58,12 +58,12 @@ import org.apache.geronimo.transaction.manager.GeronimoTransactionManager;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class GeronimoJTAContextFactory extends AbstractContextFactory
 {
-    // SECTION-START[GeronimoJTAContextFactory]
+    // SECTION-START[InitialContextFactory]
 
     public Context getInitialContext( final Hashtable<?, ?> environment ) throws NamingException
     {
@@ -88,12 +88,14 @@ public class GeronimoJTAContextFactory extends AbstractContextFactory
     }
 
     // SECTION-END
+    // SECTION-START[GeronimoJTAContextFactory]
+    // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code GeronimoJTAContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public GeronimoJTAContextFactory()
     {
         // SECTION-START[Default Constructor]

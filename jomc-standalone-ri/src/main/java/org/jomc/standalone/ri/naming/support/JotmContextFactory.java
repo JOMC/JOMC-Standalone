@@ -57,12 +57,12 @@ import org.objectweb.jotm.Jotm;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class JotmContextFactory extends AbstractContextFactory
 {
-    // SECTION-START[JonasJTAContextFactory]
+    // SECTION-START[InitialContextFactory]
 
     public Context getInitialContext( final Hashtable<?, ?> environment ) throws NamingException
     {
@@ -81,12 +81,14 @@ public class JotmContextFactory extends AbstractContextFactory
     }
 
     // SECTION-END
+    // SECTION-START[JotmContextFactory]
+    // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code JotmContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public JotmContextFactory()
     {
         // SECTION-START[Default Constructor]

@@ -168,6 +168,9 @@
       <authors>
         <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
+      <specifications>
+        <reference identifier="javax.naming.Context"/>
+      </specifications>
     </implementation>
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.ri.naming.StandaloneContextFactory"
@@ -181,6 +184,9 @@
       <authors>
         <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
+      <specifications>
+        <reference identifier="javax.naming.spi.InitialContextFactory"/>
+      </specifications>
     </implementation>
     <!-- *********************************************************************************************************** -->
     <implementation identifier="org.jomc.standalone.ri.naming.java.javaURLContextFactory"
@@ -195,7 +201,7 @@
         <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
       </authors>
       <specifications>
-        <reference identifier="javax.naming.spi.InitialContextFactory"/>
+        <reference identifier="javax.naming.spi.ObjectFactory"/>
       </specifications>
     </implementation>
     <!-- *********************************************************************************************************** -->

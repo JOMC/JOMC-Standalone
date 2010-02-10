@@ -53,22 +53,20 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class TopLinkTransactionController extends JTATransactionController
 {
-    // SECTION-START[JTATransactionController]
+    // SECTION-START[TopLinkTransactionController]
+
+    private StandaloneEnvironment standaloneEnvironment;
 
     @Override
     protected TransactionManager acquireTransactionManager() throws Exception
     {
         return (TransactionManager) this.jndiLookup( this.getStandaloneEnvironment().getTransactionManagerJndiName() );
     }
-
-    // SECTION-END
-    // SECTION-START[ToplinkTransactionController]
-    private StandaloneEnvironment standaloneEnvironment;
 
     protected StandaloneEnvironment getStandaloneEnvironment()
     {
@@ -86,7 +84,7 @@ public class TopLinkTransactionController extends JTATransactionController
 
     /** Creates a new {@code TopLinkTransactionController} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public TopLinkTransactionController()
     {
         // SECTION-START[Default Constructor]

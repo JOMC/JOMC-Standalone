@@ -56,12 +56,14 @@ import org.hibernate.ejb.HibernatePersistence;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class HibernateContextFactory extends AbstractJPAContextFactory
 {
-    // SECTION-START[AbstractJPAContextFactory]
+    // SECTION-START[InitialContextFactory]
+    // SECTION-END
+    // SECTION-START[HibernateContextFactory]
 
     protected PersistenceProvider getPersistenceProvider()
     {
@@ -77,7 +79,7 @@ public class HibernateContextFactory extends AbstractJPAContextFactory
 
     /** Creates a new {@code HibernateContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public HibernateContextFactory()
     {
         // SECTION-START[Default Constructor]

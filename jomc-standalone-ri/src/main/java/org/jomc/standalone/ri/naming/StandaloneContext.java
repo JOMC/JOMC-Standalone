@@ -59,6 +59,9 @@ import javax.naming.spi.NamingManager;
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Standalone {@code Context} implementation.
+ * <p><b>Specifications</b><ul>
+ * <li>{@code javax.naming.Context} {@code Multiton}</li>
+ * </ul></p>
  *
  * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
  * @version $Id$
@@ -68,7 +71,7 @@ import javax.naming.spi.NamingManager;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class StandaloneContext implements Context
@@ -475,7 +478,7 @@ public class StandaloneContext implements Context
 
     /** Creates a new {@code StandaloneContext} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public StandaloneContext()
     {
         // SECTION-START[Default Constructor]

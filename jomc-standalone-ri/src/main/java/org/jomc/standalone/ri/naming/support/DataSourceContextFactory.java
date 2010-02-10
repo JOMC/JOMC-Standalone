@@ -62,7 +62,7 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class DataSourceContextFactory extends AbstractContextFactory
@@ -218,7 +218,7 @@ public class DataSourceContextFactory extends AbstractContextFactory
 
     /** Creates a new {@code DataSourceContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public DataSourceContextFactory()
     {
         // SECTION-START[Default Constructor]

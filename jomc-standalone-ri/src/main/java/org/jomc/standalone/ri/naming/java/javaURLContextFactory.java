@@ -48,7 +48,7 @@ import org.jomc.standalone.ri.naming.StandaloneContext;
 /**
  * Standalone context factory for the ''java'' URL scheme.
  * <p><b>Specifications</b><ul>
- * <li>{@code javax.naming.spi.InitialContextFactory} {@code Multiton}</li>
+ * <li>{@code javax.naming.spi.ObjectFactory} {@code Multiton}</li>
  * </ul></p>
  *
  * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
@@ -59,12 +59,12 @@ import org.jomc.standalone.ri.naming.StandaloneContext;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class javaURLContextFactory implements ObjectFactory
 {
-    // SECTION-START[javaContextFactory]
+    // SECTION-START[ObjectFactory]
 
     private static Context javaContext;
 
@@ -98,12 +98,14 @@ public class javaURLContextFactory implements ObjectFactory
     }
 
     // SECTION-END
+    // SECTION-START[javaURLContextFactory]
+    // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code javaURLContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-16/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public javaURLContextFactory()
     {
         // SECTION-START[Default Constructor]
