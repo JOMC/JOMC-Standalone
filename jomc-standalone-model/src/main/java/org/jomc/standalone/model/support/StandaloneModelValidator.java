@@ -82,48 +82,38 @@ public class StandaloneModelValidator implements ModelValidator
             {
                 for ( Implementation i : m.getImplementations().getImplementation() )
                 {
-                    for ( Object any : i.getAny() )
-                    {
-                        final JAXBElement detailElement = new ObjectFactory().createImplementation( i );
+                    final JAXBElement<Implementation> detailElement = new ObjectFactory().createImplementation( i );
 
-                        if ( any instanceof JAXBElement )
+                    for ( MethodsType methodsType : i.getAnyObjects( MethodsType.class ) )
+                    {
+                        if ( methodsType.getExceptions() != null &&
+                             methodsType.getExceptions().getDefaultException() != null &&
+                             methodsType.getExceptions().getDefaultException().getTargetClass() != null )
                         {
-                            any = ( (JAXBElement) any ).getValue();
+                            report.getDetails().add( new ModelValidationReport.Detail(
+                                "IMPLEMENTATION_METHODS_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
+                                getMessage( "implementationMethodsDefaultExceptionTargetClassConstraint",
+                                            i.getIdentifier(),
+                                            methodsType.getExceptions().getDefaultException().getClazz(),
+                                            methodsType.getExceptions().getDefaultException().getTargetClass() ),
+                                detailElement ) );
+
                         }
 
-                        if ( any instanceof MethodsType )
+                        for ( MethodType methodType : methodsType.getMethod() )
                         {
-                            final MethodsType methodsType = (MethodsType) any;
-
-                            if ( methodsType.getExceptions() != null &&
-                                 methodsType.getExceptions().getDefaultException() != null &&
-                                 methodsType.getExceptions().getDefaultException().getTargetClass() != null )
+                            if ( methodType.getExceptions() != null &&
+                                 methodType.getExceptions().getDefaultException() != null &&
+                                 methodType.getExceptions().getDefaultException().getTargetClass() != null )
                             {
                                 report.getDetails().add( new ModelValidationReport.Detail(
-                                    "IMPLEMENTATION_METHODS_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
-                                    getMessage( "implementationMethodsDefaultExceptionTargetClassConstraint",
-                                                i.getIdentifier(),
+                                    "IMPLEMENTATION_METHOD_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
+                                    getMessage( "implementationMethodDefaultExceptionTargetClassConstraint",
+                                                i.getIdentifier(), methodType.getName(),
                                                 methodsType.getExceptions().getDefaultException().getClazz(),
                                                 methodsType.getExceptions().getDefaultException().getTargetClass() ),
                                     detailElement ) );
 
-                            }
-
-                            for ( MethodType methodType : methodsType.getMethod() )
-                            {
-                                if ( methodType.getExceptions() != null &&
-                                     methodType.getExceptions().getDefaultException() != null &&
-                                     methodType.getExceptions().getDefaultException().getTargetClass() != null )
-                                {
-                                    report.getDetails().add( new ModelValidationReport.Detail(
-                                        "IMPLEMENTATION_METHOD_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
-                                        getMessage( "implementationMethodDefaultExceptionTargetClassConstraint",
-                                                    i.getIdentifier(), methodType.getName(),
-                                                    methodsType.getExceptions().getDefaultException().getClazz(),
-                                                    methodsType.getExceptions().getDefaultException().getTargetClass() ),
-                                        detailElement ) );
-
-                                }
                             }
                         }
                     }

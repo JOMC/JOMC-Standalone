@@ -51,10 +51,6 @@ import javax.transaction.SystemException;
 import javax.transaction.Transaction;
 import javax.transaction.TransactionManager;
 import javax.transaction.TransactionRequiredException;
-import javax.xml.bind.JAXB;
-import javax.xml.bind.JAXBElement;
-import javax.xml.namespace.QName;
-import javax.xml.transform.dom.DOMSource;
 import org.jomc.ObjectManagementException;
 import org.jomc.model.Instance;
 import org.jomc.ri.DefaultInvocation;
@@ -73,7 +69,6 @@ import org.jomc.standalone.model.TransactionType;
 import org.jomc.spi.Invocation;
 import org.jomc.standalone.model.ExceptionType;
 import org.jomc.standalone.model.ExceptionsType;
-import org.w3c.dom.Element;
 
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
@@ -113,9 +108,6 @@ public class StandaloneInvoker extends DefaultInvoker
     // SECTION-START[Invoker]
     // SECTION-END
     // SECTION-START[StandaloneInvoker]
-
-    /** {@code QName} of the {@code Methods} complex type. */
-    private static final QName METHODS_QNAME = new QName( "http://jomc.org/standalone/model", "methods" );
 
     private static final ThreadLocal<ThreadState> CURRENT = new ThreadLocal<ThreadState>()
     {
@@ -413,31 +405,7 @@ public class StandaloneInvoker extends DefaultInvoker
 
         if ( instance != null )
         {
-            MethodsType methodsType = null;
-
-            for ( Object o : instance.getAny() )
-            {
-                if ( o instanceof JAXBElement )
-                {
-                    final JAXBElement e = (JAXBElement) o;
-
-                    if ( METHODS_QNAME.equals( e.getName() ) )
-                    {
-                        methodsType = (MethodsType) e.getValue();
-                    }
-                }
-
-                if ( o instanceof Element )
-                {
-                    final Element e = (Element) o;
-                    final QName elementQName = new QName( e.getNamespaceURI(), e.getLocalName() );
-
-                    if ( METHODS_QNAME.equals( elementQName ) )
-                    {
-                        methodsType = JAXB.unmarshal( new DOMSource( e ), MethodsType.class );
-                    }
-                }
-            }
+            MethodsType methodsType = instance.getAnyObject( MethodsType.class );
 
             if ( methodsType != null )
             {
