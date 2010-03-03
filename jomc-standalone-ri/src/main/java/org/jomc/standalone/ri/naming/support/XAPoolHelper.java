@@ -39,7 +39,7 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 /**
  * Provides static methods supporting XAPool.
  *
- * @author <a href="mailto:cs@jomc.org">Christian Schulte</a> 1.0
+ * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version $Id$
  */
 class XAPoolHelper

@@ -2,7 +2,7 @@
 <!--
 
   Copyright (c) 2009 The JOMC Project
-  Copyright (c) 2005 Christian Schulte <cs@jomc.org>
+  Copyright (c) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -51,7 +51,9 @@
         <text language="en">Standalone environment.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <properties>
         <property name="defaultEntityManagerFactoryJndiName" value="java:comp/env/persistence/EntityManagerFactory">
@@ -120,7 +122,9 @@
         <text language="en">${project.name} Invoker</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <specifications>
         <reference identifier="org.jomc.spi.Invoker" version="${invoker.specification.version}"/>
@@ -166,7 +170,9 @@
         <text language="en">Standalone {@code Context} implementation.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <specifications>
         <reference identifier="javax.naming.Context"/>
@@ -182,7 +188,9 @@
         <text language="en">Standalone {@code InitialContextFactory} implementation.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <specifications>
         <reference identifier="javax.naming.spi.InitialContextFactory"/>
@@ -198,7 +206,9 @@
         <text language="en">Standalone context factory for the ''java'' URL scheme.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <specifications>
         <reference identifier="javax.naming.spi.ObjectFactory"/>
@@ -214,7 +224,9 @@
         <text language="en">Base context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <specifications>
         <reference identifier="javax.naming.spi.InitialContextFactory"/>
@@ -230,7 +242,9 @@
         <text language="en">Base JPA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.ri.naming.support.AbstractContextFactory" version="${project.version}"/>
@@ -246,7 +260,9 @@
         <text language="en">Standalone data source context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.ri.naming.support.AbstractContextFactory" version="${project.version}"/>
@@ -262,7 +278,9 @@
         <text language="en">Standalone JBoss JTA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.ri.naming.support.AbstractContextFactory" version="${project.version}"/>
@@ -285,7 +303,9 @@
         <text language="en">Standalone Geronimo JTA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.ri.naming.support.AbstractContextFactory" version="${project.version}"/>
@@ -301,7 +321,9 @@
         <text language="en">Standalone OpenJPA JPA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.ri.naming.support.AbstractJPAContextFactory" version="${project.version}"/>
@@ -317,7 +339,9 @@
         <text language="en">Standalone Hibernate JPA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.ri.naming.support.AbstractJPAContextFactory" version="${project.version}"/>
@@ -333,7 +357,9 @@
         <text language="en">Standalone Toplink JPA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.ri.naming.support.AbstractJPAContextFactory" version="${project.version}"/>
@@ -349,7 +375,9 @@
         <text language="en">Standalone Toplink {@code ExternalTransactionController}.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
     </implementation>
     <!-- *********************************************************************************************************** -->
@@ -362,7 +390,9 @@
         <text language="en">Standalone Jonas JTA context factory.</text>
       </documentation>
       <authors>
-        <author name="Christian Schulte" version="1.0" mail="cs@jomc.org" createDate="2005-07-25T19:56:45Z"/>
+        <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
+                createDate="2005-07-25T19:56:45Z"/>
+
       </authors>
       <implementations>
         <reference identifier="org.jomc.standalone.ri.naming.support.AbstractContextFactory" version="${project.version}"/>
