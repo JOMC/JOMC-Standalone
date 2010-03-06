@@ -265,34 +265,13 @@
           <version>${jomc.version}</version>
           <executions>
             <execution>
-              <id>main-java-sources</id>
               <goals>
-                <goal>main-java-sources</goal>
-              </goals>
-            </execution>
-            <execution>
-              <id>main-java-classes</id>
-              <goals>
-                <goal>main-java-classes</goal>
-                <goal>validate-main-java-classes</goal>
-              </goals>
-            </execution>
-            <execution>
-              <id>test-java-sources</id>
-              <goals>
-                <goal>test-java-sources</goal>
-              </goals>
-            </execution>
-            <execution>
-              <id>test-java-classes</id>
-              <goals>
-                <goal>test-java-classes</goal>
-                <goal>validate-test-java-classes</goal>
-              </goals>
-            </execution>
-            <execution>
-              <id>test-model</id>
-              <goals>
+                <goal>manage-main-sources</goal>
+                <goal>commit-main-classes</goal>
+                <goal>validate-main-classes</goal>
+                <goal>manage-test-sources</goal>
+                <goal>commit-test-classes</goal>
+                <goal>validate-test-classes</goal>
                 <goal>validate-test-modules</goal>
               </goals>
             </execution>
