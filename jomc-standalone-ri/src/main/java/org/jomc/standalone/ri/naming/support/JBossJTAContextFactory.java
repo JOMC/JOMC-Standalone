@@ -72,7 +72,7 @@ import javax.sql.DataSource;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                              comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
@@ -194,7 +194,7 @@ public class JBossJTAContextFactory extends AbstractContextFactory
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code JBossJTAContextFactory} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     public JBossJTAContextFactory()
     {
@@ -214,7 +214,7 @@ public class JBossJTAContextFactory extends AbstractContextFactory
      * @return {@code true} to enable ArjunaJTA's transactional JDBC driver (no JDBC3 support); {@code false} to disable ArjunaJTA's transactional JDBC driver.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.JavaSources",
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
                                  comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-17-SNAPSHOT/jomc-tools" )
     private boolean isTransactionalDriverEnabled()
     {
