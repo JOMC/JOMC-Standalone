@@ -126,7 +126,6 @@ public class StandaloneContext implements Context
             throw new NamingException( name.toString() );
         }
 
-        final Object oldObject = this.getObjectMap().get( name );
         this.getObjectMap().put( name, NamingManager.getStateToBind( obj, name, this, this.getEnvironment() ) );
     }
 
