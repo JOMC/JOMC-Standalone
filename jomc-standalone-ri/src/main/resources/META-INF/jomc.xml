@@ -119,7 +119,7 @@
                     vendor="${project.organization.name}" version="${project.version}">
 
       <documentation defaultLanguage="en">
-        <text language="en">${project.name} Invoker</text>
+        <text language="en">Standalone {@code Invoker}.</text>
       </documentation>
       <authors>
         <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"
