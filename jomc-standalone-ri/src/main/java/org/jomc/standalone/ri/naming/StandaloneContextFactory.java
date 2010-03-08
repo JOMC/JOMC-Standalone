@@ -74,7 +74,6 @@ public class StandaloneContextFactory implements InitialContextFactory
         {
             if ( instance == null )
             {
-                final long startTime = System.currentTimeMillis();
                 instance = new StandaloneContext();
 
                 if ( env != null )
