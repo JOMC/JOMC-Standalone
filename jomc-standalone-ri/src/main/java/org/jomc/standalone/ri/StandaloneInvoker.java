@@ -73,7 +73,7 @@ import org.jomc.standalone.model.ExceptionsType;
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
- * JOMC Standalone RI Invoker
+ * Standalone {@code Invoker}.
  * <p><b>Specifications</b><ul>
  * <li>{@code org.jomc.spi.Invoker} {@code 1.0} {@code Multiton}</li>
  * </ul></p>
