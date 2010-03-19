@@ -36,6 +36,7 @@
 // SECTION-END
 package org.jomc.standalone.ri.naming;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Hashtable;
 import javax.naming.Context;
@@ -59,7 +60,7 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18-SNAPSHOT/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class StandaloneContextFactory implements InitialContextFactory
@@ -103,19 +104,7 @@ public class StandaloneContextFactory implements InitialContextFactory
                         jpaContextFactory.getInitialContext( env );
                     }
 
-                    try
-                    {
-                        Class.forName( "org.enhydra.jdbc.standard.StandardXADataSource" );
-                        final Class helperClass = Class.forName( "org.jomc.standalone.ri.naming.support.XAPoolHelper" );
-                        final Method helperMethod = helperClass.getDeclaredMethod(
-                            "initializeXAPool", StandaloneEnvironment.class, Context.class );
-
-                        helperMethod.invoke( null, this.getStandaloneEnvironment(), instance );
-                    }
-                    catch ( final Exception e )
-                    {
-                        // Optional XAPool support not available.
-                    }
+                    this.isXAPoolInitialized();
                 }
             }
 
@@ -149,13 +138,43 @@ public class StandaloneContextFactory implements InitialContextFactory
         return this.standaloneEnvironment;
     }
 
+    protected boolean isXAPoolInitialized()
+    {
+        try
+        {
+            Class.forName( "org.enhydra.jdbc.standard.StandardXADataSource" );
+            final Class helperClass = Class.forName( "org.jomc.standalone.ri.naming.support.XAPoolHelper" );
+            final Method helperMethod = helperClass.getDeclaredMethod(
+                "initializeXAPool", StandaloneEnvironment.class, Context.class );
+
+            helperMethod.invoke( null, this.getStandaloneEnvironment(), instance );
+            return true;
+        }
+        catch ( final IllegalAccessException e )
+        {
+            return false;
+        }
+        catch ( final InvocationTargetException e )
+        {
+            return false;
+        }
+        catch ( final NoSuchMethodException e )
+        {
+            return false;
+        }
+        catch ( final ClassNotFoundException e )
+        {
+            return false;
+        }
+    }
+
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code StandaloneContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
     public StandaloneContextFactory()
     {
         // SECTION-START[Default Constructor]

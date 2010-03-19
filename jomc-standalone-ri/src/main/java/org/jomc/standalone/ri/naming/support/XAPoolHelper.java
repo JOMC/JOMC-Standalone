@@ -42,8 +42,13 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version $Id$
  */
-class XAPoolHelper
+abstract class XAPoolHelper
 {
+
+    XAPoolHelper()
+    {
+        super();
+    }
 
     static void initializeXAPool( final StandaloneEnvironment environment, final Context context )
         throws NamingException
