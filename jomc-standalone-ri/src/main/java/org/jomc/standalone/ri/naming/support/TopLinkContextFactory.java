@@ -54,7 +54,7 @@ import javax.persistence.spi.PersistenceProvider;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class TopLinkContextFactory extends AbstractJPAContextFactory
@@ -74,7 +74,7 @@ public class TopLinkContextFactory extends AbstractJPAContextFactory
 
     /** Creates a new {@code TopLinkContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-18/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
     public TopLinkContextFactory()
     {
         // SECTION-START[Default Constructor]
