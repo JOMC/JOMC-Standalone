@@ -77,11 +77,11 @@ import org.jomc.standalone.model.ExceptionsType;
  * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
- * <li>"{@link #getIllegalTransactionMessage illegalTransaction}"<table>
+ * <li>"{@link #getIllegalTransactionMessage illegalTransactionMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Cannot invoke method ''{0}'' with a ''{1}'' transaction context.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgef&uuml;hrt werden.</pre></td></tr>
  * </table>
- * <li>"{@link #getUnsupportedTransactionMessage unsupportedTransaction}"<table>
+ * <li>"{@link #getUnsupportedTransactionMessage unsupportedTransactionMessage}"<table>
  * <tr><td valign="top">English:</td><td valign="top"><pre>Unsupported transaction attribute ''{1}'' invoking method ''{0}''.</pre></td></tr>
  * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiges Transaktions-Attribut ''{1}'' bei der Ausf&uuml;hrung von Methode ''{0}''.</pre></td></tr>
  * </table>
@@ -95,7 +95,7 @@ import org.jomc.standalone.model.ExceptionsType;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class StandaloneInvoker extends DefaultInvoker
@@ -553,7 +553,7 @@ public class StandaloneInvoker extends DefaultInvoker
 
     /** Creates a new {@code StandaloneInvoker} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     public StandaloneInvoker()
     {
         // SECTION-START[Default Constructor]
@@ -573,7 +573,7 @@ public class StandaloneInvoker extends DefaultInvoker
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -588,7 +588,7 @@ public class StandaloneInvoker extends DefaultInvoker
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
 
     /**
-     * Gets the text of the {@code illegalTransaction} message.
+     * Gets the text of the {@code illegalTransactionMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Cannot invoke method ''{0}'' with a ''{1}'' transaction context.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgef&uuml;hrt werden.</pre></td></tr>
@@ -596,21 +596,21 @@ public class StandaloneInvoker extends DefaultInvoker
      * @param locale The locale of the message to return.
      * @param methodName Format argument.
      * @param statusName Format argument.
-     * @return The text of the {@code illegalTransaction} message.
+     * @return The text of the {@code illegalTransactionMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getIllegalTransactionMessage( final java.util.Locale locale, final java.lang.String methodName, final java.lang.String statusName )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalTransaction", locale, methodName, statusName );
-        assert _m != null : "'illegalTransaction' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalTransactionMessage", locale, methodName, statusName );
+        assert _m != null : "'illegalTransactionMessage' message not found.";
         return _m;
     }
 
     /**
-     * Gets the text of the {@code unsupportedTransaction} message.
+     * Gets the text of the {@code unsupportedTransactionMessage} message.
      * <p><b>Templates</b><br/><table>
      * <tr><td valign="top">English:</td><td valign="top"><pre>Unsupported transaction attribute ''{1}'' invoking method ''{0}''.</pre></td></tr>
      * <tr><td valign="top">Deutsch:</td><td valign="top"><pre>Ung&uuml;ltiges Transaktions-Attribut ''{1}'' bei der Ausf&uuml;hrung von Methode ''{0}''.</pre></td></tr>
@@ -618,16 +618,16 @@ public class StandaloneInvoker extends DefaultInvoker
      * @param locale The locale of the message to return.
      * @param methodName Format argument.
      * @param transactionAttribute Format argument.
-     * @return The text of the {@code unsupportedTransaction} message.
+     * @return The text of the {@code unsupportedTransactionMessage} message.
      *
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-alpha-19/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
     private String getUnsupportedTransactionMessage( final java.util.Locale locale, final java.lang.String methodName, final java.lang.String transactionAttribute )
     {
-        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "unsupportedTransaction", locale, methodName, transactionAttribute );
-        assert _m != null : "'unsupportedTransaction' message not found.";
+        final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "unsupportedTransactionMessage", locale, methodName, transactionAttribute );
+        assert _m != null : "'unsupportedTransactionMessage' message not found.";
         return _m;
     }
     // </editor-fold>
