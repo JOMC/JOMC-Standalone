@@ -58,7 +58,7 @@ import org.apache.geronimo.transaction.manager.GeronimoTransactionManager;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class GeronimoJTAContextFactory extends AbstractContextFactory
@@ -95,7 +95,7 @@ public class GeronimoJTAContextFactory extends AbstractContextFactory
 
     /** Creates a new {@code GeronimoJTAContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-1/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
     public GeronimoJTAContextFactory()
     {
         // SECTION-START[Default Constructor]
