@@ -60,7 +60,7 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-3-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class StandaloneContextFactory implements InitialContextFactory
@@ -174,7 +174,7 @@ public class StandaloneContextFactory implements InitialContextFactory
 
     /** Creates a new {@code StandaloneContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-3-SNAPSHOT/jomc-tools" )
     public StandaloneContextFactory()
     {
         // SECTION-START[Default Constructor]

@@ -55,7 +55,7 @@ import org.apache.openjpa.persistence.PersistenceProviderImpl;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-3-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class OpenJPAContextFactory extends AbstractJPAContextFactory
@@ -75,7 +75,7 @@ public class OpenJPAContextFactory extends AbstractJPAContextFactory
 
     /** Creates a new {@code OpenJPAContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-2/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-3-SNAPSHOT/jomc-tools" )
     public OpenJPAContextFactory()
     {
         // SECTION-START[Default Constructor]
