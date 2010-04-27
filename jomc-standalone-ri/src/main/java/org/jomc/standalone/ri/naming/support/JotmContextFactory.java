@@ -57,7 +57,7 @@ import org.objectweb.jotm.Jotm;
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-3-SNAPSHOT/jomc-tools" )
+                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-3/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class JotmContextFactory extends AbstractContextFactory
@@ -88,7 +88,7 @@ public class JotmContextFactory extends AbstractContextFactory
 
     /** Creates a new {@code JotmContextFactory} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-3-SNAPSHOT/jomc-tools" )
+                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-3/jomc-tools" )
     public JotmContextFactory()
     {
         // SECTION-START[Default Constructor]
