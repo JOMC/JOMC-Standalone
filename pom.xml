@@ -109,11 +109,13 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3</version>
+          <version>2.3.1</version>
           <configuration>
             <optimize>true</optimize>
             <showDeprecation>true</showDeprecation>
             <showWarnings>true</showWarnings>
+            <source>1.5</source>
+            <target>1.5</target>
           </configuration>
         </plugin>
         <plugin>
@@ -125,7 +127,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>2.4.2</version>
+          <version>2.4.3</version>
           <configuration>
             <delimiters>
               <delimiter>${*}</delimiter>
@@ -169,7 +171,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.3</version>
+          <version>2.3.1</version>
           <configuration>
             <archive>
               <index>true</index>
@@ -220,7 +222,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.6.1</version>
+          <version>2.7</version>
           <configuration>
             <breakiterator>true</breakiterator>
             <keywords>true</keywords>
@@ -231,12 +233,12 @@
             <windowtitle>${project.name} ${project.version}</windowtitle>
             <detectJavaApiLink>true</detectJavaApiLink>
             <detectOfflineLinks>false</detectOfflineLinks>
-            <!-- <detectLinks>true</detectLinks> Disabled due to http://jira.codehaus.org/browse/MJAVADOC-273 -->
-            <doclet>gr.spinellis.umlgraph.doclet.UmlGraphDoc</doclet>
+            <!-- detectLinks>true</detectLinks See http://jira.codehaus.org/browse/MJAVADOC-283 -->
+            <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
             <docletArtifact>
-              <groupId>gr.spinellis</groupId>
-              <artifactId>UmlGraph</artifactId>
-              <version>4.6</version>
+              <groupId>org.umlgraph</groupId>
+              <artifactId>doclet</artifactId>
+              <version>5.1</version>
             </docletArtifact>
             <additionalparam>
               -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 9
@@ -256,7 +258,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>2.4</version>
+          <version>2.4.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -295,12 +297,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>2.3</version>
+          <version>2.3.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>2.1.1</version>
+          <version>2.1.2</version>
           <configuration>
             <archive>
               <index>true</index>
@@ -637,7 +639,7 @@
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
-        <version>1.5.11</version>
+        <version>1.6.0</version>
       </dependency>
       <dependency>
         <groupId>log4j</groupId>
@@ -705,11 +707,12 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>2.1.2</version>
+        <!-- version>2.2</version> ArrayIndexOutOfBoundsException with site plugin 2.0.1 -->
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.6.1</version>
+        <version>2.7</version>
         <reportSets>
           <reportSet>
             <id>javadoc</id>
@@ -728,12 +731,12 @@
               <windowtitle>${project.name} ${project.version}</windowtitle>
               <detectJavaApiLink>true</detectJavaApiLink>
               <detectOfflineLinks>false</detectOfflineLinks>
-              <!-- <detectLinks>true</detectLinks> Disabled due to http://jira.codehaus.org/browse/MJAVADOC-273 -->
-              <doclet>gr.spinellis.umlgraph.doclet.UmlGraphDoc</doclet>
+              <!-- detectLinks>true</detectLinks See http://jira.codehaus.org/browse/MJAVADOC-283 -->
+              <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
               <docletArtifact>
-                <groupId>gr.spinellis</groupId>
-                <artifactId>UmlGraph</artifactId>
-                <version>4.6</version>
+                <groupId>org.umlgraph</groupId>
+                <artifactId>doclet</artifactId>
+                <version>5.1</version>
               </docletArtifact>
               <additionalparam>
                 -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 9
@@ -755,7 +758,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>2.4</version>
+        <version>2.5</version>
         <configuration>
           <targetJdk>1.5</targetJdk>
         </configuration>
@@ -798,7 +801,7 @@
         <artifactId>findbugs-maven-plugin</artifactId>
         <version>2.3.1</version>
         <configuration>
-          <maxHeap>128</maxHeap>
+          <maxHeap>256</maxHeap>
         </configuration>
       </plugin>
       <plugin>
