@@ -52,8 +52,7 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                             comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-3/jomc-tools" )
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-4-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public class TopLinkTransactionController extends JTATransactionController
@@ -83,8 +82,7 @@ public class TopLinkTransactionController extends JTATransactionController
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code TopLinkTransactionController} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor",
-                                 comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-3/jomc-tools" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-4-SNAPSHOT/jomc-tools" )
     public TopLinkTransactionController()
     {
         // SECTION-START[Default Constructor]
