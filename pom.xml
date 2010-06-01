@@ -376,6 +376,7 @@
                 <schemaDirectory>src/main/schemas</schemaDirectory>
                 <extension>true</extension>
                 <outputDirectory>${xjcOutputDirectory}</outputDirectory>
+                <staleFile>${project.build.directory}/xjc.staleFile</staleFile>
               </configuration>
             </execution>
           </executions>
@@ -896,7 +897,7 @@
               <execution>
                 <id>attach-sources</id>
                 <goals>
-                  <goal>jar</goal>
+                  <goal>jar-no-fork</goal>
                 </goals>
               </execution>
             </executions>
