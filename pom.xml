@@ -41,9 +41,6 @@
   <name>JOMC Standalone</name>
   <description>Standalone environment.</description>
   <url>http://jomc.sourceforge.net/jomc-standalone/${project.version}</url>
-  <prerequisites>
-    <maven>2.2.1</maven>
-  </prerequisites>
   <inceptionYear>2005</inceptionYear>
   <organization>
     <name>The JOMC Project</name>
