@@ -372,7 +372,7 @@
                 <schemaDirectory>src/main/schemas</schemaDirectory>
                 <extension>true</extension>
                 <outputDirectory>${xjcOutputDirectory}</outputDirectory>
-                <staleFile>${project.build.directory}/xjc.staleFile</staleFile>
+                <staleFile>${project.build.directory}/xjc.staleFile</staleFile> <!-- See http://jira.codehaus.org/browse/MJAXB-34 -->
               </configuration>
             </execution>
           </executions>
