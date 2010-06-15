@@ -39,7 +39,7 @@
   <version>1.0-beta-2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>JOMC Standalone</name>
-  <description>Standalone environment.</description>
+  <description>JOMC Standalone is an object management and configuration standalone environment. This is the parent module of the JOMC Standalone artifacts.</description>
   <url>http://jomc.sourceforge.net/jomc-standalone/${project.version}</url>
   <inceptionYear>2005</inceptionYear>
   <organization>
@@ -267,11 +267,18 @@
           <version>${jomc.version}</version>
           <executions>
             <execution>
+              <id>main-default</id>
               <goals>
                 <goal>attach-main-module</goal>
                 <goal>manage-main-sources</goal>
                 <goal>commit-main-classes</goal>
                 <goal>validate-main-classes</goal>
+                <goal>validate-main-modules</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>test-default</id>
+              <goals>
                 <goal>attach-test-module</goal>
                 <goal>manage-test-sources</goal>
                 <goal>commit-test-classes</goal>
@@ -952,7 +959,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <xjcOutputDirectory>${project.build.directory}/generated-sources/jaxb</xjcOutputDirectory>
     <remoteResourcesOutputDirectory>${project.build.directory}/maven-shared-archive-resources</remoteResourcesOutputDirectory>
-    <jomc.version>1.0-beta-4</jomc.version>
+    <jomc.version>1.0-beta-5-SNAPSHOT</jomc.version>
     <jomc-build.version>1.4</jomc-build.version>
     <surefire.version>2.5</surefire.version>
     <emma-maven-plugin.version>1.0-alpha-2</emma-maven-plugin.version>

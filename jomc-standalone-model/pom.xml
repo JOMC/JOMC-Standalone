@@ -41,7 +41,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>jomc-standalone-model</artifactId>
   <name>JOMC Standalone Model</name>
-  <description>Standalone environment model.</description>
+  <description>Object management and configuration standalone environment model.</description>
   <build>
     <resources>
       <resource>

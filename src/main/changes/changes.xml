@@ -105,5 +105,9 @@
     <release version="1.0-beta-1" date="2010-04-03">
       <action dev="schulte2005" type="update">Updated to JOMC 1.0-beta-1.</action>
     </release>
+    <!-- *********************************************************************************************************** -->
+    <release version="1.0-beta-2">
+      <action dev="schulte2005" type="update">Updated to JOMC 1.0-beta-5.</action>
+    </release>
   </body>
 </document>

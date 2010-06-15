@@ -42,7 +42,7 @@
   <artifactId>jomc-standalone-ri</artifactId>
   <packaging>jar</packaging>
   <name>JOMC Standalone RI</name>
-  <description>Standalone environment reference implementation.</description>
+  <description>Object management and configuration standalone environment reference implementation.</description>
   <build>
     <resources>
       <resource>
