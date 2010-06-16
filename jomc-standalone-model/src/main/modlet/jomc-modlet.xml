@@ -32,12 +32,19 @@
   $Id$
 
 -->
-<schemas xmlns="http://jomc.org/model/bootstrap"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://jomc.org/model/bootstrap http://jomc.sourceforge.net/model/bootstrap/jomc-bootstrap-1.0.xsd">
+<modlet xmlns="http://jomc.org/model/modlet"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://jomc.org/model/modlet http://jomc.sourceforge.net/model/modlet/jomc-modlet-1.0.xsd"
+        identifier="${project.name}" model="http://jomc.org/model" name="${project.name}"
+        vendor="${project.organization.name}" version="${project.version}">
 
-  <schema public-id="http://jomc.org/standalone/model"
-          system-id="http://jomc.sourceforge.net/standalone/model/jomc-standalone-1.0.xsd"
-          context-id="org.jomc.standalone.model" classpath-id="org/jomc/standalone/model/jomc-standalone-1.0.xsd"/>
+  <schemas>
+    <schema public-id="http://jomc.org/standalone/model"
+            system-id="http://jomc.sourceforge.net/standalone/model/jomc-standalone-1.0.xsd"
+            context-id="org.jomc.standalone.model" classpath-id="org/jomc/standalone/model/jomc-standalone-1.0.xsd"/>
 
-</schemas>
+  </schemas>
+  <services>
+    <service ordinal="2000" identifier="org.jomc.model.ModelValidator" class="org.jomc.standalone.model.support.StandaloneModelValidator"/>
+  </services>
+</modlet>
