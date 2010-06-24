@@ -34,20 +34,21 @@
  */
 // </editor-fold>
 // SECTION-END
-package org.jomc.standalone.model.support;
+package org.jomc.standalone.model.modlet;
 
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javax.xml.bind.JAXBElement;
 import org.jomc.model.Implementation;
-import org.jomc.model.ModelContext;
-import org.jomc.model.ModelException;
-import org.jomc.model.ModelValidationReport;
-import org.jomc.model.ModelValidator;
 import org.jomc.model.Module;
 import org.jomc.model.Modules;
 import org.jomc.model.ObjectFactory;
+import org.jomc.modlet.Model;
+import org.jomc.modlet.ModelContext;
+import org.jomc.modlet.ModelException;
+import org.jomc.modlet.ModelValidationReport;
+import org.jomc.modlet.ModelValidator;
 import org.jomc.standalone.model.MethodType;
 import org.jomc.standalone.model.MethodsType;
 
@@ -70,12 +71,34 @@ public class StandaloneModelValidator implements ModelValidator
 {
     // SECTION-START[StandaloneModelValidator]
 
-    public ModelValidationReport validateModel( final ModelContext modelContext, final Modules modules )
+    public ModelValidationReport validateModel( final ModelContext context, final Model model )
         throws ModelException
     {
+        if ( context == null )
+        {
+            throw new NullPointerException( "context" );
+        }
+        if ( model == null )
+        {
+            throw new NullPointerException( "model" );
+        }
+
+        final JAXBElement<Modules> modules = model.getAnyElement( Modules.MODEL_PUBLIC_ID, "modules" );
+        if ( modules == null )
+        {
+            throw new ModelException( getMessage( "modulesNotFound", model.getIdentifier() ) );
+        }
+
+        if ( context.isLoggable( Level.FINE ) )
+        {
+            context.log( Level.FINE, getMessage( "validatingModel", this.getClass().getName(), model.getIdentifier() ),
+                         null );
+
+        }
+
         final ModelValidationReport report = new ModelValidationReport();
 
-        for ( Module m : modules.getModule() )
+        for ( Module m : modules.getValue().getModule() )
         {
             if ( m.getImplementations() != null )
             {
@@ -85,9 +108,9 @@ public class StandaloneModelValidator implements ModelValidator
 
                     for ( MethodsType methodsType : i.getAnyObjects( MethodsType.class ) )
                     {
-                        if ( methodsType.getExceptions() != null &&
-                             methodsType.getExceptions().getDefaultException() != null &&
-                             methodsType.getExceptions().getDefaultException().getTargetClass() != null )
+                        if ( methodsType.getExceptions() != null && methodsType.getExceptions().getDefaultException()
+                                                                    != null && methodsType.getExceptions().
+                            getDefaultException().getTargetClass() != null )
                         {
                             report.getDetails().add( new ModelValidationReport.Detail(
                                 "IMPLEMENTATION_METHODS_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
@@ -101,9 +124,9 @@ public class StandaloneModelValidator implements ModelValidator
 
                         for ( MethodType methodType : methodsType.getMethod() )
                         {
-                            if ( methodType.getExceptions() != null &&
-                                 methodType.getExceptions().getDefaultException() != null &&
-                                 methodType.getExceptions().getDefaultException().getTargetClass() != null )
+                            if ( methodType.getExceptions() != null && methodType.getExceptions().getDefaultException()
+                                                                       != null && methodType.getExceptions().
+                                getDefaultException().getTargetClass() != null )
                             {
                                 report.getDetails().add( new ModelValidationReport.Detail(
                                     "IMPLEMENTATION_METHOD_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,

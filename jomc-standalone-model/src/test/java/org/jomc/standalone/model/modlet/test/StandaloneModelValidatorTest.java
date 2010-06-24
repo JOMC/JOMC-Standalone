@@ -34,12 +34,14 @@
  */
 // </editor-fold>
 // SECTION-END
-package org.jomc.standalone.model.support.test;
+package org.jomc.standalone.model.modlet.test;
 
+import org.jomc.model.ObjectFactory;
+import org.jomc.modlet.Model;
+import org.jomc.modlet.ModelContext;
+import org.jomc.modlet.ModelValidationReport;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Unmarshaller;
-import org.jomc.model.ModelContext;
-import org.jomc.model.ModelValidationReport;
 import org.jomc.model.Module;
 import org.jomc.model.Modules;
 import org.junit.Test;
@@ -49,7 +51,7 @@ import static org.junit.Assert.assertFalse;
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
- * Test cases for class {@code org.jomc.standalone.model.support.StandaloneModelValidator}.
+ * Test cases for class {@code org.jomc.standalone.model.modlet.StandaloneModelValidator}.
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version $Id$
@@ -68,7 +70,7 @@ public class StandaloneModelValidatorTest
     @Test public void testValidateModel() throws Exception
     {
         final ModelContext context = ModelContext.createModelContext( this.getClass().getClassLoader() );
-        final Unmarshaller u = context.createUnmarshaller();
+        final Unmarshaller u = context.createUnmarshaller( Modules.MODEL_PUBLIC_ID );
 
         final Modules modules = new Modules();
         final JAXBElement<Module> module =
@@ -76,7 +78,11 @@ public class StandaloneModelValidatorTest
 
         modules.getModule().add( module.getValue() );
 
-        final ModelValidationReport report = context.validateModel( modules );
+        final Model model = new Model();
+        model.setIdentifier( Modules.MODEL_PUBLIC_ID );
+        model.getAny().add( new ObjectFactory().createModules( modules ) );
+
+        final ModelValidationReport report = context.validateModel( model );
         assertFalse( report.isModelValid() );
 
         for ( ModelValidationReport.Detail d : report.getDetails() )

@@ -44,12 +44,12 @@
 
   <implementations>
     <!-- *********************************************************************************************************** -->
-    <implementation identifier="org.jomc.standalone.model.support.test.StandaloneModelValidatorTest"
-                    class="org.jomc.standalone.model.support.test.StandaloneModelValidatorTest"
+    <implementation identifier="org.jomc.standalone.model.modlet.test.StandaloneModelValidatorTest"
+                    class="org.jomc.standalone.model.modlet.test.StandaloneModelValidatorTest"
                     classDeclaration="true" name="${project.name}" version="${project.version}"
                     vendor="${project.organization.name}">
       <documentation defaultLanguage="en">
-        <text language="en">Test cases for class {@code org.jomc.standalone.model.support.StandaloneModelValidator}.</text>
+        <text language="en">Test cases for class {@code org.jomc.standalone.model.modlet.StandaloneModelValidator}.</text>
       </documentation>
       <authors>
         <author name="Christian Schulte" version="1.0" mail="schulte2005@users.sourceforge.net"

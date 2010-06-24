@@ -99,6 +99,27 @@
               </resources>
             </configuration>
           </execution>
+          <execution>
+            <id>copy-modlet</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>${basedir}/src/main/modlet</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+              <delimiters>
+                <delimiter>${*}</delimiter>
+              </delimiters>
+              <useDefaultDelimiters>false</useDefaultDelimiters>
+              <escapeWindowsPaths>true</escapeWindowsPaths>
+              <outputDirectory>${project.build.outputDirectory}/META-INF</outputDirectory>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -122,36 +143,14 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-modlet</id>
-            <phase>process-test-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <resources>
-                <resource>
-                  <directory>${basedir}/src/main/modlet</directory>
-                  <filtering>true</filtering>
-                </resource>
-              </resources>
-              <delimiters>
-                <delimiter>${*}</delimiter>
-              </delimiters>
-              <useDefaultDelimiters>false</useDefaultDelimiters>
-              <escapeWindowsPaths>true</escapeWindowsPaths>
-              <outputDirectory>${project.build.outputDirectory}/META-INF</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
   <dependencies>
+    <dependency>
+      <groupId>org.jomc</groupId>
+      <artifactId>jomc-modlet</artifactId>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>org.jomc</groupId>
       <artifactId>jomc-model</artifactId>
