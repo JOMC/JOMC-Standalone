@@ -39,6 +39,7 @@ package org.jomc.standalone.ri.naming.support;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.naming.spi.InitialContextFactory;
 import org.jomc.standalone.ri.StandaloneEnvironment;
 
 // SECTION-START[Documentation]
@@ -56,12 +57,11 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments =
+"See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
-public abstract class AbstractContextFactory
-    implements
-    javax.naming.spi.InitialContextFactory
+public abstract class AbstractContextFactory implements InitialContextFactory
 {
     // SECTION-START[InitialContextFactory]
     // SECTION-END
@@ -94,9 +94,9 @@ public abstract class AbstractContextFactory
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code AbstractContextFactory} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments =
+    "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
     public AbstractContextFactory()
     {
         // SECTION-START[Default Constructor]

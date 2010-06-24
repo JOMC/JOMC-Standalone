@@ -61,10 +61,11 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments =
+"See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
 // </editor-fold>
 // SECTION-END
-public class DataSourceContextFactory extends AbstractContextFactory
+public final class DataSourceContextFactory extends AbstractContextFactory
 {
     // SECTION-START[InitialContextFactory]
 
@@ -116,10 +117,10 @@ public class DataSourceContextFactory extends AbstractContextFactory
     {
         for ( Map.Entry p : this.getStandaloneEnvironment().getProperties().entrySet() )
         {
-            if ( p.getKey().toString().startsWith( StandaloneEnvironment.DATA_SOURCE_PREFIX ) &&
-                 !p.getKey().toString().equals( StandaloneEnvironment.DATA_SOURCE_JNDI_NAME ) &&
-                 !p.getKey().toString().equals( StandaloneEnvironment.DATA_SOURCE_CLASS_NAME ) &&
-                 !p.getKey().toString().equals( StandaloneEnvironment.DATA_SOURCE_CONTEXT_FACTORY_NAME ) )
+            if ( p.getKey().toString().startsWith( StandaloneEnvironment.DATA_SOURCE_PREFIX ) && !p.getKey().toString().
+                equals( StandaloneEnvironment.DATA_SOURCE_JNDI_NAME ) && !p.getKey().toString().equals(
+                StandaloneEnvironment.DATA_SOURCE_CLASS_NAME ) && !p.getKey().toString().equals(
+                StandaloneEnvironment.DATA_SOURCE_CONTEXT_FACTORY_NAME ) )
             {
                 final char[] chars =
                     p.getKey().toString().substring( StandaloneEnvironment.DATA_SOURCE_PREFIX.length() ).toCharArray();
@@ -214,9 +215,9 @@ public class DataSourceContextFactory extends AbstractContextFactory
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code DataSourceContextFactory} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments =
+    "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
     public DataSourceContextFactory()
     {
         // SECTION-START[Default Constructor]
