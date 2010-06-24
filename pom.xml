@@ -238,7 +238,7 @@
             </docletArtifact>
             <additionalparam>
               -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 10
-              -nodefontpackagesize 8 -outputencoding ${project.reporting.outputEncoding}
+              -nodefontpackagesize 8 -outputencoding ${project.reporting.outputEncoding} -inferdepvis protected
             </additionalparam>
             <archive>
               <index>true</index>
@@ -743,7 +743,7 @@
               </docletArtifact>
               <additionalparam>
                 -inferrel -inferdep -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 10
-                -nodefontpackagesize 8 -outputencoding ${project.reporting.outputEncoding}
+                -nodefontpackagesize 8 -outputencoding ${project.reporting.outputEncoding} -inferdepvis protected
               </additionalparam>
             </configuration>
           </reportSet>
