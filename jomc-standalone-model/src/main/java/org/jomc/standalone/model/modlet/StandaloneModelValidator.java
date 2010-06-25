@@ -41,6 +41,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javax.xml.bind.JAXBElement;
 import org.jomc.model.Implementation;
+import org.jomc.model.ModelObject;
 import org.jomc.model.Module;
 import org.jomc.model.Modules;
 import org.jomc.model.ObjectFactory;
@@ -83,64 +84,66 @@ public final class StandaloneModelValidator implements ModelValidator
             throw new NullPointerException( "model" );
         }
 
-        final JAXBElement<Modules> modules = model.getAnyElement( Modules.MODEL_PUBLIC_ID, "modules" );
-        if ( modules == null )
-        {
-            throw new ModelException( getMessage( "modulesNotFound", model.getIdentifier() ) );
-        }
-
-        if ( context.isLoggable( Level.FINE ) )
-        {
-            context.log( Level.FINE, getMessage( "validatingModel", this.getClass().getName(), model.getIdentifier() ),
-                         null );
-
-        }
-
         final ModelValidationReport report = new ModelValidationReport();
+        final JAXBElement<Modules> modules = model.getAnyElement( ModelObject.MODEL_PUBLIC_ID, "modules" );
 
-        for ( Module m : modules.getValue().getModule() )
+        if ( modules != null )
         {
-            if ( m.getImplementations() != null )
+            if ( context.isLoggable( Level.FINE ) )
             {
-                for ( Implementation i : m.getImplementations().getImplementation() )
+                context.log( Level.FINE, getMessage(
+                    "validatingModel", this.getClass().getName(), model.getIdentifier() ), null );
+
+            }
+
+            for ( Module m : modules.getValue().getModule() )
+            {
+                if ( m.getImplementations() != null )
                 {
-                    final JAXBElement<Implementation> detailElement = new ObjectFactory().createImplementation( i );
-
-                    for ( MethodsType methodsType : i.getAnyObjects( MethodsType.class ) )
+                    for ( Implementation i : m.getImplementations().getImplementation() )
                     {
-                        if ( methodsType.getExceptions() != null && methodsType.getExceptions().getDefaultException()
-                                                                    != null && methodsType.getExceptions().
-                            getDefaultException().getTargetClass() != null )
-                        {
-                            report.getDetails().add( new ModelValidationReport.Detail(
-                                "IMPLEMENTATION_METHODS_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
-                                getMessage( "implementationMethodsDefaultExceptionTargetClassConstraint",
-                                            i.getIdentifier(),
-                                            methodsType.getExceptions().getDefaultException().getClazz(),
-                                            methodsType.getExceptions().getDefaultException().getTargetClass() ),
-                                detailElement ) );
+                        final JAXBElement<Implementation> detailElement = new ObjectFactory().createImplementation( i );
 
-                        }
-
-                        for ( MethodType methodType : methodsType.getMethod() )
+                        for ( MethodsType methodsType : i.getAnyObjects( MethodsType.class ) )
                         {
-                            if ( methodType.getExceptions() != null && methodType.getExceptions().getDefaultException()
-                                                                       != null && methodType.getExceptions().
-                                getDefaultException().getTargetClass() != null )
+                            if ( methodsType.getExceptions() != null
+                                 && methodsType.getExceptions().getDefaultException() != null
+                                 && methodsType.getExceptions().getDefaultException().getTargetClass() != null )
                             {
                                 report.getDetails().add( new ModelValidationReport.Detail(
-                                    "IMPLEMENTATION_METHOD_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
-                                    getMessage( "implementationMethodDefaultExceptionTargetClassConstraint",
-                                                i.getIdentifier(), methodType.getName(),
+                                    "IMPLEMENTATION_METHODS_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
+                                    getMessage( "implementationMethodsDefaultExceptionTargetClassConstraint",
+                                                i.getIdentifier(),
                                                 methodsType.getExceptions().getDefaultException().getClazz(),
                                                 methodsType.getExceptions().getDefaultException().getTargetClass() ),
                                     detailElement ) );
 
                             }
+
+                            for ( MethodType methodType : methodsType.getMethod() )
+                            {
+                                if ( methodType.getExceptions() != null
+                                     && methodType.getExceptions().getDefaultException() != null
+                                     && methodType.getExceptions().getDefaultException().getTargetClass() != null )
+                                {
+                                    report.getDetails().add( new ModelValidationReport.Detail(
+                                        "IMPLEMENTATION_METHOD_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
+                                        getMessage( "implementationMethodDefaultExceptionTargetClassConstraint",
+                                                    i.getIdentifier(), methodType.getName(),
+                                                    methodsType.getExceptions().getDefaultException().getClazz(),
+                                                    methodsType.getExceptions().getDefaultException().getTargetClass() ),
+                                        detailElement ) );
+
+                                }
+                            }
                         }
                     }
                 }
             }
+        }
+        else if ( context.isLoggable( Level.WARNING ) )
+        {
+            context.log( Level.WARNING, getMessage( "modulesNotFound", model.getIdentifier() ), null );
         }
 
         return report;
