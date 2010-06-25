@@ -36,14 +36,15 @@
 // SECTION-END
 package org.jomc.standalone.model.modlet.test;
 
-import org.jomc.model.ObjectFactory;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.Unmarshaller;
+import org.jomc.model.ModelObject;
+import org.jomc.model.Module;
+import org.jomc.model.Modules;
+import org.jomc.model.modlet.ModelHelper;
 import org.jomc.modlet.Model;
 import org.jomc.modlet.ModelContext;
 import org.jomc.modlet.ModelValidationReport;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.Unmarshaller;
-import org.jomc.model.Module;
-import org.jomc.model.Modules;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -70,7 +71,7 @@ public class StandaloneModelValidatorTest
     @Test public void testValidateModel() throws Exception
     {
         final ModelContext context = ModelContext.createModelContext( this.getClass().getClassLoader() );
-        final Unmarshaller u = context.createUnmarshaller( Modules.MODEL_PUBLIC_ID );
+        final Unmarshaller u = context.createUnmarshaller( ModelObject.MODEL_PUBLIC_ID );
 
         final Modules modules = new Modules();
         final JAXBElement<Module> module =
@@ -79,8 +80,8 @@ public class StandaloneModelValidatorTest
         modules.getModule().add( module.getValue() );
 
         final Model model = new Model();
-        model.setIdentifier( Modules.MODEL_PUBLIC_ID );
-        model.getAny().add( new ObjectFactory().createModules( modules ) );
+        model.setIdentifier( ModelObject.MODEL_PUBLIC_ID );
+        ModelHelper.setModules( model, modules );
 
         final ModelValidationReport report = context.validateModel( model );
         assertFalse( report.isModelValid() );

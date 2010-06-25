@@ -41,10 +41,10 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javax.xml.bind.JAXBElement;
 import org.jomc.model.Implementation;
-import org.jomc.model.ModelObject;
 import org.jomc.model.Module;
 import org.jomc.model.Modules;
 import org.jomc.model.ObjectFactory;
+import org.jomc.model.modlet.ModelHelper;
 import org.jomc.modlet.Model;
 import org.jomc.modlet.ModelContext;
 import org.jomc.modlet.ModelException;
@@ -85,7 +85,7 @@ public final class StandaloneModelValidator implements ModelValidator
         }
 
         final ModelValidationReport report = new ModelValidationReport();
-        final JAXBElement<Modules> modules = model.getAnyElement( ModelObject.MODEL_PUBLIC_ID, "modules" );
+        final Modules modules = ModelHelper.getModules( model );
 
         if ( modules != null )
         {
@@ -96,7 +96,7 @@ public final class StandaloneModelValidator implements ModelValidator
 
             }
 
-            for ( Module m : modules.getValue().getModule() )
+            for ( Module m : modules.getModule() )
             {
                 if ( m.getImplementations() != null )
                 {
