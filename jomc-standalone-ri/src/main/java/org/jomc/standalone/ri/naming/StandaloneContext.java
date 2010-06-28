@@ -60,7 +60,7 @@ import javax.naming.spi.NamingManager;
 /**
  * Standalone {@code Context} implementation.
  * <p><b>Specifications</b><ul>
- * <li>{@code javax.naming.Context} {@code Multiton}</li>
+ * <li>{@code 'javax.naming.Context'} ({@code javax.naming.Context}) {@code Multiton}</li>
  * </ul></p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

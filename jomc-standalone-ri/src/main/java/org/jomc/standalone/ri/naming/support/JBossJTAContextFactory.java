@@ -56,7 +56,7 @@ import javax.sql.DataSource;
 /**
  * Standalone JBoss JTA context factory.
  * <p><b>Specifications</b><ul>
- * <li>{@code javax.naming.spi.InitialContextFactory} {@code Multiton}</li>
+ * <li>{@code 'javax.naming.spi.InitialContextFactory'} ({@code javax.naming.spi.InitialContextFactory}) {@code Multiton}</li>
  * </ul></p>
  * <p><b>Properties</b><ul>
  * <li>"{@link #isTransactionalDriverEnabled transactionalDriverEnabled}"

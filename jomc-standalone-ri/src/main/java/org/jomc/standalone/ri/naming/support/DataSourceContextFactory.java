@@ -51,7 +51,7 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 /**
  * Standalone data source context factory.
  * <p><b>Specifications</b><ul>
- * <li>{@code javax.naming.spi.InitialContextFactory} {@code Multiton}</li>
+ * <li>{@code 'javax.naming.spi.InitialContextFactory'} ({@code javax.naming.spi.InitialContextFactory}) {@code Multiton}</li>
  * </ul></p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

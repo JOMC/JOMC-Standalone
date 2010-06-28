@@ -70,11 +70,11 @@ import org.jomc.standalone.model.ExceptionsType;
 /**
  * Standalone {@code Invoker}.
  * <p><b>Specifications</b><ul>
- * <li>{@code org.jomc.spi.Invoker} {@code 1.0} {@code Multiton}</li>
+ * <li>{@code 'org.jomc.spi.Invoker'} ({@code org.jomc.spi.Invoker}) {@code 1.0} {@code Multiton}</li>
  * </ul></p>
  * <p><b>Dependencies</b><ul>
  * <li>"{@link #getLocale Locale}"<blockquote>
- * Dependency on {@code java.util.Locale} at specification level 1.1 bound to an instance.</blockquote></li>
+ * Dependency on {@code 'java.util.Locale'} ({@code java.util.Locale}) at specification level 1.1 bound to an instance.</blockquote></li>
  * </ul></p>
  * <p><b>Messages</b><ul>
  * <li>"{@link #getIllegalTransactionMessage illegalTransactionMessage}"<table>
@@ -565,7 +565,7 @@ public class StandaloneInvoker extends DefaultInvoker
 
     /**
      * Gets the {@code Locale} dependency.
-     * <p>This method returns the "{@code default}" object of the {@code java.util.Locale} specification at specification level 1.1.</p>
+     * <p>This method returns the "{@code default}" object of the {@code 'java.util.Locale'} specification at specification level 1.1.</p>
      * <p>That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.</p>
      * @return The {@code Locale} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.

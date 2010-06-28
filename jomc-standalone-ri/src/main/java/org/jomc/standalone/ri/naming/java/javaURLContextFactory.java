@@ -48,7 +48,7 @@ import org.jomc.standalone.ri.naming.StandaloneContext;
 /**
  * Standalone context factory for the ''java'' URL scheme.
  * <p><b>Specifications</b><ul>
- * <li>{@code javax.naming.spi.ObjectFactory} {@code Multiton}</li>
+ * <li>{@code 'javax.naming.spi.ObjectFactory'} ({@code javax.naming.spi.ObjectFactory}) {@code Multiton}</li>
  * </ul></p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
