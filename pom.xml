@@ -273,7 +273,7 @@
                 <goal>manage-main-sources</goal>
                 <goal>commit-main-classes</goal>
                 <goal>validate-main-classes</goal>
-                <goal>validate-main-modules</goal>
+                <goal>validate-main-model</goal>
               </goals>
             </execution>
             <execution>
@@ -283,7 +283,7 @@
                 <goal>manage-test-sources</goal>
                 <goal>commit-test-classes</goal>
                 <goal>validate-test-classes</goal>
-                <goal>validate-test-modules</goal>
+                <goal>validate-test-model</goal>
               </goals>
             </execution>
           </executions>
