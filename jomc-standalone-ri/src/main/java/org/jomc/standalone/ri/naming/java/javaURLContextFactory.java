@@ -67,33 +67,36 @@ public class javaURLContextFactory implements ObjectFactory
 
     private static Context javaContext;
 
-    public synchronized Object getObjectInstance( final Object obj, final Name name, final Context nameCtx,
-                                                  final Hashtable environment ) throws Exception
+    public Object getObjectInstance( final Object obj, final Name name, final Context nameCtx,
+                                     final Hashtable environment ) throws Exception
     {
-        if ( javaContext == null )
+        synchronized ( javaURLContextFactory.class )
         {
-            javaContext = new StandaloneContext();
-            javaContext.getEnvironment().putAll( environment );
-        }
-
-        if ( obj == null )
-        {
-            return javaContext;
-        }
-        if ( obj instanceof String && ( (String) obj ).startsWith( "java:" ) )
-        {
-            return javaContext.lookup( new CompositeName( obj.toString() ) );
-        }
-        if ( obj instanceof String[] && ( (String[]) obj ).length > 0 )
-        {
-            final String url = ( (String[]) obj )[0];
-            if ( url.startsWith( "java:" ) )
+            if ( javaContext == null )
             {
-                return javaContext.lookup( new CompositeName( ( (String[]) obj )[0] ) );
+                javaContext = new StandaloneContext();
+                javaContext.getEnvironment().putAll( environment );
             }
-        }
 
-        return null;
+            if ( obj == null )
+            {
+                return javaContext;
+            }
+            if ( obj instanceof String && ( (String) obj ).startsWith( "java:" ) )
+            {
+                return javaContext.lookup( new CompositeName( obj.toString() ) );
+            }
+            if ( obj instanceof String[] && ( (String[]) obj ).length > 0 )
+            {
+                final String url = ( (String[]) obj )[0];
+                if ( url.startsWith( "java:" ) )
+                {
+                    return javaContext.lookup( new CompositeName( ( (String[]) obj )[0] ) );
+                }
+            }
+
+            return null;
+        }
     }
 
     // SECTION-END

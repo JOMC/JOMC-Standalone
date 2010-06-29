@@ -106,8 +106,14 @@
       <action dev="schulte2005" type="update">Updated to JOMC 1.0-beta-1.</action>
     </release>
     <!-- *********************************************************************************************************** -->
-    <release version="1.0-beta-2">
-      <action dev="schulte2005" type="update">Updated to JOMC 1.0-beta-5.</action>
+    <release version="1.0-beta-2" date="2010-06-29">
+      <action dev="schulte2005" type="fix"><![CDATA[Corrected synchronization of method <code>getInitialContext</code>
+      of class <code>org.jomc.standalone.ri.naming.StandaloneContextFactory</code>.]]>
+      </action>
+      <action dev="schulte2005" type="fix"><![CDATA[Corrected synchronization of method <code>getObjectInstance</code>
+      of class <code>org.jomc.standalone.ri.naming.java.javaURLContextFactory</code>.]]>
+      </action>
+      <action dev="schulte2005" type="update">Updated to JOMC 1.0.</action>
     </release>
   </body>
 </document>

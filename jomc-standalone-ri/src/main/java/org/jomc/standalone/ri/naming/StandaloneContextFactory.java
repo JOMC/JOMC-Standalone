@@ -68,58 +68,61 @@ public class StandaloneContextFactory implements InitialContextFactory
 
     private static Context instance;
 
-    public synchronized Context getInitialContext( final Hashtable env ) throws NamingException
+    public Context getInitialContext( final Hashtable env ) throws NamingException
     {
-        try
+        synchronized ( StandaloneContextFactory.class )
         {
-            if ( instance == null )
+            try
             {
-                instance = new StandaloneContext();
-
-                if ( env != null )
+                if ( instance == null )
                 {
-                    System.getProperties().putAll( env );
-                    instance.getEnvironment().putAll( env );
+                    instance = new StandaloneContext();
 
-                    if ( this.getStandaloneEnvironment().getDataSourceContextFactoryName() != null )
+                    if ( env != null )
                     {
-                        final InitialContextFactory dataSourceContextFactory = (InitialContextFactory) Class.forName(
-                            this.getStandaloneEnvironment().getDataSourceContextFactoryName() ).newInstance();
+                        System.getProperties().putAll( env );
+                        instance.getEnvironment().putAll( env );
 
-                        dataSourceContextFactory.getInitialContext( env );
+                        if ( this.getStandaloneEnvironment().getDataSourceContextFactoryName() != null )
+                        {
+                            final InitialContextFactory dataSourceContextFactory = (InitialContextFactory) Class.forName(
+                                this.getStandaloneEnvironment().getDataSourceContextFactoryName() ).newInstance();
+
+                            dataSourceContextFactory.getInitialContext( env );
+                        }
+                        if ( this.getStandaloneEnvironment().getJtaContextFactoryName() != null )
+                        {
+                            final InitialContextFactory jtaContextFactory = (InitialContextFactory) Class.forName(
+                                this.getStandaloneEnvironment().getJtaContextFactoryName() ).newInstance();
+
+                            jtaContextFactory.getInitialContext( env );
+                        }
+                        if ( this.getStandaloneEnvironment().getJpaContextFactoryName() != null )
+                        {
+                            final InitialContextFactory jpaContextFactory = (InitialContextFactory) Class.forName(
+                                this.getStandaloneEnvironment().getJpaContextFactoryName() ).newInstance();
+
+                            jpaContextFactory.getInitialContext( env );
+                        }
+
+                        this.isXAPoolInitialized();
                     }
-                    if ( this.getStandaloneEnvironment().getJtaContextFactoryName() != null )
-                    {
-                        final InitialContextFactory jtaContextFactory = (InitialContextFactory) Class.forName(
-                            this.getStandaloneEnvironment().getJtaContextFactoryName() ).newInstance();
-
-                        jtaContextFactory.getInitialContext( env );
-                    }
-                    if ( this.getStandaloneEnvironment().getJpaContextFactoryName() != null )
-                    {
-                        final InitialContextFactory jpaContextFactory = (InitialContextFactory) Class.forName(
-                            this.getStandaloneEnvironment().getJpaContextFactoryName() ).newInstance();
-
-                        jpaContextFactory.getInitialContext( env );
-                    }
-
-                    this.isXAPoolInitialized();
                 }
-            }
 
-            return instance;
-        }
-        catch ( final InstantiationException e )
-        {
-            throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
-        }
-        catch ( final IllegalAccessException e )
-        {
-            throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
-        }
-        catch ( final ClassNotFoundException e )
-        {
-            throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
+                return instance;
+            }
+            catch ( final InstantiationException e )
+            {
+                throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
+            }
+            catch ( final IllegalAccessException e )
+            {
+                throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
+            }
+            catch ( final ClassNotFoundException e )
+            {
+                throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
+            }
         }
     }
 
