@@ -51,7 +51,7 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 /**
  * Standalone data source context factory.
  * <p><b>Specifications</b><ul>
- * <li>{@code 'javax.naming.spi.InitialContextFactory'} ({@code javax.naming.spi.InitialContextFactory}) {@code Multiton}</li>
+ * <li>{@code 'javax.naming.spi.InitialContextFactory'} {@code (javax.naming.spi.InitialContextFactory)} {@code Multiton}</li>
  * </ul></p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -61,7 +61,7 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0", comments = "See http://jomc.sourceforge.net/jomc/1.0/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public final class DataSourceContextFactory extends AbstractContextFactory
@@ -216,7 +216,7 @@ public final class DataSourceContextFactory extends AbstractContextFactory
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code DataSourceContextFactory} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0", comments = "See http://jomc.sourceforge.net/jomc/1.0/jomc-tools" )
     public DataSourceContextFactory()
     {
         // SECTION-START[Default Constructor]

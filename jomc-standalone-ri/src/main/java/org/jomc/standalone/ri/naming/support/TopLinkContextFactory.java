@@ -43,7 +43,7 @@ import javax.persistence.spi.PersistenceProvider;
 /**
  * Standalone Toplink JPA context factory.
  * <p><b>Specifications</b><ul>
- * <li>{@code 'javax.naming.spi.InitialContextFactory'} ({@code javax.naming.spi.InitialContextFactory}) {@code Multiton}</li>
+ * <li>{@code 'javax.naming.spi.InitialContextFactory'} {@code (javax.naming.spi.InitialContextFactory)} {@code Multiton}</li>
  * </ul></p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -53,7 +53,7 @@ import javax.persistence.spi.PersistenceProvider;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0", comments = "See http://jomc.sourceforge.net/jomc/1.0/jomc-tools" )
 // </editor-fold>
 // SECTION-END
 public final class TopLinkContextFactory extends AbstractJPAContextFactory
@@ -72,7 +72,7 @@ public final class TopLinkContextFactory extends AbstractJPAContextFactory
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
 
     /** Creates a new {@code TopLinkContextFactory} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0-beta-5-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.0-beta-5-SNAPSHOT/jomc-tools" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.0", comments = "See http://jomc.sourceforge.net/jomc/1.0/jomc-tools" )
     public TopLinkContextFactory()
     {
         // SECTION-START[Default Constructor]
