@@ -959,7 +959,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <xjcOutputDirectory>${project.build.directory}/generated-sources/jaxb</xjcOutputDirectory>
     <remoteResourcesOutputDirectory>${project.build.directory}/maven-shared-archive-resources</remoteResourcesOutputDirectory>
-    <jomc.version>1.0-beta-5-SNAPSHOT</jomc.version>
+    <jomc.version>1.0</jomc.version>
     <jomc-build.version>1.4</jomc-build.version>
     <surefire.version>2.5</surefire.version>
     <emma-maven-plugin.version>1.0-alpha-2</emma-maven-plugin.version>
