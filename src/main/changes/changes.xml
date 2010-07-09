@@ -115,5 +115,13 @@
       </action>
       <action dev="schulte2005" type="update">Updated to JOMC 1.0.</action>
     </release>
+    <!-- *********************************************************************************************************** -->
+    <release version="1.0-beta-3">
+      <action dev="schulte2005" type="add"><![CDATA[Added a <code>location</code> attribute to the
+      <code>@XmlSchema</code> annotation of the <code>org.jomc.standalone.model</code> package. Added a
+      <code>@XmlNs</code> annotation to the <code>@XmlSchema</code> annotation of the
+      <code>org.jomc.standalone.model</code> package.]]>
+      </action>
+    </release>
   </body>
 </document>

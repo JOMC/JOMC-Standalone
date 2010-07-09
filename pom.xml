@@ -40,7 +40,7 @@
   <packaging>pom</packaging>
   <name>JOMC Standalone</name>
   <description>JOMC Standalone is an object management and configuration standalone environment. This is the parent module of the JOMC Standalone artifacts.</description>
-  <url>http://jomc.sourceforge.net/jomc-standalone/${project.version}</url>
+  <url>http://jomc.sourceforge.net/jomc-standalone/${jomc.site.version}</url>
   <inceptionYear>2005</inceptionYear>
   <organization>
     <name>The JOMC Project</name>
@@ -287,10 +287,6 @@
               </goals>
             </execution>
           </executions>
-          <configuration>
-            <classesDirectory>${project.build.directory}/classes</classesDirectory>
-            <testClassesDirectory>${project.build.directory}/test-classes</testClassesDirectory>
-          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -371,10 +367,11 @@
               <configuration>
                 <arguments>-copy-constructor -mark-generated -Xinject-code</arguments>
                 <bindingDirectory>src/main/schemas</bindingDirectory>
-                <schemaDirectory>src/main/schemas</schemaDirectory>
                 <extension>true</extension>
-                <outputDirectory>${xjcOutputDirectory}</outputDirectory>
+                <npa>true</npa>
+                <schemaDirectory>src/main/schemas</schemaDirectory>
                 <staleFile>${project.build.directory}/xjc.staleFile</staleFile> <!-- See http://jira.codehaus.org/browse/MJAXB-34 -->
+                <outputDirectory>${xjcOutputDirectory}</outputDirectory>
               </configuration>
             </execution>
           </executions>
@@ -702,7 +699,7 @@
     <site>
       <id>jomc.sourceforge.net</id>
       <name>JOMC Site</name>
-      <url>scp://shell.sourceforge.net/home/groups/j/jo/jomc/htdocs/jomc-standalone/${project.version}</url>
+      <url>scp://shell.sourceforge.net/home/groups/j/jo/jomc/htdocs/jomc-standalone/${jomc.site.version}</url>
     </site>
   </distributionManagement>
   <reporting>
@@ -849,8 +846,8 @@
             <artifactId>maven-scm-plugin</artifactId>
             <executions>
               <execution>
-                <id>update-workdir</id>
-                <phase>validate</phase>
+                <id>initialize</id>
+                <phase>initialize</phase>
                 <goals>
                   <goal>update</goal>
                 </goals>
@@ -859,6 +856,7 @@
                 <id>main-sources</id>
                 <phase>process-resources</phase>
                 <goals>
+                  <goal>update</goal>
                   <goal>checkin</goal>
                 </goals>
               </execution>
@@ -866,6 +864,7 @@
                 <id>test-sources</id>
                 <phase>process-test-resources</phase>
                 <goals>
+                  <goal>update</goal>
                   <goal>checkin</goal>
                 </goals>
               </execution>
@@ -961,6 +960,7 @@
     <remoteResourcesOutputDirectory>${project.build.directory}/maven-shared-archive-resources</remoteResourcesOutputDirectory>
     <jomc.version>1.0</jomc.version>
     <jomc-build.version>1.4</jomc-build.version>
+    <jomc.site.version>1.0.x</jomc.site.version>
     <surefire.version>2.5</surefire.version>
     <emma-maven-plugin.version>1.0-alpha-2</emma-maven-plugin.version>
     <invoker.specification.version>1.0</invoker.specification.version>
