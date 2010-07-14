@@ -145,7 +145,7 @@ public class StandaloneContextFactory implements InitialContextFactory
         try
         {
             Class.forName( "org.enhydra.jdbc.standard.StandardXADataSource" );
-            final Class helperClass = Class.forName( "org.jomc.standalone.ri.naming.support.XAPoolHelper" );
+            final Class<?> helperClass = Class.forName( "org.jomc.standalone.ri.naming.support.XAPoolHelper" );
             final Method helperMethod = helperClass.getDeclaredMethod(
                 "initializeXAPool", StandaloneEnvironment.class, Context.class );
 
