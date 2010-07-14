@@ -130,7 +130,7 @@
         <reference identifier="org.jomc.spi.Invoker" version="${invoker.specification.version}"/>
       </specifications>
       <implementations>
-        <reference identifier="org.jomc.ri.DefaultInvoker" final="true"/>
+        <reference identifier="org.jomc.ri.DefaultInvoker" version="1.0" final="true"/>
       </implementations>
       <dependencies>
         <dependency name="Locale" identifier="java.util.Locale" bound="true" final="true" implementationName="default"
