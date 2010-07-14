@@ -453,7 +453,7 @@ public class StandaloneInvoker extends DefaultInvoker
 
             final ParametersType parametersType = new ParametersType();
 
-            for ( Class clazz : invocation.getMethod().getParameterTypes() )
+            for ( Class<?> clazz : invocation.getMethod().getParameterTypes() )
             {
                 final ParameterType parameterType = new ParameterType();
                 parameterType.setType( clazz.getName() );
