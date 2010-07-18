@@ -89,13 +89,6 @@ public final class StandaloneModelValidator implements ModelValidator
 
         if ( modules != null )
         {
-            if ( context.isLoggable( Level.FINE ) )
-            {
-                context.log( Level.FINE, getMessage(
-                    "validatingModel", this.getClass().getName(), model.getIdentifier() ), null );
-
-            }
-
             for ( Module m : modules.getModule() )
             {
                 if ( m.getImplementations() != null )
