@@ -42,7 +42,7 @@
   <artifactId>jomc-standalone-model</artifactId>
   <name>JOMC Standalone Model</name>
   <description>Object management and configuration standalone environment model.</description>
-  <url>${jomc.artifacts.url}/${project.artifacId}-${project.version}</url>
+  <url>${jomc.artifacts.url}/${project.artifactId}-${project.version}</url>
   <build>
     <resources>
       <resource>

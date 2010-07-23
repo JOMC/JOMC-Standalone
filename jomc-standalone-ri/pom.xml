@@ -43,7 +43,7 @@
   <packaging>jar</packaging>
   <name>JOMC Standalone RI</name>
   <description>Object management and configuration standalone environment reference implementation.</description>
-  <url>${jomc.artifacts.url}/${project.artifacId}-${project.version}</url>
+  <url>${jomc.artifacts.url}/${project.artifactId}-${project.version}</url>
   <build>
     <resources>
       <resource>
