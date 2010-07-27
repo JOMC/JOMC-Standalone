@@ -1011,7 +1011,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <xjcOutputDirectory>${project.build.directory}/generated-sources/jaxb</xjcOutputDirectory>
     <remoteResourcesOutputDirectory>${project.build.directory}/maven-shared-archive-resources</remoteResourcesOutputDirectory>
-    <jomc.version>1.1-SNAPSHOT</jomc.version>
+    <jomc.version>1.1</jomc.version>
     <jomc.build.version>1.5</jomc.build.version>
     <jomc.base.version>1.0</jomc.base.version>
     <jomc.artifacts.url>http://jomc.sourceforge.net/jomc-standalone/${jomc.base.version}</jomc.artifacts.url>
