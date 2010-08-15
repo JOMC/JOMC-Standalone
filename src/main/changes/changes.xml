@@ -43,6 +43,10 @@
     <!-- *********************************************************************************************************** -->
     <release version="1.0-beta-3">
       <action dev="schulte2005" type="update">Split parent changes document to a single document per artifact.</action>
+      <action dev="schulte2005" type="update"><![CDATA[POM updates:<ul>
+      <li>Updated the <code>maven-scm-plugin</code> from <code>1.3</code> to <code>1.4</code>.</li>
+      </ul>]]>
+      </action>
     </release>
   </body>
 </document>
