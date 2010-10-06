@@ -77,25 +77,25 @@ public final class DataSourceContextFactory extends AbstractContextFactory
         }
         catch ( final ClassNotFoundException e )
         {
-            throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
+            throw (NamingException) new NamingException( getMessage( e ) ).initCause( e );
         }
         catch ( final InstantiationException e )
         {
-            throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
+            throw (NamingException) new NamingException( getMessage( e ) ).initCause( e );
         }
         catch ( final IllegalAccessException e )
         {
-            throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
+            throw (NamingException) new NamingException( getMessage( e ) ).initCause( e );
         }
         catch ( final InvocationTargetException e )
         {
-            throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
+            throw (NamingException) new NamingException( getMessage( e ) ).initCause( e );
         }
     }
 
     // SECTION-END
     // SECTION-START[DataSourceContextFactory]
-    private static final Class[] NO_CLASSES =
+    private static final Class<?>[] NO_CLASSES =
     {
     };
 
@@ -114,7 +114,7 @@ public final class DataSourceContextFactory extends AbstractContextFactory
     private void setupDataSource( final Object dataSource )
         throws NamingException, IllegalAccessException, InvocationTargetException
     {
-        for ( Map.Entry p : this.getStandaloneEnvironment().getProperties().entrySet() )
+        for ( Map.Entry<?, ?> p : this.getStandaloneEnvironment().getProperties().entrySet() )
         {
             if ( p.getKey().toString().startsWith( StandaloneEnvironment.DATA_SOURCE_PREFIX )
                  && !p.getKey().toString().equals( StandaloneEnvironment.DATA_SOURCE_JNDI_NAME )
@@ -127,19 +127,19 @@ public final class DataSourceContextFactory extends AbstractContextFactory
                 chars[0] = Character.toUpperCase( chars[0] );
                 final String propertyName = String.valueOf( chars );
 
-                Method getter = this.getMethod( dataSource.getClass(), "get" + propertyName, NO_CLASSES );
+                Method getter = getMethod( dataSource.getClass(), "get" + propertyName, NO_CLASSES );
                 if ( getter == null )
                 {
-                    getter = this.getMethod( dataSource.getClass(), "is" + propertyName, NO_CLASSES );
+                    getter = getMethod( dataSource.getClass(), "is" + propertyName, NO_CLASSES );
                 }
 
-                Class propertyType = String.class;
+                Class<?> propertyType = String.class;
                 if ( getter != null )
                 {
                     propertyType = getter.getReturnType();
                 }
 
-                final Method setter = this.getMethod( dataSource.getClass(), "set" + propertyName, new Class[]
+                final Method setter = getMethod( dataSource.getClass(), "set" + propertyName, new Class<?>[]
                     {
                         propertyType
                     } );
@@ -195,7 +195,8 @@ public final class DataSourceContextFactory extends AbstractContextFactory
         }
     }
 
-    private Method getMethod( final Class clazz, final String name, final Class[] arguments ) throws NamingException
+    private static Method getMethod( final Class<?> clazz, final String name, final Class<?>[] arguments )
+        throws NamingException
     {
         try
         {
@@ -207,8 +208,13 @@ public final class DataSourceContextFactory extends AbstractContextFactory
         }
         catch ( final SecurityException e )
         {
-            throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
+            throw (NamingException) new NamingException( getMessage( e ) ).initCause( e );
         }
+    }
+
+    private static String getMessage( final Throwable t )
+    {
+        return t != null ? t.getMessage() != null ? t.getMessage() : getMessage( t.getCause() ) : null;
     }
 
     // SECTION-END

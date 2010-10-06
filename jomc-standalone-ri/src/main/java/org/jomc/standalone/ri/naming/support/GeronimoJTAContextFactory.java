@@ -82,8 +82,13 @@ public final class GeronimoJTAContextFactory extends AbstractContextFactory
         }
         catch ( final XAException e )
         {
-            throw (NamingException) new NamingException( e.getMessage() ).initCause( e );
+            throw (NamingException) new NamingException( getMessage( e ) ).initCause( e );
         }
+    }
+
+    private static String getMessage( final Throwable t )
+    {
+        return t != null ? t.getMessage() != null ? t.getMessage() : getMessage( t.getCause() ) : null;
     }
 
     // SECTION-END

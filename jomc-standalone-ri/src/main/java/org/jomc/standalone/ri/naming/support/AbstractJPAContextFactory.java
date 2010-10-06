@@ -147,7 +147,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
                     }
                     catch ( final NamingException e )
                     {
-                        throw new PersistenceException( e );
+                        throw new PersistenceException( getMessage( e ), e );
                     }
                 }
 
@@ -169,15 +169,15 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
                     }
                     catch ( final SAXException e )
                     {
-                        throw new PersistenceException( e );
+                        throw new PersistenceException( getMessage( e ), e );
                     }
                     catch ( final IOException e )
                     {
-                        throw new PersistenceException( e );
+                        throw new PersistenceException( getMessage( e ), e );
                     }
                     catch ( final ParserConfigurationException e )
                     {
-                        throw new PersistenceException( e );
+                        throw new PersistenceException( getMessage( e ), e );
                     }
                 }
 
@@ -199,7 +199,7 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
                     }
                     catch ( final IOException e )
                     {
-                        throw new PersistenceException( e );
+                        throw new PersistenceException( getMessage( e ), e );
                     }
                 }
 
@@ -221,15 +221,15 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
                     }
                     catch ( final SAXException e )
                     {
-                        throw new PersistenceException( e );
+                        throw new PersistenceException( getMessage( e ), e );
                     }
                     catch ( final IOException e )
                     {
-                        throw new PersistenceException( e );
+                        throw new PersistenceException( getMessage( e ), e );
                     }
                     catch ( final ParserConfigurationException e )
                     {
-                        throw new PersistenceException( e );
+                        throw new PersistenceException( getMessage( e ), e );
                     }
                 }
 
@@ -318,6 +318,11 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
         }
 
         return this.persistenceUnitInfo;
+    }
+
+    private static String getMessage( final Throwable t )
+    {
+        return t != null ? t.getMessage() != null ? t.getMessage() : getMessage( t.getCause() ) : null;
     }
 
     // SECTION-END

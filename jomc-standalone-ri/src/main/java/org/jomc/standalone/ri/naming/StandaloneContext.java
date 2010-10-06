@@ -92,7 +92,7 @@ public class StandaloneContext implements Context
         }
         catch ( final Exception e )
         {
-            final NamingException n = new NamingException( e.getMessage() );
+            final NamingException n = new NamingException( getMessage( e ) );
             n.setRootCause( e );
             throw n;
         }
@@ -468,6 +468,11 @@ public class StandaloneContext implements Context
         }
 
         return this.contextMap;
+    }
+
+    private static String getMessage( final Throwable t )
+    {
+        return t != null ? t.getMessage() != null ? t.getMessage() : getMessage( t.getCause() ) : null;
     }
 
     // SECTION-END

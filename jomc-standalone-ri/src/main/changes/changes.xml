@@ -41,6 +41,8 @@
   </properties>
   <body>
     <!-- *********************************************************************************************************** -->
-    <release version="1.0-beta-3"/>
+    <release version="1.0-beta-3">
+      <action dev="schulte2005" type="fix">Updated to preserve messages of caught exceptions.</action>
+    </release>
   </body>
 </document>

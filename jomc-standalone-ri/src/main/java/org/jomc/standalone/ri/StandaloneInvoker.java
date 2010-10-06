@@ -145,7 +145,7 @@ public class StandaloneInvoker extends DefaultInvoker
                     {
                         final TransactionRequiredException e =
                             new TransactionRequiredException( this.getIllegalTransactionMessage(
-                            this.getLocale(), invocation.getMethod().getName(), this.getStatusName( status ) ) );
+                            this.getLocale(), invocation.getMethod().getName(), getStatusName( status ) ) );
 
                         e.fillInStackTrace();
                         invocation.setResult( e );
@@ -157,7 +157,7 @@ public class StandaloneInvoker extends DefaultInvoker
                     {
                         final NotSupportedException e =
                             new NotSupportedException( this.getIllegalTransactionMessage(
-                            this.getLocale(), invocation.getMethod().getName(), this.getStatusName( status ) ) );
+                            this.getLocale(), invocation.getMethod().getName(), getStatusName( status ) ) );
 
                         e.fillInStackTrace();
                         invocation.setResult( e );
@@ -182,7 +182,7 @@ public class StandaloneInvoker extends DefaultInvoker
                     else if ( status != Status.STATUS_ACTIVE )
                     {
                         final SystemException e = new SystemException( this.getIllegalTransactionMessage(
-                            this.getLocale(), invocation.getMethod().getName(), this.getStatusName( status ) ) );
+                            this.getLocale(), invocation.getMethod().getName(), getStatusName( status ) ) );
 
                         e.fillInStackTrace();
                         invocation.setResult( e );
@@ -198,7 +198,7 @@ public class StandaloneInvoker extends DefaultInvoker
                     else if ( status != Status.STATUS_NO_TRANSACTION )
                     {
                         final SystemException e = new SystemException( this.getIllegalTransactionMessage(
-                            this.getLocale(), invocation.getMethod().getName(), this.getStatusName( status ) ) );
+                            this.getLocale(), invocation.getMethod().getName(), getStatusName( status ) ) );
 
                         e.fillInStackTrace();
                         invocation.setResult( e );
@@ -320,7 +320,7 @@ public class StandaloneInvoker extends DefaultInvoker
             {
                 for ( ExceptionType e : frameState.getMethodType().getExceptions().getException() )
                 {
-                    final Class handledExceptionClass = Class.forName( e.getClazz(), true, classLoader );
+                    final Class<?> handledExceptionClass = Class.forName( e.getClazz(), true, classLoader );
 
                     if ( handledExceptionClass.isAssignableFrom( invocation.getResult().getClass() ) )
                     {
@@ -340,7 +340,8 @@ public class StandaloneInvoker extends DefaultInvoker
                 if ( handledException.getTargetClass() != null )
                 {
                     final Throwable targetException =
-                        (Throwable) Class.forName( handledException.getTargetClass(), true, classLoader ).newInstance();
+                        Class.forName( handledException.getTargetClass(), true, classLoader ).
+                        asSubclass( Throwable.class ).newInstance();
 
                     targetException.initCause( (Throwable) invocation.getResult() );
                     targetException.fillInStackTrace();
@@ -349,9 +350,9 @@ public class StandaloneInvoker extends DefaultInvoker
             }
             else if ( frameState.getMethodType().getExceptions().getDefaultException() != null )
             {
-                final Throwable defaultException = (Throwable) Class.forName(
+                final Throwable defaultException = Class.forName(
                     frameState.getMethodType().getExceptions().getDefaultException().getClazz(), true, classLoader ).
-                    newInstance();
+                    asSubclass( Throwable.class ).newInstance();
 
                 defaultException.initCause( (Throwable) invocation.getResult() );
                 defaultException.fillInStackTrace();
@@ -367,21 +368,21 @@ public class StandaloneInvoker extends DefaultInvoker
         }
         catch ( final InstantiationException e )
         {
-            final ObjectManagementException oe = new ObjectManagementException( e );
+            final ObjectManagementException oe = new ObjectManagementException( getMessage( e ), e );
             oe.fillInStackTrace();
             invocation.setResult( oe );
             frameState.setRollback( true );
         }
         catch ( final IllegalAccessException e )
         {
-            final ObjectManagementException oe = new ObjectManagementException( e );
+            final ObjectManagementException oe = new ObjectManagementException( getMessage( e ), e );
             oe.fillInStackTrace();
             invocation.setResult( oe );
             frameState.setRollback( true );
         }
         catch ( final ClassNotFoundException e )
         {
-            final ObjectManagementException oe = new ObjectManagementException( e );
+            final ObjectManagementException oe = new ObjectManagementException( getMessage( e ), e );
             oe.fillInStackTrace();
             invocation.setResult( oe );
             frameState.setRollback( true );
@@ -510,7 +511,7 @@ public class StandaloneInvoker extends DefaultInvoker
         return frame;
     }
 
-    private String getStatusName( final int status ) throws SystemException, NamingException
+    private static String getStatusName( final int status ) throws SystemException, NamingException
     {
         switch ( status )
         {
@@ -546,6 +547,12 @@ public class StandaloneInvoker extends DefaultInvoker
 
         }
     }
+
+    private static String getMessage( final Throwable t )
+    {
+        return t != null ? t.getMessage() != null ? t.getMessage() : getMessage( t.getCause() ) : null;
+    }
+
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
