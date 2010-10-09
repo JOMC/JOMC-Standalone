@@ -49,6 +49,7 @@
       <li>Updated the <code>maven-surefire-report-plugin</code> from <code>2.5</code> to <code>2.6</code>.</li>
       <li>Updated the <code>maven-compiler-plugin</code> from <code>2.3.1</code> to <code>2.3.2</code>.</li>
       <li>Updated the <code>maven-checkstyle-plugin</code> from <code>2.5</code> to <code>2.6</code>.</li>
+      <li>Updated the <code>maven-release-plugin</code> from <code>2.0</code> to <code>2.1</code>.</li>
       <li>Updated <code>slf4j</code> from <code>1.6.0</code> to <code>1.6.1</code>.</li>
       <li>Updated <code>junit</code> from <code>4.8.1</code> to <code>4.8.2</code>.</li>
       <li>Added a Sourceforge logo to the generated Javadoc.</li>
