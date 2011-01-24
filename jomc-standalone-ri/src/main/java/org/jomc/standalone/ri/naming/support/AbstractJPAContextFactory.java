@@ -102,8 +102,9 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
 
     /**
      * {@inheritDoc}
-     * <p>This method creates a {@code EntityManagerFactory} using the {@code PersistenceUnitInfo} corresponding to the
-     * environment of the factory and a corresponding {@code EntityManager} binding both objects to the context  that {@code EntityManagerFactory} and the
+     * <p>This method creates an {@code EntityManagerFactory} using the {@code PersistenceUnitInfo} corresponding to the
+     * environment of the factory and uses that factory to create an {@code EntityManager} binding both objects to the
+     * context of the factory.</p>
      *
      * @param environment The possibly {@code null} environment specifying information to be used in the creation of the
      * initial context.
