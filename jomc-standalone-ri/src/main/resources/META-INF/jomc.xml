@@ -45,7 +45,8 @@
     <!-- *********************************************************************************************************** -->
     <implementation identifier="${project.name} Environment" name="${project.name} Environment"
                     class="org.jomc.standalone.ri.StandaloneEnvironment" classDeclaration="true"
-                    version="${project.version}" vendor="${project.organization.name}" stateless="true">
+                    version="${project.version}" vendor="${project.organization.name}" stateless="true"
+                    createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone environment.</text>
@@ -111,12 +112,18 @@
             <text language="en">The default class name of the {@code DataSource} backing the standalone environment.</text>
           </documentation>
         </property>
+        <property name="defaultTemporaryDirectoryName" value="jomc-standalone">
+          <documentation defaultLanguage="en">
+            <text language="en">The default name of the temporary directory backing the standalone environment.</text>
+          </documentation>
+        </property>
       </properties>
     </implementation>
     <!-- *********************************************************************************************************** -->
     <implementation identifier="${project.name} Invoker" name="${project.name} Invoker"
                     class="org.jomc.standalone.ri.StandaloneInvoker" classDeclaration="true" stateless="true"
-                    vendor="${project.organization.name}" version="${project.version}">
+                    vendor="${project.organization.name}" version="${project.version}"
+                    createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone {@code Invoker}.</text>
@@ -164,7 +171,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.StandaloneContext"
                     class="org.jomc.standalone.ri.naming.StandaloneContext" classDeclaration="true"
                     name="${project.name} StandaloneContext" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone {@code Context} implementation.</text>
@@ -182,7 +189,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.StandaloneContextFactory"
                     class="org.jomc.standalone.ri.naming.StandaloneContextFactory" classDeclaration="true"
                     name="${project.name} StandaloneContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone {@code InitialContextFactory} implementation.</text>
@@ -200,7 +207,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.java.javaURLContextFactory"
                     class="org.jomc.standalone.ri.naming.java.javaURLContextFactory" classDeclaration="true"
                     name="${project.name} javaURLContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone context factory for the ''java'' URL scheme.</text>
@@ -218,7 +225,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.support.AbstractContextFactory"
                     class="org.jomc.standalone.ri.naming.support.AbstractContextFactory" classDeclaration="true"
                     name="${project.name} AbstractContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}" abstract="true">
+                    vendor="${project.organization.name}" abstract="true" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Base context factory.</text>
@@ -236,7 +243,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.support.AbstractJPAContextFactory"
                     class="org.jomc.standalone.ri.naming.support.AbstractJPAContextFactory" classDeclaration="true"
                     name="${project.name} AbstractJPAContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}" abstract="true">
+                    vendor="${project.organization.name}" abstract="true" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Base JPA context factory.</text>
@@ -254,7 +261,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.support.DataSourceContextFactory"
                     class="org.jomc.standalone.ri.naming.support.DataSourceContextFactory" classDeclaration="true"
                     name="${project.name} DataSourceContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone data source context factory.</text>
@@ -272,7 +279,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.support.JBossJTAContextFactory"
                     class="org.jomc.standalone.ri.naming.support.JBossJTAContextFactory" classDeclaration="true"
                     name="${project.name} JBossJTAContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone JBoss JTA context factory.</text>
@@ -297,7 +304,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.support.GeronimoJTAContextFactory"
                     class="org.jomc.standalone.ri.naming.support.GeronimoJTAContextFactory" classDeclaration="true"
                     name="${project.name} GeronimoJTAContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone Geronimo JTA context factory.</text>
@@ -315,7 +322,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.support.OpenJPAContextFactory"
                     class="org.jomc.standalone.ri.naming.support.OpenJPAContextFactory" classDeclaration="true"
                     name="${project.name} OpenJPAContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone OpenJPA JPA context factory.</text>
@@ -333,7 +340,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.support.HibernateContextFactory"
                     class="org.jomc.standalone.ri.naming.support.HibernateContextFactory" classDeclaration="true"
                     name="${project.name} HibernateContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone Hibernate JPA context factory.</text>
@@ -351,7 +358,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.support.TopLinkContextFactory"
                     class="org.jomc.standalone.ri.naming.support.TopLinkContextFactory" classDeclaration="true"
                     name="${project.name} TopLinkContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone Toplink JPA context factory.</text>
@@ -369,7 +376,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.support.TopLinkTransactionController"
                     class="org.jomc.standalone.ri.naming.support.TopLinkTransactionController" classDeclaration="true"
                     name="${project.name} ToplinkTransactionController" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone Toplink {@code ExternalTransactionController}.</text>
@@ -384,7 +391,7 @@
     <implementation identifier="org.jomc.standalone.ri.naming.support.JotmContextFactory"
                     class="org.jomc.standalone.ri.naming.support.JotmContextFactory" classDeclaration="true"
                     name="${project.name} JotmContextFactory" version="${project.version}"
-                    vendor="${project.organization.name}">
+                    vendor="${project.organization.name}" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone Jonas JTA context factory.</text>

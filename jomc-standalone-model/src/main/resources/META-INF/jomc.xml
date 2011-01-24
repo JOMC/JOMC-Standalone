@@ -46,7 +46,7 @@
     <implementation identifier="org.jomc.standalone.model.modlet.StandaloneModelValidator"
                     class="org.jomc.standalone.model.modlet.StandaloneModelValidator"
                     classDeclaration="true" name="${project.name}" version="${project.version}"
-                    vendor="${project.organization.name}" stateless="true">
+                    vendor="${project.organization.name}" stateless="true" createDate="2009-07-26T19:56:45Z">
 
       <documentation defaultLanguage="en">
         <text language="en">Standalone 'ModelValidator' implementation.</text>
