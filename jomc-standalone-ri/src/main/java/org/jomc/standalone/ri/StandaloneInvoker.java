@@ -103,38 +103,181 @@ public class StandaloneInvoker extends DefaultInvoker
     // SECTION-END
     // SECTION-START[StandaloneInvoker]
 
-    private static final ThreadLocal<ThreadState> CURRENT = new ThreadLocal<ThreadState>()
+    /**
+     * State of a frame.
+     *
+     * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a>
+     * @version $Id$
+     */
+    public static class FrameState
+    {
+
+        /** Model of the method associated with the frame. */
+        private final MethodType methodType;
+
+        /** Transaction suspended due to the frame or {@code null}. */
+        private Transaction suspendedTransaction;
+
+        private boolean suspendedTransactionSet;
+
+        /** Flag indicating the frame initiated the transaction associated with the frame. */
+        private boolean transactionInitiator;
+
+        private boolean transactionInitiatorSet;
+
+        /** Flag indicating the transaction associated with this frame to be rolled back. */
+        private boolean rollback;
+
+        /**
+         * Creates a new {@code FrameState} instance.
+         *
+         * @param method The model of the method to associate with the new frame.
+         *
+         * @throws NullPointerException if {@code method} is {@code null}.
+         */
+        public FrameState( final MethodType method )
+        {
+            super();
+
+            if ( method == null )
+            {
+                throw new NullPointerException( "method" );
+            }
+
+            this.methodType = method;
+        }
+
+        /**
+         * Gets the model of the method associated with this frame.
+         *
+         * @return The model of the method associated with this frame.
+         */
+        public final MethodType getMethodType()
+        {
+            return this.methodType;
+        }
+
+        /**
+         * Gets the transaction suspended due to this frame.
+         *
+         * @return The transaction suspended due to this frame or {@code null} if no transaction got suspended due to
+         * this frame.
+         */
+        public final Transaction getSuspendedTransaction()
+        {
+            return this.suspendedTransaction;
+        }
+
+        /**
+         * Sets the transaction suspended due to this frame.
+         *
+         * @param value The new transaction suspended due to this frame or {@code null}.
+         *
+         * @throws IllegalStateException if a suspended transaction already has been set.
+         */
+        public final void setSuspendedTransaction( final Transaction value )
+        {
+            if ( this.suspendedTransactionSet )
+            {
+                throw new IllegalStateException();
+            }
+
+            this.suspendedTransaction = value;
+            this.suspendedTransactionSet = true;
+        }
+
+        /**
+         * Gets a flag indicating this frame initiated the transaction associated with this frame.
+         *
+         * @return {@code true} if this frame initiated the transaction associated with this frame; {@code false} if
+         * this frame did not initiate the transaction associated with this frame.
+         */
+        public final boolean isTransactionInitiator()
+        {
+            return this.transactionInitiator;
+        }
+
+        /**
+         * Sets the flag indicating this frame initiated the transaction associated with this frame.
+         *
+         * @param value {@code true} if this frame initiated the transaction associated with this frame; {@code false}
+         * if this frame did not initiate the transaction associated with this frame.
+         *
+         * @throws IllegalStateException if the flag indicating this frame initiated the transaction associated with
+         * this frame already has been set.
+         */
+        public final void setTransactionInitiator( final boolean value )
+        {
+            if ( this.transactionInitiatorSet )
+            {
+                throw new IllegalStateException();
+            }
+
+            this.transactionInitiator = value;
+            this.transactionInitiatorSet = true;
+        }
+
+        /**
+         * Gets a flag indicating the transaction associated with this frame to be rolled back.
+         *
+         * @return {@code true} if the transaction associated with this frame is to be rolled back; {@code false} if
+         * the transaction associated with this frame is to be committed.
+         */
+        public final boolean isRollback()
+        {
+            return this.rollback;
+        }
+
+        /**
+         * Sets the flag indicating the transaction associated with this frame to be rolled back.
+         *
+         * @param value {@code true} to roll back the transaction associated with this frame; {@code false} to commit
+         * the transaction associated with this frame.
+         */
+        public final void setRollback( final boolean value )
+        {
+            if ( !this.rollback )
+            {
+                this.rollback = value;
+            }
+        }
+
+    }
+
+    /** Environment of the instance. */
+    private StandaloneEnvironment standaloneEnvironment;
+
+    /** Context of the instance. */
+    private Context standaloneContext;
+
+    /** Thread local frames. */
+    private static final ThreadLocal<Stack<FrameState>> FRAMES = new ThreadLocal<Stack<FrameState>>()
     {
 
         @Override
-        public ThreadState initialValue()
+        public Stack<FrameState> initialValue()
         {
-            return new ThreadState();
+            return new Stack<FrameState>();
         }
 
     };
-
-    private StandaloneEnvironment standaloneEnvironment;
-
-    private Context standaloneContext;
 
     @Override
     public Invocation preInvoke( final Invocation invocation )
     {
         try
         {
-            final FrameState currentFrame = this.createFrameState( invocation );
+            final FrameState currentFrame = this.getFrameState( invocation );
             invocation.getContext().put( FrameState.class, currentFrame );
 
-            final FrameState previousFrame =
-                CURRENT.get().getFrames().isEmpty() ? null : CURRENT.get().getFrames().peek();
+            final FrameState previousFrame = FRAMES.get().isEmpty() ? null : FRAMES.get().peek();
 
             if ( previousFrame != null )
             {
                 currentFrame.setRollback( previousFrame.isRollback() );
             }
 
-            CURRENT.get().getFrames().push( currentFrame );
+            FRAMES.get().push( currentFrame );
 
             final int status = this.getTransactionManager().getStatus();
 
@@ -241,7 +384,7 @@ public class StandaloneInvoker extends DefaultInvoker
     @Override
     public Invocation postInvoke( final Invocation invocation )
     {
-        final FrameState frame = CURRENT.get().getFrames().pop();
+        final FrameState frame = FRAMES.get().pop();
 
         try
         {
@@ -332,10 +475,7 @@ public class StandaloneInvoker extends DefaultInvoker
 
             if ( handledException != null )
             {
-                if ( !frameState.isRollback() )
-                {
-                    frameState.setRollback( handledException.isRollback() );
-                }
+                frameState.setRollback( handledException.isRollback() );
 
                 if ( handledException.getTargetClass() != null )
                 {
@@ -358,12 +498,9 @@ public class StandaloneInvoker extends DefaultInvoker
                 defaultException.fillInStackTrace();
                 invocation.setResult( defaultException );
 
-                if ( !frameState.isRollback() )
-                {
-                    frameState.setRollback(
-                        frameState.getMethodType().getExceptions().getDefaultException().isRollback() );
+                frameState.setRollback(
+                    frameState.getMethodType().getExceptions().getDefaultException().isRollback() );
 
-                }
             }
         }
         catch ( final InstantiationException e )
@@ -389,8 +526,41 @@ public class StandaloneInvoker extends DefaultInvoker
         }
     }
 
+    /**
+     * Creates a new {@code FrameState} instance for a given invocation.
+     *
+     * @param invocation The invocation to create a new {@code FrameState} instance for.
+     *
+     * @return A new {@code FrameState} instance for {@code invocation}.
+     *
+     * @throws NullPointerException if {@code invocation} is {@code null}.
+     */
+    protected FrameState getFrameState( final Invocation invocation )
+    {
+        if ( invocation == null )
+        {
+            throw new NullPointerException( "invocation" );
+        }
+
+        return new FrameState( this.getMethodType( invocation ) );
+    }
+
+    /**
+     * Gets the model of the method of a given invocation.
+     *
+     * @param invocation The invocation to get the model of the associated method of.
+     *
+     * @return The model of the method of {@code invocation}.
+     *
+     * @throws NullPointerException if {@code invocation} is {@code null}.
+     */
     public MethodType getMethodType( final Invocation invocation )
     {
+        if ( invocation == null )
+        {
+            throw new NullPointerException( "invocation" );
+        }
+
         MethodType methodType = null;
         final Instance instance = (Instance) invocation.getContext().get( DefaultInvocation.INSTANCE_KEY );
 
@@ -470,7 +640,12 @@ public class StandaloneInvoker extends DefaultInvoker
         return methodType;
     }
 
-    private StandaloneEnvironment getStandaloneEnvironment()
+    /**
+     * Gets the environment of the invoker.
+     *
+     * @return The environment of the invoker.
+     */
+    protected StandaloneEnvironment getStandaloneEnvironment()
     {
         if ( this.standaloneEnvironment == null )
         {
@@ -480,7 +655,14 @@ public class StandaloneInvoker extends DefaultInvoker
         return this.standaloneEnvironment;
     }
 
-    private Context getStandaloneContext() throws NamingException
+    /**
+     * Gets the JNDI context of the invoker.
+     *
+     * @return The JNDI context of the invoker.
+     *
+     * @throws NamingException if getting the JNDI context of the invoker fails.
+     */
+    protected Context getStandaloneContext() throws NamingException
     {
         if ( this.standaloneContext == null )
         {
@@ -490,6 +672,17 @@ public class StandaloneInvoker extends DefaultInvoker
         return this.standaloneContext;
     }
 
+    /**
+     * Gets the transaction manager of the JNDI context of the invoker.
+     *
+     * @return The transaction manager of the JNDI context of the invoker.
+     *
+     * @throws NamingException if getting the transaction manager of the JNDI context of the invoker fails.
+     *
+     * @see #getStandaloneContext()
+     * @see #getStandaloneEnvironment()
+     * @see StandaloneEnvironment#getTransactionManagerJndiName()
+     */
     private TransactionManager getTransactionManager() throws NamingException
     {
         return (TransactionManager) this.getStandaloneContext().lookup(
@@ -497,6 +690,17 @@ public class StandaloneInvoker extends DefaultInvoker
 
     }
 
+    /**
+     * Gets the entity manager of the JNDI context of the invoker.
+     *
+     * @return The entity manager of the JNDI context of the invoker.
+     *
+     * @throws NamingException if getting the entity manager of the JNDI context of the invoker fails.
+     *
+     * @see #getStandaloneContext()
+     * @see #getStandaloneEnvironment()
+     * @see StandaloneEnvironment#getEntityManagerJndiName()
+     */
     private EntityManager getEntityManager() throws NamingException
     {
         return (EntityManager) this.getStandaloneContext().lookup(
@@ -504,14 +708,14 @@ public class StandaloneInvoker extends DefaultInvoker
 
     }
 
-    private FrameState createFrameState( final Invocation invocation )
-    {
-        final FrameState frame = new FrameState();
-        frame.setMethodType( this.getMethodType( invocation ) );
-        return frame;
-    }
-
-    private static String getStatusName( final int status ) throws SystemException, NamingException
+    /**
+     * Gets a name for a transaction status constant.
+     *
+     * @param status The status constant to get a name for.
+     *
+     * @return A name for {@code status}.
+     */
+    private static String getStatusName( final int status )
     {
         switch ( status )
         {
@@ -548,6 +752,13 @@ public class StandaloneInvoker extends DefaultInvoker
         }
     }
 
+    /**
+     * Gets the message of a given {@code Throwable} recursively.
+     *
+     * @param t The {@code Throwable} to get the message of.
+     *
+     * @return The message of {@code t} or {@code null} if no message is found.
+     */
     private static String getMessage( final Throwable t )
     {
         return t != null ? t.getMessage() != null ? t.getMessage() : getMessage( t.getCause() ) : null;
@@ -634,84 +845,4 @@ public class StandaloneInvoker extends DefaultInvoker
     }
     // </editor-fold>
     // SECTION-END
-}
-
-class ThreadState
-{
-
-    private Stack<FrameState> frames;
-
-    ThreadState()
-    {
-        super();
-    }
-
-    public Stack<FrameState> getFrames()
-    {
-        if ( this.frames == null )
-        {
-            this.frames = new Stack<FrameState>();
-        }
-
-        return this.frames;
-    }
-
-}
-
-class FrameState
-{
-
-    private MethodType methodType;
-
-    private Transaction suspendedTransaction;
-
-    private boolean transactionInitiator;
-
-    private boolean rollback;
-
-    FrameState()
-    {
-        super();
-    }
-
-    public MethodType getMethodType()
-    {
-        return this.methodType;
-    }
-
-    public void setMethodType( final MethodType value )
-    {
-        this.methodType = value;
-    }
-
-    public Transaction getSuspendedTransaction()
-    {
-        return this.suspendedTransaction;
-    }
-
-    public void setSuspendedTransaction( final Transaction value )
-    {
-        this.suspendedTransaction = value;
-    }
-
-    public boolean isTransactionInitiator()
-    {
-        return this.transactionInitiator;
-    }
-
-    public void setTransactionInitiator( final boolean value )
-    {
-        this.transactionInitiator = value;
-    }
-
-    public boolean isRollback()
-    {
-        return this.rollback;
-    }
-
-    public void setRollback( final boolean value )
-    {
-        this.rollback = value;
-    }
-
 }

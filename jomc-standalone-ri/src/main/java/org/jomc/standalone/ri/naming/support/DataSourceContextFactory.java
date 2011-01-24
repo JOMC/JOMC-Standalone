@@ -64,7 +64,7 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.1", comments = "See http://jomc.sourceforge.net/jomc/1.1/jomc-tools-1.1" )
 // </editor-fold>
 // SECTION-END
-public final class DataSourceContextFactory extends AbstractContextFactory
+public class DataSourceContextFactory extends AbstractContextFactory
 {
     // SECTION-START[InitialContextFactory]
 

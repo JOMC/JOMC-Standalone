@@ -56,7 +56,7 @@ import javax.persistence.spi.PersistenceProvider;
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.1", comments = "See http://jomc.sourceforge.net/jomc/1.1/jomc-tools-1.1" )
 // </editor-fold>
 // SECTION-END
-public final class TopLinkContextFactory extends AbstractJPAContextFactory
+public class TopLinkContextFactory extends AbstractJPAContextFactory
 {
     // SECTION-START[InitialContextFactory]
     // SECTION-END

@@ -57,7 +57,7 @@ import org.apache.openjpa.persistence.PersistenceProviderImpl;
 @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.1", comments = "See http://jomc.sourceforge.net/jomc/1.1/jomc-tools-1.1" )
 // </editor-fold>
 // SECTION-END
-public final class OpenJPAContextFactory extends AbstractJPAContextFactory
+public class OpenJPAContextFactory extends AbstractJPAContextFactory
 {
     // SECTION-START[InitialContextFactory]
     // SECTION-END

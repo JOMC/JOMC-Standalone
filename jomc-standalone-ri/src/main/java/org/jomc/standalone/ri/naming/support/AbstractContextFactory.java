@@ -66,10 +66,17 @@ public abstract class AbstractContextFactory implements InitialContextFactory
     // SECTION-END
     // SECTION-START[AbstractContextFactory]
 
+    /** The environment of the factory. */
     private StandaloneEnvironment standaloneEnvironment;
 
+    /** The context of the factory. */
     private Context standaloneContext;
 
+    /**
+     * Gets the environment of the factory.
+     *
+     * @return The environment of the factory.
+     */
     protected StandaloneEnvironment getStandaloneEnvironment()
     {
         if ( this.standaloneEnvironment == null )
@@ -80,6 +87,11 @@ public abstract class AbstractContextFactory implements InitialContextFactory
         return this.standaloneEnvironment;
     }
 
+    /**
+     * Gets the context of the factory.
+     *
+     * @return The context of the factory.
+     */
     protected Context getStandaloneContext() throws NamingException
     {
         if ( this.standaloneContext == null )

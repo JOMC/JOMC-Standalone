@@ -78,6 +78,10 @@ import java.util.Properties;
  * <blockquote>Property of type {@code java.lang.String}.
  * <p>The default JNDI name of the data source backing the standalone JTA implementation.</p>
  * </blockquote></li>
+ * <li>"{@link #getDefaultTemporaryDirectoryName defaultTemporaryDirectoryName}"
+ * <blockquote>Property of type {@code java.lang.String}.
+ * <p>The default name of the temporary directory backing the standalone environment.</p>
+ * </blockquote></li>
  * <li>"{@link #getDefaultTransactionManagerJndiName defaultTransactionManagerJndiName}"
  * <blockquote>Property of type {@code java.lang.String}.
  * <p>The default JNDI name the standalone {@code TransactionManager} is bound to.</p>
@@ -201,7 +205,7 @@ public class StandaloneEnvironment
      */
     public String getEntityManagerJndiName()
     {
-        return System.getProperty( ENTITY_MANAGER_JNDI_NAME, this.getDefaultEntityManagerJndiName() );
+        return this.getProperties().getProperty( ENTITY_MANAGER_JNDI_NAME, this.getDefaultEntityManagerJndiName() );
     }
 
     /**
@@ -211,7 +215,9 @@ public class StandaloneEnvironment
      */
     public String getEntityManagerFactoryJndiName()
     {
-        return System.getProperty( ENTITY_MANAGER_FACTORY_JNDI_NAME, this.getDefaultEntityManagerFactoryJndiName() );
+        return this.getProperties().getProperty( ENTITY_MANAGER_FACTORY_JNDI_NAME,
+                                                 this.getDefaultEntityManagerFactoryJndiName() );
+
     }
 
     /**
@@ -221,7 +227,9 @@ public class StandaloneEnvironment
      */
     public String getTransactionManagerJndiName()
     {
-        return System.getProperty( TRANSACTION_MANAGER_JNDI_NAME, this.getDefaultTransactionManagerJndiName() );
+        return this.getProperties().getProperty( TRANSACTION_MANAGER_JNDI_NAME,
+                                                 this.getDefaultTransactionManagerJndiName() );
+
     }
 
     /**
@@ -231,7 +239,9 @@ public class StandaloneEnvironment
      */
     public String getUserTransactionJndiName()
     {
-        return System.getProperty( USER_TRANSACTION_JNDI_NAME, this.getDefaultUserTransactionJndiName() );
+        return this.getProperties().getProperty( USER_TRANSACTION_JNDI_NAME,
+                                                 this.getDefaultUserTransactionJndiName() );
+
     }
 
     /**
@@ -241,8 +251,8 @@ public class StandaloneEnvironment
      */
     public String getTransactionSynchronizationRegistryJndiName()
     {
-        return System.getProperty( TRANSACTION_SYNCHRONIZATION_REGISTRY_JNDI_NAME,
-                                   this.getDefaultTransactionSynchronizationRegistryJndiName() );
+        return this.getProperties().getProperty( TRANSACTION_SYNCHRONIZATION_REGISTRY_JNDI_NAME,
+                                                 this.getDefaultTransactionSynchronizationRegistryJndiName() );
 
     }
 
@@ -255,7 +265,7 @@ public class StandaloneEnvironment
      */
     public String getJpaContextFactoryName()
     {
-        return System.getProperty( JPA_CONTEXT_FACTORY_NAME, this.getDefaultJpaContextFactoryName() );
+        return this.getProperties().getProperty( JPA_CONTEXT_FACTORY_NAME, this.getDefaultJpaContextFactoryName() );
     }
 
     /**
@@ -267,7 +277,7 @@ public class StandaloneEnvironment
     {
         try
         {
-            final String sysRootUrl = System.getProperty( JPA_ROOT_URL );
+            final String sysRootUrl = this.getProperties().getProperty( JPA_ROOT_URL );
 
             if ( sysRootUrl != null )
             {
@@ -281,7 +291,8 @@ public class StandaloneEnvironment
             }
             else
             {
-                final File defaultRootUrl = new File( System.getProperty( "java.io.tmpdir" ), "jomc-standalone" );
+                final File defaultRootUrl = new File( System.getProperty( "java.io.tmpdir" ),
+                                                      this.getDefaultTemporaryDirectoryName() );
 
                 if ( !defaultRootUrl.exists() )
                 {
@@ -306,7 +317,7 @@ public class StandaloneEnvironment
      */
     public String getJtaContextFactoryName()
     {
-        return System.getProperty( JTA_CONTEXT_FACTORY_NAME, this.getDefaultJtaContextFactoryName() );
+        return this.getProperties().getProperty( JTA_CONTEXT_FACTORY_NAME, this.getDefaultJtaContextFactoryName() );
     }
 
     /**
@@ -316,7 +327,7 @@ public class StandaloneEnvironment
      */
     public String getJtaDataSourceJndiName()
     {
-        return System.getProperty( JTA_DATA_SOURCE_JNDI_NAME, this.getDefaultJtaDataSourceJndiName() );
+        return this.getProperties().getProperty( JTA_DATA_SOURCE_JNDI_NAME, this.getDefaultJtaDataSourceJndiName() );
     }
 
     /**
@@ -328,7 +339,9 @@ public class StandaloneEnvironment
      */
     public String getDataSourceContextFactoryName()
     {
-        return System.getProperty( DATA_SOURCE_CONTEXT_FACTORY_NAME, this.getDefaultDataSourceContextFactoryName() );
+        return this.getProperties().getProperty( DATA_SOURCE_CONTEXT_FACTORY_NAME,
+                                                 this.getDefaultDataSourceContextFactoryName() );
+
     }
 
     /**
@@ -338,7 +351,7 @@ public class StandaloneEnvironment
      */
     public String getDataSourceClassName()
     {
-        return System.getProperty( DATA_SOURCE_CLASS_NAME, this.getDefaultDataSourceClassName() );
+        return this.getProperties().getProperty( DATA_SOURCE_CLASS_NAME, this.getDefaultDataSourceClassName() );
     }
 
     /**
@@ -348,7 +361,7 @@ public class StandaloneEnvironment
      */
     public String getDataSourceJndiName()
     {
-        return System.getProperty( DATA_SOURCE_JNDI_NAME, this.getDefaultDataSourceJndiName() );
+        return this.getProperties().getProperty( DATA_SOURCE_JNDI_NAME, this.getDefaultDataSourceJndiName() );
     }
 
     /**
@@ -358,7 +371,7 @@ public class StandaloneEnvironment
      */
     public String getDataSourceUser()
     {
-        return System.getProperty( DATA_SOURCE_USER );
+        return this.getProperties().getProperty( DATA_SOURCE_USER );
     }
 
     /**
@@ -368,7 +381,7 @@ public class StandaloneEnvironment
      */
     public String getDataSourcePassword()
     {
-        return System.getProperty( DATA_SOURCE_PASSWORD );
+        return this.getProperties().getProperty( DATA_SOURCE_PASSWORD );
     }
 
     /**
@@ -501,6 +514,19 @@ public class StandaloneEnvironment
     {
         final java.lang.String _p = (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "defaultJtaDataSourceJndiName" );
         assert _p != null : "'defaultJtaDataSourceJndiName' property not found.";
+        return _p;
+    }
+
+    /**
+     * Gets the value of the {@code defaultTemporaryDirectoryName} property.
+     * @return The default name of the temporary directory backing the standalone environment.
+     * @throws org.jomc.ObjectManagementException if getting the property instance fails.
+     */
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.1", comments = "See http://jomc.sourceforge.net/jomc/1.1/jomc-tools-1.1" )
+    private java.lang.String getDefaultTemporaryDirectoryName()
+    {
+        final java.lang.String _p = (java.lang.String) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getProperty( this, "defaultTemporaryDirectoryName" );
+        assert _p != null : "'defaultTemporaryDirectoryName' property not found.";
         return _p;
     }
 

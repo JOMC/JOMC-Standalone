@@ -84,6 +84,18 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
 {
     // SECTION-START[InitialContextFactory]
 
+    /**
+     * {@inheritDoc}
+     * <p>This method creates a {@code EntityManagerFactory} using the {@code PersistenceUnitInfo} corresponding to the
+     * environment of the factory and a corresponding {@code EntityManager} binding both objects to the context  that {@code EntityManagerFactory} and the
+     *
+     * @param environment The possibly {@code null} environment specifying information to be used in the creation of the
+     * initial context.
+     *
+     * @return {@code null}.
+     *
+     * @throws NamingException if binding the {@code EntityManager} or {@code EntityManagerFactory} fails.
+     */
     public final Context getInitialContext( final Hashtable<?, ?> environment ) throws NamingException
     {
         final EntityManagerFactory entityManagerFactory =
@@ -101,12 +113,24 @@ public abstract class AbstractJPAContextFactory extends AbstractContextFactory
 
     // SECTION-END
     // SECTION-START[AbstractJPAContextFactory]
+    /** JPA namespace URI. */
     private static final String PERSISTENCE_NS = "http://java.sun.com/xml/ns/persistence";
 
+    /** The {@code PersistenceUnitInfo} corresponding to the factories environment. */
     private PersistenceUnitInfo persistenceUnitInfo;
 
+    /**
+     * Gets the {@code PersistenceProvider} backing the factory.
+     *
+     * @return The {@code PersistenceProvider} backing the factory.
+     */
     protected abstract PersistenceProvider getPersistenceProvider();
 
+    /**
+     * Gets the {@code PersistenceUnitInfo} corresponding to the factories environment.
+     *
+     * @return The {@code PersistenceUnitInfo} corresponding to the factories environment.
+     */
     protected PersistenceUnitInfo getPersistenceUnitInfo()
     {
         if ( this.persistenceUnitInfo == null )
