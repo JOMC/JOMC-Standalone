@@ -324,8 +324,8 @@
               <configuration>
                 <rules>
                   <requireMavenVersion>
-                    <message>This project requires a 2.2.x Maven version.</message>
-                    <version>[2.2,2.3)</version>
+                    <message>This project requires Apache Maven 2.2.1 (r801777; 2009-08-06 21:16:01+0200).</message>
+                    <version>[2.2.1]</version>
                   </requireMavenVersion>
                 </rules>
               </configuration>
