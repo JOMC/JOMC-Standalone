@@ -933,6 +933,11 @@
           <minSeverity>info</minSeverity>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>net.sf.xradar</groupId>
+        <artifactId>maven-xradar-plugin</artifactId>
+        <version>1.2.2</version>
+      </plugin>
     </plugins>
   </reporting>
   <profiles>
