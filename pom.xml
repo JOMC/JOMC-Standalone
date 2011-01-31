@@ -51,6 +51,7 @@
       <name>The JOMC Project Copyright</name>
       <url>http://jomc.sourceforge.net/LICENSE.txt</url>
       <distribution>repo</distribution>
+      <comments>Simplified BSD License.</comments>
     </license>
   </licenses>
   <developers>
