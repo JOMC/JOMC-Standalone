@@ -375,36 +375,6 @@
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
-          <artifactId>jaxb2-maven-plugin</artifactId>
-          <version>1.3</version>
-          <dependencies>
-            <dependency>
-              <groupId>net.sourceforge.ccxjc</groupId>
-              <artifactId>cc-xjc-plugin</artifactId>
-              <version>1.3</version>
-            </dependency>
-          </dependencies>
-          <executions>
-            <execution>
-              <id>xjc</id>
-              <phase>generate-sources</phase>
-              <goals>
-                <goal>xjc</goal>
-              </goals>
-              <configuration>
-                <arguments>-copy-constructor -mark-generated -Xinject-code</arguments>
-                <bindingDirectory>src/main/schemas</bindingDirectory>
-                <extension>true</extension>
-                <npa>true</npa>
-                <schemaDirectory>src/main/schemas</schemaDirectory>
-                <staleFile>${project.build.directory}/xjc.staleFile</staleFile> <!-- See http://jira.codehaus.org/browse/MJAXB-34 -->
-                <outputDirectory>${xjcOutputDirectory}</outputDirectory>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
           <artifactId>animal-sniffer-maven-plugin</artifactId>
           <version>1.6</version>
           <executions>
@@ -420,6 +390,39 @@
                   <artifactId>java15</artifactId>
                   <version>1.0</version>
                 </signature>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.jvnet.jaxb2.maven2</groupId>
+          <artifactId>maven-jaxb21-plugin</artifactId>
+          <version>0.7.5</version>
+          <executions>
+            <execution>
+              <id>generate-main</id>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+              <configuration>
+                <args>
+                  <arg>-npa</arg>
+                  <arg>-copy-constructor</arg>
+                  <arg>-mark-generated</arg>
+                  <arg>-Xinject-code</arg>
+                </args>
+                <bindingDirectory>src/main/schemas</bindingDirectory>
+                <extension>true</extension>
+                <generateDirectory>${xjcOutputDirectory}</generateDirectory>
+                <readOnly>true</readOnly>
+                <schemaDirectory>src/main/schemas</schemaDirectory>
+                <plugins>
+                  <plugin>
+                    <groupId>net.sourceforge.ccxjc</groupId>
+                    <artifactId>cc-xjc-plugin</artifactId>
+                    <version>1.4</version>
+                  </plugin>
+                </plugins>
               </configuration>
             </execution>
           </executions>
