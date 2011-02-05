@@ -61,9 +61,11 @@
       <li>Updated <code>commons-lang</code> from <code>2.5</code> to <code>2.6</code>.</li>
       <li>Updated <code>jaxb-api</code> from <code>2.2.1</code> to <code>2.2.2</code>.</li>
       <li>Updated <code>jaxb-impl</code> from <code>2.2.1.1</code> to <code>2.2.2</code>.</li>
+      <li>Updated <code>jomc-build-resources</code> from <code>1.5</code> to <code>1.6</code>.</li>
       <li>Removed the <code>jaxb2-maven-plugin</code>.</li>
       <li>Added a Sourceforge logo to the generated Javadoc.</li>
       <li>Updated Javadoc Java API links to new location at Oracle.</li>
+      <li>Updated <code>animal-sniffer-maven-plugin</code> configuration to support building with JDK 1.6+.</li>
       </ul>]]>
       </action>
     </release>
