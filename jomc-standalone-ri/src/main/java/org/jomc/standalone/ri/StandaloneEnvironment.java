@@ -56,63 +56,63 @@ import java.util.Properties;
  *       <td align="left" scope="col" nowrap><b>Documentation</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultDataSourceClassName defaultDataSourceClassName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultDataSourceClassName defaultDataSourceClassName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default class name of the {@code DataSource} backing the standalone environment.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultDataSourceContextFactoryName defaultDataSourceContextFactoryName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultDataSourceContextFactoryName defaultDataSourceContextFactoryName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default class name of the {@code InitialContextFactory} providing the standalone {@code DataSource}.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultDataSourceJndiName defaultDataSourceJndiName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultDataSourceJndiName defaultDataSourceJndiName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default JNDI name of the data source backing the standalone JPA implementation.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultEntityManagerFactoryJndiName defaultEntityManagerFactoryJndiName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultEntityManagerFactoryJndiName defaultEntityManagerFactoryJndiName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default JNDI name the standalone {@code EntityManagerFactory} is bound to.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultEntityManagerJndiName defaultEntityManagerJndiName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultEntityManagerJndiName defaultEntityManagerJndiName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default JNDI name the standalone {@code EntityManager} is bound to.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultJpaContextFactoryName defaultJpaContextFactoryName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultJpaContextFactoryName defaultJpaContextFactoryName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default class name of the {@code InitialContextFactory} providing the JPA implementation backing the standalone environment.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultJtaContextFactoryName defaultJtaContextFactoryName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultJtaContextFactoryName defaultJtaContextFactoryName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default class name of the of the {@code InitialContextFactory} providing the JTA implementation backing the standalone environment.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultJtaDataSourceJndiName defaultJtaDataSourceJndiName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultJtaDataSourceJndiName defaultJtaDataSourceJndiName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default JNDI name of the data source backing the standalone JTA implementation.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultTemporaryDirectoryName defaultTemporaryDirectoryName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultTemporaryDirectoryName defaultTemporaryDirectoryName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default name of the temporary directory backing the standalone environment.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultTransactionManagerJndiName defaultTransactionManagerJndiName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultTransactionManagerJndiName defaultTransactionManagerJndiName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default JNDI name the standalone {@code TransactionManager} is bound to.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultTransactionSynchronizationRegistryJndiName defaultTransactionSynchronizationRegistryJndiName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultTransactionSynchronizationRegistryJndiName defaultTransactionSynchronizationRegistryJndiName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default JNDI name the standalone {@code TransactionSynchronizationRegistry} is bound to.</td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #getDefaultUserTransactionJndiName defaultUserTransactionJndiName}</td>
- *       <td align="left" nowrap>{@code java.lang.String}</td>
+ *       <td align="left" valign="top" nowrap>{@link #getDefaultUserTransactionJndiName defaultUserTransactionJndiName}</td>
+ *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
  *       <td align="left" valign="top">The default JNDI name the standalone {@code UserTransaction} is bound to.</td>
  *     </tr>
  *   </table>

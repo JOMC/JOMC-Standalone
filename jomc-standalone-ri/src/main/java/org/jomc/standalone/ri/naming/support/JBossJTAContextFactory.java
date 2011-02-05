@@ -85,8 +85,8 @@ import javax.sql.DataSource;
  *       <td align="left" scope="col" nowrap><b>Documentation</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@link #isTransactionalDriverEnabled transactionalDriverEnabled}</td>
- *       <td align="left" nowrap>{@code boolean}</td>
+ *       <td align="left" valign="top" nowrap>{@link #isTransactionalDriverEnabled transactionalDriverEnabled}</td>
+ *       <td align="left" valign="top" nowrap>{@code boolean}</td>
  *       <td align="left" valign="top">{@code true} to enable ArjunaJTA's transactional JDBC driver (no JDBC3 support); {@code false} to disable ArjunaJTA's transactional JDBC driver.</td>
  *     </tr>
  *   </table>
