@@ -56,6 +56,7 @@
       <li>Updated the <code>maven-assembly-plugin</code> from <code>2.2-beta-5</code> to <code>2.2</code>.</li>
       <li>Updated the <code>maven-site-plugin</code> from <code>2.1.1</code> to <code>2.2</code>.</li>
       <li>Updated the <code>clirr-maven-plugin</code> from <code>2.2.2</code> to <code>2.3</code>.</li>
+      <li>Updated the <code>emma-maven-plugin</code> from <code>1.0-alpha-2</code> to <code>1.0-alpha-3</code>.</li>
       <li>Updated <code>slf4j</code> from <code>1.6.0</code> to <code>1.6.1</code>.</li>
       <li>Updated <code>junit</code> from <code>4.8.1</code> to <code>4.8.2</code>.</li>
       <li>Updated <code>commons-lang</code> from <code>2.5</code> to <code>2.6</code>.</li>
