@@ -211,7 +211,7 @@
     <site>
       <id>jomc.sourceforge.net</id>
       <name>JOMC Site</name>
-      <url>${jomc.artifacts.distribution.url}/${project.artifacId}-${project.version}</url>
+      <url>${jomc.artifacts.distribution.url}/${project.artifactId}-${project.version}</url>
     </site>
   </distributionManagement>
   <profiles>
