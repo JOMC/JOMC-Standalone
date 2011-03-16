@@ -92,7 +92,7 @@
   <scm>
     <connection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-standalone/trunk</connection>
     <developerConnection>scm:svn:https://jomc.svn.sourceforge.net/svnroot/jomc/jomc-standalone/trunk</developerConnection>
-    <url>http://sourceforge.net/apps/trac/jomc/browser/jomc-standalone/trunk</url>
+    <url>http://jomc.sourceforge.net/project/sources?jomc-standalone/trunk</url>
   </scm>
   <build>
     <extensions>
