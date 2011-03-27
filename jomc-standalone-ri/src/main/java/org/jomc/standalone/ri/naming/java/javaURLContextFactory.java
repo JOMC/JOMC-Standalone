@@ -50,6 +50,29 @@ import org.jomc.standalone.ri.naming.StandaloneContext;
  * <p>
  *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
  *     <tr class="TableHeadingColor">
+ *       <th align="left" scope="col" colspan="2" nowrap><font size="+2">Implementation</font></th>
+ *     </tr>
+ *     <tr>
+ *       <td class="TableSubHeadingColor" align="left" nowrap><b>Identifier:</b></td>
+ *       <td class="TableRowColor" align="left" nowrap>{@code org.jomc.standalone.ri.naming.java.javaURLContextFactory}</td>
+ *     </tr>
+ *     <tr>
+ *       <td class="TableSubHeadingColor" align="left" nowrap><b>Name:</b></td>
+ *       <td class="TableRowColor" align="left" nowrap>{@code JOMC Standalone RI javaURLContextFactory}</td>
+ *     </tr>
+ *     <tr>
+ *       <td class="TableSubHeadingColor" align="left" nowrap><b>Flags:</b></td>
+ *       <td class="TableRowColor" align="left" nowrap>{@code none}</td>
+ *     </tr>
+ *     <tr>
+ *       <td class="TableSubHeadingColor" align="left" nowrap><b>Version:</b></td>
+ *       <td class="TableRowColor" align="left" nowrap>{@code 1.0-beta-3-SNAPSHOT}</td>
+ *     </tr>
+ *   </table>
+ * </p>
+ * <p>
+ *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
+ *     <tr class="TableHeadingColor">
  *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Specifications</font></th>
  *     </tr>
  *     <tr class="TableSubHeadingColor">
