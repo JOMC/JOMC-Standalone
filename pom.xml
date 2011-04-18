@@ -1104,7 +1104,7 @@
     <jomc.base.version>1.0</jomc.base.version>
     <jomc.artifacts.url>http://jomc.sourceforge.net/jomc-standalone/${jomc.base.version}</jomc.artifacts.url>
     <jomc.artifacts.distribution.url>scp://shell.sourceforge.net/home/project-web/jomc/htdocs/jomc-standalone/${jomc.base.version}</jomc.artifacts.distribution.url>
-    <surefire.version>2.8</surefire.version>
+    <surefire.version>2.8.1</surefire.version>
     <emma-maven-plugin.version>1.0-alpha-3</emma-maven-plugin.version>
     <invoker.specification.version>1.0</invoker.specification.version>
     <maven-changes-plugin.version>2.4</maven-changes-plugin.version>
