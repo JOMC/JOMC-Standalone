@@ -59,6 +59,7 @@
       <li>Updated the <code>maven-remote-resources-plugin</code> from <code>1.1</code> to <code>1.2</code>.</li>
       <li>Updated the <code>maven-resources-plugin</code> from <code>2.4.3</code> to <code>2.5</code>.</li>
       <li>Updated the <code>maven-gpg-plugin</code> from <code>1.1</code> to <code>1.2</code>.</li>
+      <li>Updated the <code>buildnumber-maven-plugin</code> from <code>1.0-beta-4</code> to <code>1.0</code>.</li>
       <li>Updated the <code>clirr-maven-plugin</code> from <code>2.2.2</code> to <code>2.3</code>.</li>
       <li>Updated the <code>emma-maven-plugin</code> from <code>1.0-alpha-2</code> to <code>1.0-alpha-3</code>.</li>
       <li>Updated the <code>findbugs-maven-plugin</code> from <code>2.3.1</code> to <code>2.3.2</code>.</li>
