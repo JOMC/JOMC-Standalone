@@ -9,10 +9,10 @@
   modification, are permitted provided that the following conditions
   are met:
 
-    * Redistributions of source code must retain the above copyright
+    o Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
 
-    * Redistributions in binary form must reproduce the above copyright
+    o Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in
       the documentation and/or other materials provided with the
       distribution.
@@ -148,7 +148,7 @@
         <message name="illegalTransactionMessage" final="true">
           <template defaultLanguage="en">
             <text language="en">Cannot invoke method ''{0}'' with a ''{1}'' transaction context.</text>
-            <text language="de">Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgeführt werden.</text>
+            <text language="de">Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgefÃ¼hrt werden.</text>
           </template>
           <arguments>
             <argument index="0" name="methodName"/>
@@ -158,7 +158,7 @@
         <message name="unsupportedTransactionMessage" final="true">
           <template defaultLanguage="en">
             <text language="en">Unsupported transaction attribute ''{1}'' invoking method ''{0}''.</text>
-            <text language="de">Ungültiges Transaktions-Attribut ''{1}'' bei der Ausführung von Methode ''{0}''.</text>
+            <text language="de">UngÃ¼ltiges Transaktions-Attribut ''{1}'' bei der AusfÃ¼hrung von Methode ''{0}''.</text>
           </template>
           <arguments>
             <argument index="0" name="methodName"/>
