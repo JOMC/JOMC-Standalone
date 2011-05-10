@@ -145,7 +145,7 @@
         <artifactId>wagon-maven-plugin</artifactId>
         <executions>
           <execution>
-            <id>sourceforge-upload</id>
+            <id>deploy-schema</id>
             <phase>site-deploy</phase>
             <goals>
               <goal>upload</goal>
