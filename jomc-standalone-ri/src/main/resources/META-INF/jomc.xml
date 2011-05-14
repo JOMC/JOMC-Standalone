@@ -148,7 +148,7 @@
         <message name="illegalTransactionMessage" final="true">
           <template defaultLanguage="en">
             <text language="en">Cannot invoke method ''{0}'' with a ''{1}'' transaction context.</text>
-            <text language="de">Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgefÃ¼hrt werden.</text>
+            <text language="de">Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgeführt werden.</text>
           </template>
           <arguments>
             <argument index="0" name="methodName"/>
@@ -158,7 +158,7 @@
         <message name="unsupportedTransactionMessage" final="true">
           <template defaultLanguage="en">
             <text language="en">Unsupported transaction attribute ''{1}'' invoking method ''{0}''.</text>
-            <text language="de">UngÃ¼ltiges Transaktions-Attribut ''{1}'' bei der AusfÃ¼hrung von Methode ''{0}''.</text>
+            <text language="de">Ungültiges Transaktions-Attribut ''{1}'' bei der Ausführung von Methode ''{0}''.</text>
           </template>
           <arguments>
             <argument index="0" name="methodName"/>
