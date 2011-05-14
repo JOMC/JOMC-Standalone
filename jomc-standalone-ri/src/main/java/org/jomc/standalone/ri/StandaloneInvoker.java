@@ -139,12 +139,12 @@ import org.jomc.standalone.model.ExceptionsType;
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalTransactionMessage illegalTransactionMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Cannot invoke method ''{0}'' with a ''{1}'' transaction context.</code></pre><hr/><pre><code>Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgef&Atilde;&frac14;hrt werden.</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Cannot invoke method ''{0}'' with a ''{1}'' transaction context.</code></pre><hr/><pre><code>Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgef&uuml;hrt werden.</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getUnsupportedTransactionMessage unsupportedTransactionMessage}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Unsupported transaction attribute ''{1}'' invoking method ''{0}''.</code></pre><hr/><pre><code>Ung&Atilde;&frac14;ltiges Transaktions-Attribut ''{1}'' bei der Ausf&Atilde;&frac14;hrung von Methode ''{0}''.</code></pre></td>
+ *       <td align="left" valign="top" nowrap><pre><code>Unsupported transaction attribute ''{1}'' invoking method ''{0}''.</code></pre><hr/><pre><code>Ung&uuml;ltiges Transaktions-Attribut ''{1}'' bei der Ausf&uuml;hrung von Methode ''{0}''.</code></pre></td>
  *     </tr>
  *   </table>
  * </p>
@@ -878,7 +878,7 @@ public class StandaloneInvoker extends DefaultInvoker
      *     </tr>
      *     <tr class="TableRow">
      *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgef&Atilde;&frac14;hrt werden.</code></pre></td>
+     *       <td align="left" valign="top" nowrap><pre><code>Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgef&uuml;hrt werden.</code></pre></td>
      *     </tr>
      *   </table>
      * </p>
@@ -911,7 +911,7 @@ public class StandaloneInvoker extends DefaultInvoker
      *     </tr>
      *     <tr class="TableRow">
      *       <td align="left" valign="top" nowrap>Deutsch</td>
-     *       <td align="left" valign="top" nowrap><pre><code>Ung&Atilde;&frac14;ltiges Transaktions-Attribut ''{1}'' bei der Ausf&Atilde;&frac14;hrung von Methode ''{0}''.</code></pre></td>
+     *       <td align="left" valign="top" nowrap><pre><code>Ung&uuml;ltiges Transaktions-Attribut ''{1}'' bei der Ausf&uuml;hrung von Methode ''{0}''.</code></pre></td>
      *     </tr>
      *   </table>
      * </p>
