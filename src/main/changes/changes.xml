@@ -61,6 +61,7 @@
       <li>Updated the <code>maven-resources-plugin</code> from <code>2.4.3</code> to <code>2.5</code>.</li>
       <li>Updated the <code>maven-gpg-plugin</code> from <code>1.1</code> to <code>1.2</code>.</li>
       <li>Updated the <code>maven-javadoc-plugin</code> from <code>2.7</code> to <code>2.8</code>.</li>
+      <li>Updated the <code>maven-project-info-reports-plugin</code> from <code>2.2</code> to <code>2.4</code>.</li>
       <li>Updated the <code>buildnumber-maven-plugin</code> from <code>1.0-beta-4</code> to <code>1.0</code>.</li>
       <li>Updated the <code>clirr-maven-plugin</code> from <code>2.2.2</code> to <code>2.3</code>.</li>
       <li>Updated the <code>emma-maven-plugin</code> from <code>1.0-alpha-2</code> to <code>1.0-alpha-3</code>.</li>
