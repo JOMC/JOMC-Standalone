@@ -131,25 +131,22 @@ import org.jomc.standalone.model.ExceptionsType;
  * <p>
  *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
  *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Messages</font></th>
+ *       <th align="left" scope="col" colspan="3" nowrap><font size="+2">Messages</font></th>
  *     </tr>
  *     <tr class="TableSubHeadingColor">
  *       <td align="left" scope="col" nowrap><b>Name</b></td>
  *       <td align="left" scope="col" nowrap><b>Flags</b></td>
  *       <td align="left" scope="col" nowrap><b>Languages</b></td>
- *       <td align="left" scope="col" nowrap><b>Default Templates</b></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getIllegalTransactionMessage illegalTransactionMessage}</td>
  *       <td align="left" valign="top" nowrap>{@code final}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Cannot invoke method ''{0}'' with a ''{1}'' transaction context.</code></pre><hr/><pre><code>Die Methode ''{0}'' kann nicht in einem ''{1}'' Transaktions-Kontext ausgef&uuml;hrt werden.</code></pre></td>
  *     </tr>
  *     <tr class="TableRowColor">
  *       <td align="left" valign="top" nowrap>{@link #getUnsupportedTransactionMessage unsupportedTransactionMessage}</td>
  *       <td align="left" valign="top" nowrap>{@code final}</td>
  *       <td align="left" valign="top" nowrap>English (default),&nbsp;Deutsch</td>
- *       <td align="left" valign="top" nowrap><pre><code>Unsupported transaction attribute ''{1}'' invoking method ''{0}''.</code></pre><hr/><pre><code>Ung&uuml;ltiges Transaktions-Attribut ''{1}'' bei der Ausf&uuml;hrung von Methode ''{0}''.</code></pre></td>
  *     </tr>
  *   </table>
  * </p>
