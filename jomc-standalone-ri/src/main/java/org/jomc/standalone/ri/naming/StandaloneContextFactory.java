@@ -48,51 +48,19 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Standalone {@code InitialContextFactory} implementation.
+ *
  * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="2" nowrap><font size="+2">Implementation</font></th>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Identifier:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code org.jomc.standalone.ri.naming.StandaloneContextFactory}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Name:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code JOMC Standalone RI StandaloneContextFactory}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Flags:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code none}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Version:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code 1.0-beta-3-SNAPSHOT}</td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Specifications</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Identifier</b></td>
- *       <td align="left" scope="col" nowrap><b>Class</b></td>
- *       <td align="left" scope="col" nowrap><b>Scope</b></td>
- *       <td align="left" scope="col" nowrap><b>Version</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" nowrap>{@code javax.naming.spi.InitialContextFactory}</td>
- *       <td align="left" nowrap>{@code javax.naming.spi.InitialContextFactory}</td>
- *       <td align="left" nowrap>{@code Multiton}</td>
- *       <td align="left" nowrap></td>
- *     </tr>
- *   </table>
+ *   This implementation is identified by identifier {@code <org.jomc.standalone.ri.naming.StandaloneContextFactory>}.
+ *   It provides objects named {@code <JOMC Standalone RI StandaloneContextFactory>} of the following specifications:
+ *
+ *   <ul>
+ *     <li>{@code <javax.naming.spi.InitialContextFactory>} at any specification level.</li>
+ *   </ul>
+ *
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
- * @version $Id$
+ * @version 1.0-beta-3-SNAPSHOT
  */
 // </editor-fold>
 // SECTION-END

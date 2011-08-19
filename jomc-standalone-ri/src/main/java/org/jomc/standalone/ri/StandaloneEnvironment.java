@@ -45,117 +45,14 @@ import java.util.Properties;
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
 /**
  * Standalone environment.
+ *
  * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="2" nowrap><font size="+2">Implementation</font></th>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Identifier:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code JOMC Standalone RI Environment}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Name:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code JOMC Standalone RI Environment}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Flags:</b></td>
- *       <td class="TableRowColor" align="left" nowrap> {@code stateless}</td>
- *     </tr>
- *     <tr>
- *       <td class="TableSubHeadingColor" align="left" nowrap><b>Version:</b></td>
- *       <td class="TableRowColor" align="left" nowrap>{@code 1.0-beta-3-SNAPSHOT}</td>
- *     </tr>
- *   </table>
- * </p>
- * <p>
- *   <table border="1" width="100%" cellpadding="3" cellspacing="0">
- *     <tr class="TableHeadingColor">
- *       <th align="left" scope="col" colspan="4" nowrap><font size="+2">Properties</font></th>
- *     </tr>
- *     <tr class="TableSubHeadingColor">
- *       <td align="left" scope="col" nowrap><b>Name</b></td>
- *       <td align="left" scope="col" nowrap><b>Type</b></td>
- *       <td align="left" scope="col" nowrap><b>Flags</b></td>
- *       <td align="left" scope="col" nowrap><b>Documentation</b></td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultDataSourceClassName defaultDataSourceClassName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default class name of the {@code DataSource} backing the standalone environment.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultDataSourceContextFactoryName defaultDataSourceContextFactoryName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default class name of the {@code InitialContextFactory} providing the standalone {@code DataSource}.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultDataSourceJndiName defaultDataSourceJndiName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default JNDI name of the data source backing the standalone JPA implementation.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultEntityManagerFactoryJndiName defaultEntityManagerFactoryJndiName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default JNDI name the standalone {@code EntityManagerFactory} is bound to.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultEntityManagerJndiName defaultEntityManagerJndiName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default JNDI name the standalone {@code EntityManager} is bound to.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultJpaContextFactoryName defaultJpaContextFactoryName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default class name of the {@code InitialContextFactory} providing the JPA implementation backing the standalone environment.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultJtaContextFactoryName defaultJtaContextFactoryName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default class name of the of the {@code InitialContextFactory} providing the JTA implementation backing the standalone environment.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultJtaDataSourceJndiName defaultJtaDataSourceJndiName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default JNDI name of the data source backing the standalone JTA implementation.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultTemporaryDirectoryName defaultTemporaryDirectoryName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default name of the temporary directory backing the standalone environment.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultTransactionManagerJndiName defaultTransactionManagerJndiName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default JNDI name the standalone {@code TransactionManager} is bound to.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultTransactionSynchronizationRegistryJndiName defaultTransactionSynchronizationRegistryJndiName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default JNDI name the standalone {@code TransactionSynchronizationRegistry} is bound to.</td>
- *     </tr>
- *     <tr class="TableRowColor">
- *       <td align="left" valign="top" nowrap>{@link #getDefaultUserTransactionJndiName defaultUserTransactionJndiName}</td>
- *       <td align="left" valign="top" nowrap>{@code java.lang.String}</td>
- *       <td align="left" valign="top" nowrap>{@code none}</td>
- *       <td align="left" valign="top">The default JNDI name the standalone {@code UserTransaction} is bound to.</td>
- *     </tr>
- *   </table>
+ *   This implementation is identified by identifier {@code <JOMC Standalone RI Environment>}.
+ *   It does not provide any specified objects.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
- * @version $Id$
+ * @version 1.0-beta-3-SNAPSHOT
  */
 // </editor-fold>
 // SECTION-END
@@ -472,7 +369,7 @@ public class StandaloneEnvironment
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
 
     /**
-     * Gets the value of the {@code defaultDataSourceClassName} property.
+     * Gets the value of the {@code <defaultDataSourceClassName>} property.
      * @return The default class name of the {@code DataSource} backing the standalone environment.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -485,7 +382,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultDataSourceContextFactoryName} property.
+     * Gets the value of the {@code <defaultDataSourceContextFactoryName>} property.
      * @return The default class name of the {@code InitialContextFactory} providing the standalone {@code DataSource}.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -498,7 +395,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultDataSourceJndiName} property.
+     * Gets the value of the {@code <defaultDataSourceJndiName>} property.
      * @return The default JNDI name of the data source backing the standalone JPA implementation.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -511,7 +408,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultEntityManagerFactoryJndiName} property.
+     * Gets the value of the {@code <defaultEntityManagerFactoryJndiName>} property.
      * @return The default JNDI name the standalone {@code EntityManagerFactory} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -524,7 +421,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultEntityManagerJndiName} property.
+     * Gets the value of the {@code <defaultEntityManagerJndiName>} property.
      * @return The default JNDI name the standalone {@code EntityManager} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -537,7 +434,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultJpaContextFactoryName} property.
+     * Gets the value of the {@code <defaultJpaContextFactoryName>} property.
      * @return The default class name of the {@code InitialContextFactory} providing the JPA implementation backing the standalone environment.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -550,7 +447,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultJtaContextFactoryName} property.
+     * Gets the value of the {@code <defaultJtaContextFactoryName>} property.
      * @return The default class name of the of the {@code InitialContextFactory} providing the JTA implementation backing the standalone environment.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -563,7 +460,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultJtaDataSourceJndiName} property.
+     * Gets the value of the {@code <defaultJtaDataSourceJndiName>} property.
      * @return The default JNDI name of the data source backing the standalone JTA implementation.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -576,7 +473,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultTemporaryDirectoryName} property.
+     * Gets the value of the {@code <defaultTemporaryDirectoryName>} property.
      * @return The default name of the temporary directory backing the standalone environment.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -589,7 +486,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultTransactionManagerJndiName} property.
+     * Gets the value of the {@code <defaultTransactionManagerJndiName>} property.
      * @return The default JNDI name the standalone {@code TransactionManager} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -602,7 +499,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultTransactionSynchronizationRegistryJndiName} property.
+     * Gets the value of the {@code <defaultTransactionSynchronizationRegistryJndiName>} property.
      * @return The default JNDI name the standalone {@code TransactionSynchronizationRegistry} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -615,7 +512,7 @@ public class StandaloneEnvironment
     }
 
     /**
-     * Gets the value of the {@code defaultUserTransactionJndiName} property.
+     * Gets the value of the {@code <defaultUserTransactionJndiName>} property.
      * @return The default JNDI name the standalone {@code UserTransaction} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
