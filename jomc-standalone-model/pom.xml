@@ -64,101 +64,109 @@
         <directory>src/test/resources</directory>
       </testResource>
     </testResources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>default-schemas-copy</id>
+              <phase>prepare-package</phase>
+              <goals>
+                <goal>copy-resources</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>${project.build.directory}/schemas</outputDirectory>
+                <resources>
+                  <resource>
+                    <directory>src/main/schemas</directory>
+                    <filtering>false</filtering>
+                    <includes>
+                      <include>*.xsd</include>
+                      <include>*.xjb</include>
+                    </includes>
+                  </resource>
+                  <resource>
+                    <directory>${remoteResourcesOutputDirectory}</directory>
+                    <filtering>false</filtering>
+                    <includes>
+                      <include>**/*.txt</include>
+                    </includes>
+                  </resource>
+                </resources>
+              </configuration>
+            </execution>
+            <execution>
+              <id>default-modlet-copy</id>
+              <phase>process-classes</phase>
+              <goals>
+                <goal>copy-resources</goal>
+              </goals>
+              <configuration>
+                <resources>
+                  <resource>
+                    <directory>${basedir}/src/main/modlet</directory>
+                    <filtering>true</filtering>
+                  </resource>
+                </resources>
+                <delimiters>
+                  <delimiter>${*}</delimiter>
+                </delimiters>
+                <useDefaultDelimiters>false</useDefaultDelimiters>
+                <escapeWindowsPaths>true</escapeWindowsPaths>
+                <outputDirectory>${project.build.outputDirectory}/META-INF</outputDirectory>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>default-schemas-jar</id>
+              <phase>prepare-package</phase>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+              <configuration>
+                <classesDirectory>${project.build.directory}/schemas</classesDirectory>
+                <classifier>schemas</classifier>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>wagon-maven-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>site-deploy-upload</id>
+              <phase>site-deploy</phase>
+              <goals>
+                <goal>upload</goal>
+              </goals>
+              <configuration>
+                <fromDir>${basedir}/src/main/schemas</fromDir>
+                <includes>*.xsd</includes>
+                <serverId>jomc.sourceforge.net</serverId>
+                <toDir>model</toDir>
+                <url>${jomc.artifacts.distribution.base.url}/standalone</url>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-schemas</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/schemas</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>src/main/schemas</directory>
-                  <filtering>false</filtering>
-                  <includes>
-                    <include>*.xsd</include>
-                    <include>*.xjb</include>
-                  </includes>
-                </resource>
-                <resource>
-                  <directory>${remoteResourcesOutputDirectory}</directory>
-                  <filtering>false</filtering>
-                  <includes>
-                    <include>**/*.txt</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-modlet</id>
-            <phase>compile</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <resources>
-                <resource>
-                  <directory>${basedir}/src/main/modlet</directory>
-                  <filtering>true</filtering>
-                </resource>
-              </resources>
-              <delimiters>
-                <delimiter>${*}</delimiter>
-              </delimiters>
-              <useDefaultDelimiters>false</useDefaultDelimiters>
-              <escapeWindowsPaths>true</escapeWindowsPaths>
-              <outputDirectory>${project.build.outputDirectory}/META-INF</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb21-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-schemas</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <classesDirectory>${project.build.directory}/schemas</classesDirectory>
-              <classifier>schemas</classifier>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>wagon-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>deploy-schema</id>
-            <phase>site-deploy</phase>
-            <goals>
-              <goal>upload</goal>
-            </goals>
-            <configuration>
-              <fromDir>${basedir}/src/main/schemas</fromDir>
-              <includes>*.xsd</includes>
-              <serverId>jomc.sourceforge.net</serverId>
-              <toDir>model</toDir>
-              <url>${jomc.artifacts.distribution.base.url}/standalone</url>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
@@ -179,21 +187,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>emma-maven-plugin</artifactId>
-        <version>${emma-maven-plugin.version}</version>
-        <configuration>
-          <sourcePaths>
-            <sourcePath>${project.build.sourceDirectory}</sourcePath>
-            <sourcePath>${xjcOutputDirectory}</sourcePath>
-          </sourcePaths>
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
   <distributionManagement>
     <site>
       <id>jomc.sourceforge.net</id>
