@@ -93,6 +93,8 @@ public abstract class AbstractContextFactory implements InitialContextFactory
      * Gets the context of the factory.
      *
      * @return The context of the factory.
+     *
+     * @throws NamingException if getting the context fails.
      */
     protected Context getStandaloneContext() throws NamingException
     {
