@@ -4,3 +4,4 @@
 /target
 /maven-eclipse.xml
 /.settings
+/jomc-standalone-model.iml
