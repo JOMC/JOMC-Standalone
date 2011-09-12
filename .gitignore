@@ -2,3 +2,5 @@
 /jomc-standalone.iml
 /target
 /jomc-standalone.iws
+/.settings
+/.project
