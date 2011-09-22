@@ -130,7 +130,6 @@
               <delimiter>${*}</delimiter>
             </delimiters>
             <useDefaultDelimiters>false</useDefaultDelimiters>
-            <escapeWindowsPaths>true</escapeWindowsPaths>
           </configuration>
         </plugin>
         <plugin>
@@ -617,18 +616,6 @@
                 <goal>check</goal>
               </goals>
               <configuration>
-                <ignoreDependencies>false</ignoreDependencies>
-                <ignores>
-                  <ignore>com.arjuna*</ignore>
-                  <ignore>javax.persistence*</ignore>
-                  <ignore>javax.transaction*</ignore>
-                  <ignore>oracle.toplink*</ignore>
-                  <ignore>org.apache*</ignore>
-                  <ignore>org.hibernate*</ignore>
-                  <ignore>org.enhydra*</ignore>
-                  <ignore>org.jomc*</ignore>
-                  <ignore>org.objectweb*</ignore>
-                </ignores>
                 <signature>
                   <groupId>org.jomc.build</groupId>
                   <artifactId>jdk15-jaxb21-signature</artifactId>
