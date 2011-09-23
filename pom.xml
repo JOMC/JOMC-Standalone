@@ -453,7 +453,11 @@
             <fail>false</fail>
             <rules>
               <requireMavenVersion>
-                <message>This project should be built using Apache Maven 3.0.3 (r1075438; 2011-02-28 18:31:09+0100).</message>
+                <message>
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! This project should be built using Apache Maven 3.0.3 (r1075438; 2011-02-28 18:31:09+0100) !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                </message>
                 <version>[3.0.3]</version>
               </requireMavenVersion>
             </rules>
