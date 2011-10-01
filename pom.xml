@@ -27,7 +27,7 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
   THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-  $JOMC$
+  $JOMC: pom.xml 3801 2011-10-01 22:18:35Z schulte2005 $
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -739,6 +739,12 @@
               </goals>
             </execution>
           </executions>
+          <configuration>
+            <templateParameters>
+              <licenseRevisionKeyword>$JOMC$</licenseRevisionKeyword>
+              <licenseSkipVendorCopyright>true</licenseSkipVendorCopyright>
+            </templateParameters>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
