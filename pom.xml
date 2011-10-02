@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-  Copyright (C) 2005 Christian Schulte <schulte2005@users.sourceforge.net>
+  Copyright (C) Christian Schulte (schulte2005@users.sourceforge.net), 2005-07-25
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -27,7 +27,7 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
   THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-  $JOMC: pom.xml 3801 2011-10-01 22:18:35Z schulte2005 $
+  $JOMC$
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
