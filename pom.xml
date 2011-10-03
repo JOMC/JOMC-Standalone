@@ -741,7 +741,7 @@
           </executions>
           <configuration>
             <templateParameters>
-              <licenseRevisionKeyword>$JOMC$</licenseRevisionKeyword>
+              <licenseRevisionKeyword>JOMC</licenseRevisionKeyword>
               <licenseSkipVendorCopyright>true</licenseSkipVendorCopyright>
             </templateParameters>
           </configuration>
