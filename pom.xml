@@ -1679,7 +1679,7 @@
     <xjcTestOutputDirectory>${project.build.directory}/generated-sources/jaxb-test</xjcTestOutputDirectory> <!-- See http://netbeans.org/bugzilla/show_bug.cgi?id=187595 -->
     <javaccOutputDirectory>${project.build.directory}/generated-sources/javacc</javaccOutputDirectory>
     <remoteResourcesOutputDirectory>${project.build.directory}/maven-shared-archive-resources</remoteResourcesOutputDirectory>
-    <surefire.version>2.9</surefire.version>
+    <surefire.version>2.10</surefire.version>
     <plugintools.version>2.9</plugintools.version> <!-- See http://jira.codehaus.org/browse/MNG-3762 -->
     <plexuscontainers.version>1.5.5</plexuscontainers.version>
     <wagon.version>1.0</wagon.version>
