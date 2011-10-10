@@ -53,15 +53,15 @@ import org.jomc.ObjectManagementException;
 import org.jomc.model.Instance;
 import org.jomc.ri.DefaultInvocation;
 import org.jomc.ri.DefaultInvoker;
+import org.jomc.spi.Invocation;
+import org.jomc.standalone.model.ExceptionType;
+import org.jomc.standalone.model.ExceptionsType;
 import org.jomc.standalone.model.MethodType;
 import org.jomc.standalone.model.MethodsType;
 import org.jomc.standalone.model.ParameterType;
 import org.jomc.standalone.model.ParametersType;
-import static org.jomc.standalone.model.TransactionAttributeType.*;
 import org.jomc.standalone.model.TransactionType;
-import org.jomc.spi.Invocation;
-import org.jomc.standalone.model.ExceptionType;
-import org.jomc.standalone.model.ExceptionsType;
+import static org.jomc.standalone.model.TransactionAttributeType.*;
 
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">

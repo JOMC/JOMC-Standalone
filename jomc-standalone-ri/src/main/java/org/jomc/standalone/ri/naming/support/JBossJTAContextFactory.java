@@ -34,12 +34,6 @@
 // SECTION-END
 package org.jomc.standalone.ri.naming.support;
 
-import com.arjuna.ats.arjuna.coordinator.TransactionReaper;
-import com.arjuna.ats.arjuna.recovery.RecoveryManager;
-import com.arjuna.ats.jdbc.TransactionalDriver;
-import com.arjuna.ats.jdbc.common.jdbcPropertyManager;
-import com.arjuna.ats.jta.common.jtaPropertyManager;
-import com.arjuna.ats.jta.utils.JNDIManager;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -48,6 +42,12 @@ import java.util.Properties;
 import javax.naming.Context;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+import com.arjuna.ats.arjuna.coordinator.TransactionReaper;
+import com.arjuna.ats.arjuna.recovery.RecoveryManager;
+import com.arjuna.ats.jdbc.TransactionalDriver;
+import com.arjuna.ats.jdbc.common.jdbcPropertyManager;
+import com.arjuna.ats.jta.common.jtaPropertyManager;
+import com.arjuna.ats.jta.utils.JNDIManager;
 
 // SECTION-START[Documentation]
 // <editor-fold defaultstate="collapsed" desc=" Generated Documentation ">
