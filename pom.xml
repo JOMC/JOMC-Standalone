@@ -460,6 +460,14 @@
                 </message>
                 <version>[3.0.3]</version>
               </requireMavenVersion>
+              <requireJavaVersion>
+                <message>
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! This project should be built using JDK 6 or any later version.                             !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                </message>
+                <version>[1.6.0,)</version>
+              </requireJavaVersion>
             </rules>
           </configuration>
         </plugin>
