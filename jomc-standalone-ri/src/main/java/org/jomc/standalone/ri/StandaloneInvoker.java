@@ -759,7 +759,6 @@ public class StandaloneInvoker extends DefaultInvoker
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code StandaloneInvoker} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
     public StandaloneInvoker()
@@ -772,7 +771,6 @@ public class StandaloneInvoker extends DefaultInvoker
     // SECTION-END
     // SECTION-START[Dependencies]
     // <editor-fold defaultstate="collapsed" desc=" Generated Dependencies ">
-
     /**
      * Gets the {@code <Locale>} dependency.
      * <p>
@@ -795,7 +793,6 @@ public class StandaloneInvoker extends DefaultInvoker
     // SECTION-END
     // SECTION-START[Messages]
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
-
     /**
      * Gets the text of the {@code <illegalTransactionMessage>} message.
      * <p><strong>Languages:</strong>
@@ -818,7 +815,6 @@ public class StandaloneInvoker extends DefaultInvoker
         assert _m != null : "'illegalTransactionMessage' message not found.";
         return _m;
     }
-
     /**
      * Gets the text of the {@code <unsupportedTransactionMessage>} message.
      * <p><strong>Languages:</strong>

@@ -350,7 +350,6 @@ public class StandaloneEnvironment
     // SECTION-END
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
-
     /** Creates a new {@code StandaloneEnvironment} instance. */
     @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
     public StandaloneEnvironment()
@@ -365,7 +364,6 @@ public class StandaloneEnvironment
     // SECTION-END
     // SECTION-START[Properties]
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
-
     /**
      * Gets the value of the {@code <defaultDataSourceClassName>} property.
      * @return The default class name of the {@code DataSource} backing the standalone environment.
@@ -378,7 +376,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultDataSourceClassName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultDataSourceContextFactoryName>} property.
      * @return The default class name of the {@code InitialContextFactory} providing the standalone {@code DataSource}.
@@ -391,7 +388,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultDataSourceContextFactoryName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultDataSourceJndiName>} property.
      * @return The default JNDI name of the data source backing the standalone JPA implementation.
@@ -404,7 +400,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultDataSourceJndiName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultEntityManagerFactoryJndiName>} property.
      * @return The default JNDI name the standalone {@code EntityManagerFactory} is bound to.
@@ -417,7 +412,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultEntityManagerFactoryJndiName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultEntityManagerJndiName>} property.
      * @return The default JNDI name the standalone {@code EntityManager} is bound to.
@@ -430,7 +424,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultEntityManagerJndiName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultJpaContextFactoryName>} property.
      * @return The default class name of the {@code InitialContextFactory} providing the JPA implementation backing the standalone environment.
@@ -443,7 +436,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultJpaContextFactoryName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultJtaContextFactoryName>} property.
      * @return The default class name of the of the {@code InitialContextFactory} providing the JTA implementation backing the standalone environment.
@@ -456,7 +448,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultJtaContextFactoryName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultJtaDataSourceJndiName>} property.
      * @return The default JNDI name of the data source backing the standalone JTA implementation.
@@ -469,7 +460,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultJtaDataSourceJndiName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultTemporaryDirectoryName>} property.
      * @return The default name of the temporary directory backing the standalone environment.
@@ -482,7 +472,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultTemporaryDirectoryName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultTransactionManagerJndiName>} property.
      * @return The default JNDI name the standalone {@code TransactionManager} is bound to.
@@ -495,7 +484,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultTransactionManagerJndiName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultTransactionSynchronizationRegistryJndiName>} property.
      * @return The default JNDI name the standalone {@code TransactionSynchronizationRegistry} is bound to.
@@ -508,7 +496,6 @@ public class StandaloneEnvironment
         assert _p != null : "'defaultTransactionSynchronizationRegistryJndiName' property not found.";
         return _p;
     }
-
     /**
      * Gets the value of the {@code <defaultUserTransactionJndiName>} property.
      * @return The default JNDI name the standalone {@code UserTransaction} is bound to.
