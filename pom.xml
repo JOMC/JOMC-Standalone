@@ -751,8 +751,15 @@
           </executions>
           <configuration>
             <templateParameters>
-              <licenseRevisionKeyword>JOMC</licenseRevisionKeyword>
-              <licenseSkipVendorCopyright>true</licenseSkipVendorCopyright>
+              <templateParameter>
+                <key>with-vendor-copyright</key>
+                <value>false</value>
+                <type>java.lang.Boolean</type>
+              </templateParameter>
+              <templateParameter>
+                <key>with-revision-keyword</key>
+                <value>JOMC</value>
+              </templateParameter>
             </templateParameters>
           </configuration>
         </plugin>
