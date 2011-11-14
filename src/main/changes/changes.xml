@@ -50,7 +50,7 @@
       <li>Updated the <code>maven-surefire-plugin</code> from <code>2.5</code> to <code>2.10</code>.</li>
       <li>Updated the <code>maven-surefire-report-plugin</code> from <code>2.5</code> to <code>2.10</code>.</li>
       <li>Updated the <code>maven-compiler-plugin</code> from <code>2.3.1</code> to <code>2.3.2</code>.</li>
-      <li>Updated the <code>maven-checkstyle-plugin</code> from <code>2.5</code> to <code>2.7</code>.</li>
+      <li>Updated the <code>maven-checkstyle-plugin</code> from <code>2.5</code> to <code>2.8</code>.</li>
       <li>Updated the <code>maven-release-plugin</code> from <code>2.0</code> to <code>2.2.1</code>.</li>
       <li>Updated the <code>maven-assembly-plugin</code> from <code>2.2-beta-5</code> to <code>2.2.1</code>.</li>
       <li>Updated the <code>maven-site-plugin</code> from <code>2.1.1</code> to <code>3.0</code>.</li>
@@ -63,6 +63,8 @@
       <li>Updated the <code>maven-project-info-reports-plugin</code> from <code>2.2</code> to <code>2.4</code>.</li>
       <li>Updated the <code>maven-jxr-plugin</code> from <code>2.2</code> to <code>2.3</code>.</li>
       <li>Updated the <code>maven-jar-plugin</code> from <code>2.3.1</code> to <code>2.3.2</code>.</li>
+      <li>Updated the <code>maven-pmd-plugin</code> from <code>2.5</code> to <code>2.6</code>.</li>
+      <li>Updated the <code>maven-shade-plugin</code> from <code>1.4</code> to <code>1.5</code>.</li>
       <li>Updated the <code>maven-deploy-plugin</code> from <code>2.5</code> to <code>2.7</code>.</li>
       <li>Updated the <code>build-helper-maven-plugin</code> from <code>1.5</code> to <code>1.7</code>.</li>
       <li>Updated the <code>buildnumber-maven-plugin</code> from <code>1.0-beta-4</code> to <code>1.0</code>.</li>
