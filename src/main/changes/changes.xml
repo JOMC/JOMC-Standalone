@@ -46,15 +46,15 @@
       <li>Added the <code>maven-jaxb21-plugin</code> replacing the <code>jaxb2-maven-plugin</code>.</li>
       <li>Added the <code>wagon-maven-plugin</code> to plugin management.</li>
       <li>Updated the <code>maven-changes-plugin</code> from <code>2.2</code> to <code>2.6</code>.</li>
-      <li>Updated the <code>maven-scm-plugin</code> from <code>1.3</code> to <code>1.5</code>.</li>
-      <li>Updated the <code>maven-surefire-plugin</code> from <code>2.5</code> to <code>2.10</code>.</li>
-      <li>Updated the <code>maven-surefire-report-plugin</code> from <code>2.5</code> to <code>2.10</code>.</li>
+      <li>Updated the <code>maven-scm-plugin</code> from <code>1.3</code> to <code>1.6</code>.</li>
+      <li>Updated the <code>maven-surefire-plugin</code> from <code>2.5</code> to <code>2.11</code>.</li>
+      <li>Updated the <code>maven-surefire-report-plugin</code> from <code>2.5</code> to <code>2.11</code>.</li>
       <li>Updated the <code>maven-compiler-plugin</code> from <code>2.3.1</code> to <code>2.3.2</code>.</li>
       <li>Updated the <code>maven-checkstyle-plugin</code> from <code>2.5</code> to <code>2.8</code>.</li>
       <li>Updated the <code>maven-release-plugin</code> from <code>2.0</code> to <code>2.2.1</code>.</li>
-      <li>Updated the <code>maven-assembly-plugin</code> from <code>2.2-beta-5</code> to <code>2.2.1</code>.</li>
+      <li>Updated the <code>maven-assembly-plugin</code> from <code>2.2-beta-5</code> to <code>2.2.2</code>.</li>
       <li>Updated the <code>maven-site-plugin</code> from <code>2.1.1</code> to <code>3.0</code>.</li>
-      <li>Updated the <code>maven-dependency-plugin</code> from <code>2.1</code> to <code>2.3</code>.</li>
+      <li>Updated the <code>maven-dependency-plugin</code> from <code>2.1</code> to <code>2.4</code>.</li>
       <li>Updated the <code>maven-deploy-plugin</code> from <code>2.5</code> to <code>2.6</code>.</li>
       <li>Updated the <code>maven-remote-resources-plugin</code> from <code>1.1</code> to <code>1.2.1</code>.</li>
       <li>Updated the <code>maven-resources-plugin</code> from <code>2.4.3</code> to <code>2.5</code>.</li>
@@ -70,7 +70,7 @@
       <li>Updated the <code>buildnumber-maven-plugin</code> from <code>1.0-beta-4</code> to <code>1.0</code>.</li>
       <li>Updated the <code>clirr-maven-plugin</code> from <code>2.2.2</code> to <code>2.3</code>.</li>
       <li>Updated the <code>emma-maven-plugin</code> from <code>1.0-alpha-2</code> to <code>1.0-alpha-3</code>.</li>
-      <li>Updated the <code>findbugs-maven-plugin</code> from <code>2.3.1</code> to <code>2.3.2</code>.</li>
+      <li>Updated the <code>findbugs-maven-plugin</code> from <code>2.3.1</code> to <code>2.3.3</code>.</li>
       <li>Updated the <code>xml-maven-plugin</code> from <code>1.0-beta-3</code> to <code>1.0</code>.</li>
       <li>Updated the <code>cc-xjc-plugin</code> from <code>1.3</code> to <code>2.0</code>.</li>
       <li>Updated <code>slf4j</code> from <code>1.6.0</code> to <code>1.6.1</code>.</li>
