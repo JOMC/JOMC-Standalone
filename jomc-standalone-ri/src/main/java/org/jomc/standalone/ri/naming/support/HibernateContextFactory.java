@@ -44,13 +44,14 @@ import org.hibernate.ejb.HibernatePersistence;
  * Standalone Hibernate JPA context factory.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.standalone.ri.naming.support.HibernateContextFactory>}.
+ *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.support.HibernateContextFactory>}.
+ * </p>
+ * <p>
  *   It provides objects named {@code <JOMC Standalone RI HibernateContextFactory>} of the following specifications:
  *
  *   <ul>
  *     <li>{@code <javax.naming.spi.InitialContextFactory>} at any specification level.</li>
  *   </ul>
- *
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

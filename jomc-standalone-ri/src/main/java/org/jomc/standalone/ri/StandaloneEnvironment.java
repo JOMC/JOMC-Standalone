@@ -45,9 +45,11 @@ import java.util.Properties;
  * Standalone environment.
  *
  * <p>
- *   This implementation is identified by identifier {@code <JOMC Standalone RI Environment>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <JOMC Standalone RI Environment>}.
  * </p>
+ * <dl>
+ *   <dt><b>Stateless:</b></dt><dd>No state is retained.</dd>
+ * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0-beta-3-SNAPSHOT

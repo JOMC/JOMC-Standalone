@@ -43,13 +43,14 @@ import org.apache.openjpa.persistence.PersistenceProviderImpl;
  * Standalone OpenJPA JPA context factory.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.standalone.ri.naming.support.OpenJPAContextFactory>}.
+ *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.support.OpenJPAContextFactory>}.
+ * </p>
+ * <p>
  *   It provides objects named {@code <JOMC Standalone RI OpenJPAContextFactory>} of the following specifications:
  *
  *   <ul>
  *     <li>{@code <javax.naming.spi.InitialContextFactory>} at any specification level.</li>
  *   </ul>
- *
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

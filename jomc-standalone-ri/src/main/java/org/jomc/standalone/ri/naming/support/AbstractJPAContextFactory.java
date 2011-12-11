@@ -66,9 +66,18 @@ import org.xml.sax.SAXException;
  * Base JPA context factory.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.standalone.ri.naming.support.AbstractJPAContextFactory>}.
- *   It does not provide any specified objects due to flag {@code <abstract>}.
+ *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.support.AbstractJPAContextFactory>}.
  * </p>
+ * <p>
+ *   It provides objects named {@code <JOMC Standalone RI AbstractJPAContextFactory>} of the following specifications:
+ *
+ *   <ul>
+ *     <li>{@code <javax.naming.spi.InitialContextFactory>} at any specification level.</li>
+ *   </ul>
+ * </p>
+ * <dl>
+ *   <dt><b>Abstract:</b></dt><dd>An {@code ObjectManager} does not produce objects.</dd>
+ * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0-beta-3-SNAPSHOT

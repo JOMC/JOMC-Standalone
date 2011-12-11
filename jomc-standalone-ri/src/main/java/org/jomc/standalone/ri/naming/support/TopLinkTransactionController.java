@@ -44,8 +44,7 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
  * Standalone Toplink {@code ExternalTransactionController}.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.standalone.ri.naming.support.TopLinkTransactionController>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.support.TopLinkTransactionController>}.
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

@@ -69,15 +69,18 @@ import static org.jomc.standalone.model.TransactionAttributeType.*;
  * Standalone {@code Invoker}.
  *
  * <p>
- *   This implementation is identified by identifier {@code <JOMC Standalone RI Invoker>}.
+ *   This implementation is identified by {@code <JOMC Standalone RI Invoker>}.
+ * </p>
+ * <p>
  *   It provides objects named {@code <JOMC Standalone RI Invoker>} of the following specifications:
  *
  *   <ul>
  *     <li>{@code <org.jomc.spi.Invoker>} at specification level 1.0.</li>
  *   </ul>
- *
- *   No state is retained across operations due to flag {@code <stateless>}.
  * </p>
+ * <dl>
+ *   <dt><b>Stateless:</b></dt><dd>No state is retained.</dd>
+ * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0-beta-3-SNAPSHOT
@@ -777,6 +780,9 @@ public class StandaloneInvoker extends DefaultInvoker
      *   This method returns the {@code <default>} object of the {@code <java.util.Locale>} specification at specification level 1.1.
      *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>Descendant implementations cannot override this dependency.</dd>
+     * </dl>
      * @return The {@code <Locale>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
@@ -801,6 +807,9 @@ public class StandaloneInvoker extends DefaultInvoker
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>Descendant implementations cannot override this message.</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @param methodName Format argument.
@@ -823,6 +832,9 @@ public class StandaloneInvoker extends DefaultInvoker
      *     <li>Deutsch</li>
      *   </ul>
      * </p>
+     * <dl>
+     *   <dt><b>Final:</b></dt><dd>Descendant implementations cannot override this message.</dd>
+     * </dl>
      *
      * @param locale The locale of the message to return.
      * @param methodName Format argument.

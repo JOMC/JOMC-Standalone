@@ -45,13 +45,14 @@ import org.objectweb.jotm.Jotm;
  * Standalone Jonas JTA context factory.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.standalone.ri.naming.support.JotmContextFactory>}.
+ *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.support.JotmContextFactory>}.
+ * </p>
+ * <p>
  *   It provides objects named {@code <JOMC Standalone RI JotmContextFactory>} of the following specifications:
  *
  *   <ul>
  *     <li>{@code <javax.naming.spi.InitialContextFactory>} at any specification level.</li>
  *   </ul>
- *
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

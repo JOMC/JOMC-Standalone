@@ -59,13 +59,14 @@ import javax.naming.spi.NamingManager;
  * Standalone {@code Context} implementation.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.standalone.ri.naming.StandaloneContext>}.
+ *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.StandaloneContext>}.
+ * </p>
+ * <p>
  *   It provides objects named {@code <JOMC Standalone RI StandaloneContext>} of the following specifications:
  *
  *   <ul>
  *     <li>{@code <javax.naming.Context>} at any specification level.</li>
  *   </ul>
- *
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0

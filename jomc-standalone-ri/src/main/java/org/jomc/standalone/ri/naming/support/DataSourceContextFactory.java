@@ -50,13 +50,14 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
  * Standalone data source context factory.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.standalone.ri.naming.support.DataSourceContextFactory>}.
+ *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.support.DataSourceContextFactory>}.
+ * </p>
+ * <p>
  *   It provides objects named {@code <JOMC Standalone RI DataSourceContextFactory>} of the following specifications:
  *
  *   <ul>
  *     <li>{@code <javax.naming.spi.InitialContextFactory>} at any specification level.</li>
  *   </ul>
- *
  * </p>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
