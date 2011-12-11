@@ -57,9 +57,11 @@ import org.jomc.standalone.model.MethodsType;
  * Standalone 'ModelValidator' implementation.
  *
  * <p>
- *   This implementation is identified by identifier {@code <org.jomc.standalone.model.modlet.StandaloneModelValidator>}.
- *   It does not provide any specified objects.
+ *   This implementation is identified by {@code <org.jomc.standalone.model.modlet.StandaloneModelValidator>}.
  * </p>
+ * <dl>
+ *   <dt><b>Stateless:</b></dt><dd>No state is retained.</dd>
+ * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
  * @version 1.0-beta-3-SNAPSHOT
