@@ -93,6 +93,16 @@
       <xsd:element ref="standalone:transaction" minOccurs="0" maxOccurs="1"/>
       <xsd:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
     </xsd:sequence>
+    <xsd:attribute name="final" type="xsd:boolean" use="optional" default="false">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">Flag indicating the list of methods is the final node in an inheritance hierarchy.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="override" type="xsd:boolean" use="optional" default="false">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">Flag indicating the list of methods is intended to override a super list of methods.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
     <xsd:anyAttribute namespace="##any" processContents="lax"/>
   </xsd:complexType>
   <!-- ************************************************************************************************************* -->

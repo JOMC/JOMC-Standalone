@@ -35,6 +35,7 @@
                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                xmlns:standalone="http://jomc.org/standalone/model"
                xmlns:ci="http://jaxb.dev.java.net/plugin/code-injector"
+               xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
                version="2.0">
 
   <jaxb:bindings schemaLocation="jomc-standalone-1.0.xsd">
@@ -82,6 +83,9 @@
         return null;
     }]]>
       </ci:code>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='MethodsType']">
+      <inheritance:implements>org.jomc.model.Inheritable</inheritance:implements>
     </jaxb:bindings>
     <!-- *********************************************************************************************************** -->
     <jaxb:bindings node="xs:complexType[@name='MethodType']/xs:attribute[@name='name']">

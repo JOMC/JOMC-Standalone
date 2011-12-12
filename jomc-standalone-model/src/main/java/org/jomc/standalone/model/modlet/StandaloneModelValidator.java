@@ -111,7 +111,7 @@ public final class StandaloneModelValidator implements ModelValidator
                                 report.getDetails().add( new ModelValidationReport.Detail(
                                     "IMPLEMENTATION_METHODS_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
                                     getMessage( "implementationMethodsDefaultExceptionTargetClassConstraint",
-                                                i.getIdentifier(),
+                                                i.getIdentifier(), m.getName(),
                                                 methodsType.getExceptions().getDefaultException().getClazz(),
                                                 methodsType.getExceptions().getDefaultException().getTargetClass() ),
                                     detailElement ) );
@@ -127,7 +127,7 @@ public final class StandaloneModelValidator implements ModelValidator
                                     report.getDetails().add( new ModelValidationReport.Detail(
                                         "IMPLEMENTATION_METHOD_DEFAULT_EXCEPTION_TARGET_CLASS_CONSTRAINT", Level.SEVERE,
                                         getMessage( "implementationMethodDefaultExceptionTargetClassConstraint",
-                                                    i.getIdentifier(), methodType.getName(),
+                                                    i.getIdentifier(), m.getName(), methodType.getName(),
                                                     methodsType.getExceptions().getDefaultException().getClazz(),
                                                     methodsType.getExceptions().getDefaultException().getTargetClass() ),
                                         detailElement ) );

@@ -47,6 +47,11 @@
       <code>@XmlNs</code> annotation to the <code>@XmlSchema</code> annotation of the
       <code>org.jomc.standalone.model</code> package.]]>
       </action>
+      <action dev="schulte2005" type="add"><![CDATA[Added attributes <code>final</code> and <code>override</code>
+      to the <code>MethodsType</code> complex type of the <code>jomc-standalone-1.0.xsd</code> schema and updated
+      class <code>org.jomc.standalone.model.MethodsType</code> to implement interface
+      <code>org.jomc.model.Inheritable</code>.]]>
+      </action>
       <action dev="schulte2005" type="fix"><![CDATA[Corrected a <code>java.lang.IndexOutOfBoundsException</code> thrown
       by methods <code>matches</code> of class <code>org.jomc.standalone.model.ParametersType</code>.]]>
       </action>
