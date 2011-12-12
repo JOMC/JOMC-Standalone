@@ -79,7 +79,9 @@ import static org.jomc.standalone.model.TransactionAttributeType.*;
  *   </ul>
  * </p>
  * <dl>
- *   <dt><b>Stateless:</b></dt><dd>No state is retained.</dd>
+ *   <dt><b>Abstract:</b></dt><dd>No</dd>
+ *   <dt><b>Final:</b></dt><dd>No</dd>
+ *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
  * </dl>
  *
  * @author <a href="mailto:schulte2005@users.sourceforge.net">Christian Schulte</a> 1.0
@@ -781,7 +783,7 @@ public class StandaloneInvoker extends DefaultInvoker
      *   That specification does not apply to any scope. A new object is returned whenever requested and bound to this instance.
      * </p>
      * <dl>
-     *   <dt><b>Final:</b></dt><dd>Descendant implementations cannot override this dependency.</dd>
+     *   <dt><b>Final:</b></dt><dd>Yes</dd>
      * </dl>
      * @return The {@code <Locale>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
@@ -808,7 +810,7 @@ public class StandaloneInvoker extends DefaultInvoker
      *   </ul>
      * </p>
      * <dl>
-     *   <dt><b>Final:</b></dt><dd>Descendant implementations cannot override this message.</dd>
+     *   <dt><b>Final:</b></dt><dd>Yes</dd>
      * </dl>
      *
      * @param locale The locale of the message to return.
@@ -833,7 +835,7 @@ public class StandaloneInvoker extends DefaultInvoker
      *   </ul>
      * </p>
      * <dl>
-     *   <dt><b>Final:</b></dt><dd>Descendant implementations cannot override this message.</dd>
+     *   <dt><b>Final:</b></dt><dd>Yes</dd>
      * </dl>
      *
      * @param locale The locale of the message to return.
