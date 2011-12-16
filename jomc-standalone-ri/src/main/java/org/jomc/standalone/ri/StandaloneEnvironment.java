@@ -44,10 +44,9 @@ import java.util.Properties;
 /**
  * Standalone environment.
  *
- * <p>
- *   This implementation is identified by {@code <JOMC Standalone RI Environment>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>JOMC Standalone RI Environment</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Standalone RI Environment</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>Yes</dd>

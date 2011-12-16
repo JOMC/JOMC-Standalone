@@ -46,17 +46,10 @@ import org.jomc.standalone.ri.naming.StandaloneContext;
 /**
  * Standalone context factory for the ''java'' URL scheme.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.java.javaURLContextFactory>}.
- * </p>
- * <p>
- *   It provides objects named {@code <JOMC Standalone RI javaURLContextFactory>} of the following specifications:
- *
- *   <ul>
- *     <li>{@code <javax.naming.spi.ObjectFactory>} at any specification level.</li>
- *   </ul>
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.standalone.ri.naming.java.javaURLContextFactory</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Standalone RI javaURLContextFactory</dd>
+ *   <dt><b>Implements:</b></dt><dd>javax.naming.spi.ObjectFactory</dd></dt>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>

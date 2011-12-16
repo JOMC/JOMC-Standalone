@@ -68,17 +68,10 @@ import static org.jomc.standalone.model.TransactionAttributeType.*;
 /**
  * Standalone {@code Invoker}.
  *
- * <p>
- *   This implementation is identified by {@code <JOMC Standalone RI Invoker>}.
- * </p>
- * <p>
- *   It provides objects named {@code <JOMC Standalone RI Invoker>} of the following specifications:
- *
- *   <ul>
- *     <li>{@code <org.jomc.spi.Invoker>} at specification level 1.0.</li>
- *   </ul>
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>JOMC Standalone RI Invoker</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Standalone RI Invoker</dd>
+ *   <dt><b>Implements:</b></dt><dd>org.jomc.spi.Invoker@1.0</dd></dt>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>Yes</dd>

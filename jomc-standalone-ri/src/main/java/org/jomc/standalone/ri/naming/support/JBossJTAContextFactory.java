@@ -54,17 +54,10 @@ import com.arjuna.ats.jta.utils.JNDIManager;
 /**
  * Standalone JBoss JTA context factory.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.support.JBossJTAContextFactory>}.
- * </p>
- * <p>
- *   It provides objects named {@code <JOMC Standalone RI JBossJTAContextFactory>} of the following specifications:
- *
- *   <ul>
- *     <li>{@code <javax.naming.spi.InitialContextFactory>} at any specification level.</li>
- *   </ul>
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.standalone.ri.naming.support.JBossJTAContextFactory</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Standalone RI JBossJTAContextFactory</dd>
+ *   <dt><b>Implements:</b></dt><dd>javax.naming.spi.InitialContextFactory</dd></dt>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>

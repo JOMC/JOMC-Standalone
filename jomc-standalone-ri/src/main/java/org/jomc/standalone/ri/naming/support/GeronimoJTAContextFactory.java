@@ -45,17 +45,10 @@ import org.apache.geronimo.transaction.manager.GeronimoTransactionManager;
 /**
  * Standalone Geronimo JTA context factory.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.support.GeronimoJTAContextFactory>}.
- * </p>
- * <p>
- *   It provides objects named {@code <JOMC Standalone RI GeronimoJTAContextFactory>} of the following specifications:
- *
- *   <ul>
- *     <li>{@code <javax.naming.spi.InitialContextFactory>} at any specification level.</li>
- *   </ul>
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.standalone.ri.naming.support.GeronimoJTAContextFactory</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Standalone RI GeronimoJTAContextFactory</dd>
+ *   <dt><b>Implements:</b></dt><dd>javax.naming.spi.InitialContextFactory</dd></dt>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>

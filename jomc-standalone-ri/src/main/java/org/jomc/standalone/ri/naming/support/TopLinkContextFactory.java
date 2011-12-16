@@ -41,17 +41,10 @@ import javax.persistence.spi.PersistenceProvider;
 /**
  * Standalone Toplink JPA context factory.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.standalone.ri.naming.support.TopLinkContextFactory>}.
- * </p>
- * <p>
- *   It provides objects named {@code <JOMC Standalone RI TopLinkContextFactory>} of the following specifications:
- *
- *   <ul>
- *     <li>{@code <javax.naming.spi.InitialContextFactory>} at any specification level.</li>
- *   </ul>
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.standalone.ri.naming.support.TopLinkContextFactory</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Standalone RI TopLinkContextFactory</dd>
+ *   <dt><b>Implements:</b></dt><dd>javax.naming.spi.InitialContextFactory</dd></dt>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>
