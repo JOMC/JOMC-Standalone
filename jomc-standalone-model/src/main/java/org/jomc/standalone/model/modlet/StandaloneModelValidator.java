@@ -56,10 +56,9 @@ import org.jomc.standalone.model.MethodsType;
 /**
  * Standalone 'ModelValidator' implementation.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.standalone.model.modlet.StandaloneModelValidator>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.standalone.model.modlet.StandaloneModelValidator</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Standalone Model</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
