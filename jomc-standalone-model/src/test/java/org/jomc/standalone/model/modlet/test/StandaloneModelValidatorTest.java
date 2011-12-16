@@ -52,10 +52,9 @@ import static org.junit.Assert.assertFalse;
 /**
  * Test cases for class {@code org.jomc.standalone.model.modlet.StandaloneModelValidator}.
  *
- * <p>
- *   This implementation is identified by {@code <org.jomc.standalone.model.modlet.test.StandaloneModelValidatorTest>}.
- * </p>
  * <dl>
+ *   <dt><b>Identifier:</b></dt><dd>org.jomc.standalone.model.modlet.test.StandaloneModelValidatorTest</dd>
+ *   <dt><b>Name:</b></dt><dd>JOMC Standalone Model</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>
