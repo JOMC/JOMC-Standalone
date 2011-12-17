@@ -71,7 +71,8 @@ import static org.jomc.standalone.model.TransactionAttributeType.*;
  * <dl>
  *   <dt><b>Identifier:</b></dt><dd>JOMC Standalone RI Invoker</dd>
  *   <dt><b>Name:</b></dt><dd>JOMC Standalone RI Invoker</dd>
- *   <dt><b>Implements:</b></dt><dd>org.jomc.spi.Invoker@1.0</dd></dt>
+ *   <dt><b>Specifications:</b></dt>
+ *     <dd>org.jomc.spi.Invoker @ 1.0</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>Yes</dd>
@@ -796,15 +797,12 @@ public class StandaloneInvoker extends DefaultInvoker
     // <editor-fold defaultstate="collapsed" desc=" Generated Messages ">
     /**
      * Gets the text of the {@code <illegalTransactionMessage>} message.
-     * <p><strong>Languages:</strong>
-     *   <ul>
-     *     <li>English (default)</li>
-     *     <li>Deutsch</li>
-     *   </ul>
-     * </p>
-     * <dl>
+     * <p><dl>
+     *   <dt><b>Languages:</b></dt>
+     *     <dd>English (default)</dd>
+     *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>Yes</dd>
-     * </dl>
+     * </dl></p>
      *
      * @param locale The locale of the message to return.
      * @param methodName Format argument.
@@ -821,15 +819,12 @@ public class StandaloneInvoker extends DefaultInvoker
     }
     /**
      * Gets the text of the {@code <unsupportedTransactionMessage>} message.
-     * <p><strong>Languages:</strong>
-     *   <ul>
-     *     <li>English (default)</li>
-     *     <li>Deutsch</li>
-     *   </ul>
-     * </p>
-     * <dl>
+     * <p><dl>
+     *   <dt><b>Languages:</b></dt>
+     *     <dd>English (default)</dd>
+     *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>Yes</dd>
-     * </dl>
+     * </dl></p>
      *
      * @param locale The locale of the message to return.
      * @param methodName Format argument.

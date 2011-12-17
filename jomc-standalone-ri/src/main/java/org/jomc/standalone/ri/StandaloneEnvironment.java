@@ -369,11 +369,9 @@ public class StandaloneEnvironment
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
     /**
      * Gets the value of the {@code <defaultDataSourceClassName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default class name of the {@code DataSource} backing the standalone environment.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -386,11 +384,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultDataSourceContextFactoryName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default class name of the {@code InitialContextFactory} providing the standalone {@code DataSource}.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -403,11 +399,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultDataSourceJndiName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default JNDI name of the data source backing the standalone JPA implementation.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -420,11 +414,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultEntityManagerFactoryJndiName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default JNDI name the standalone {@code EntityManagerFactory} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -437,11 +429,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultEntityManagerJndiName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default JNDI name the standalone {@code EntityManager} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -454,11 +444,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultJpaContextFactoryName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default class name of the {@code InitialContextFactory} providing the JPA implementation backing the standalone environment.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -471,11 +459,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultJtaContextFactoryName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default class name of the of the {@code InitialContextFactory} providing the JTA implementation backing the standalone environment.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -488,11 +474,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultJtaDataSourceJndiName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default JNDI name of the data source backing the standalone JTA implementation.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -505,11 +489,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultTemporaryDirectoryName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default name of the temporary directory backing the standalone environment.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -522,11 +504,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultTransactionManagerJndiName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default JNDI name the standalone {@code TransactionManager} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -539,11 +519,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultTransactionSynchronizationRegistryJndiName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default JNDI name the standalone {@code TransactionSynchronizationRegistry} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
@@ -556,11 +534,9 @@ public class StandaloneEnvironment
     }
     /**
      * Gets the value of the {@code <defaultUserTransactionJndiName>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return The default JNDI name the standalone {@code UserTransaction} is bound to.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */

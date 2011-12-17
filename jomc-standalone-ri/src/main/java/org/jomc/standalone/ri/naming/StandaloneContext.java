@@ -61,7 +61,8 @@ import javax.naming.spi.NamingManager;
  * <dl>
  *   <dt><b>Identifier:</b></dt><dd>org.jomc.standalone.ri.naming.StandaloneContext</dd>
  *   <dt><b>Name:</b></dt><dd>JOMC Standalone RI StandaloneContext</dd>
- *   <dt><b>Implements:</b></dt><dd>javax.naming.Context</dd></dt>
+ *   <dt><b>Specifications:</b></dt>
+ *     <dd>javax.naming.Context</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>

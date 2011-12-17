@@ -52,7 +52,8 @@ import org.jomc.standalone.ri.StandaloneEnvironment;
  * <dl>
  *   <dt><b>Identifier:</b></dt><dd>org.jomc.standalone.ri.naming.support.DataSourceContextFactory</dd>
  *   <dt><b>Name:</b></dt><dd>JOMC Standalone RI DataSourceContextFactory</dd>
- *   <dt><b>Implements:</b></dt><dd>javax.naming.spi.InitialContextFactory</dd></dt>
+ *   <dt><b>Specifications:</b></dt>
+ *     <dd>javax.naming.spi.InitialContextFactory</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>

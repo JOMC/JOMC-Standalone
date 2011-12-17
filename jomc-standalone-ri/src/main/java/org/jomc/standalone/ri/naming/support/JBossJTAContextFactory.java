@@ -57,7 +57,8 @@ import com.arjuna.ats.jta.utils.JNDIManager;
  * <dl>
  *   <dt><b>Identifier:</b></dt><dd>org.jomc.standalone.ri.naming.support.JBossJTAContextFactory</dd>
  *   <dt><b>Name:</b></dt><dd>JOMC Standalone RI JBossJTAContextFactory</dd>
- *   <dt><b>Implements:</b></dt><dd>javax.naming.spi.InitialContextFactory</dd></dt>
+ *   <dt><b>Specifications:</b></dt>
+ *     <dd>javax.naming.spi.InitialContextFactory</dd>
  *   <dt><b>Abstract:</b></dt><dd>No</dd>
  *   <dt><b>Final:</b></dt><dd>No</dd>
  *   <dt><b>Stateless:</b></dt><dd>No</dd>
@@ -205,11 +206,9 @@ public class JBossJTAContextFactory extends AbstractContextFactory
     // <editor-fold defaultstate="collapsed" desc=" Generated Properties ">
     /**
      * Gets the value of the {@code <transactionalDriverEnabled>} property.
-     * <p>
-     *   <dl>
-     *     <dt><b>Final:</b></dt><dd>No</dd>
-     *   </dl>
-     * </p>
+     * <p><dl>
+     *   <dt><b>Final:</b></dt><dd>No</dd>
+     * </dl></p>
      * @return {@code true} to enable ArjunaJTA's transactional JDBC driver (no JDBC3 support); {@code false} to disable ArjunaJTA's transactional JDBC driver.
      * @throws org.jomc.ObjectManagementException if getting the property instance fails.
      */
