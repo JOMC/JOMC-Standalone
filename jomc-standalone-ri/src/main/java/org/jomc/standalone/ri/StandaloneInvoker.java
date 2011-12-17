@@ -803,7 +803,6 @@ public class StandaloneInvoker extends DefaultInvoker
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>Yes</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param methodName Format argument.
      * @param statusName Format argument.
@@ -825,7 +824,6 @@ public class StandaloneInvoker extends DefaultInvoker
      *     <dd>Deutsch</dd>
      *   <dt><b>Final:</b></dt><dd>Yes</dd>
      * </dl></p>
-     *
      * @param locale The locale of the message to return.
      * @param methodName Format argument.
      * @param transactionAttribute Format argument.
