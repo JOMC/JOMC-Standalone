@@ -52,7 +52,7 @@
       <li>Updated the <code>maven-surefire-report-plugin</code> from <code>2.5</code> to <code>2.11</code>.</li>
       <li>Updated the <code>maven-compiler-plugin</code> from <code>2.3.1</code> to <code>2.3.2</code>.</li>
       <li>Updated the <code>maven-checkstyle-plugin</code> from <code>2.5</code> to <code>2.8</code>.</li>
-      <li>Updated the <code>maven-release-plugin</code> from <code>2.0</code> to <code>2.2.1</code>.</li>
+      <li>Updated the <code>maven-release-plugin</code> from <code>2.0</code> to <code>2.2.2</code>.</li>
       <li>Updated the <code>maven-assembly-plugin</code> from <code>2.2-beta-5</code> to <code>2.2.2</code>.</li>
       <li>Updated the <code>maven-site-plugin</code> from <code>2.1.1</code> to <code>3.0</code>.</li>
       <li>Updated the <code>maven-dependency-plugin</code> from <code>2.1</code> to <code>2.4</code>.</li>
