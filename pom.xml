@@ -1769,7 +1769,11 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <xjcOutputDirectory>${project.build.directory}/generated-sources/jaxb</xjcOutputDirectory>
-    <xjcTestOutputDirectory>${project.build.directory}/generated-sources/jaxb-test</xjcTestOutputDirectory> <!-- See http://netbeans.org/bugzilla/show_bug.cgi?id=187595 -->
+    <xjcTestOutputDirectory>${project.build.directory}/generated-test-sources/jaxb</xjcTestOutputDirectory>
+    <!--
+    Netbeans IDE earlier than 7.1: http://netbeans.org/bugzilla/show_bug.cgi?id=187595
+    <xjcTestOutputDirectory>${project.build.directory}/generated-sources/jaxb-test</xjcTestOutputDirectory>
+    -->
     <javaccOutputDirectory>${project.build.directory}/generated-sources/javacc</javaccOutputDirectory>
     <remoteResourcesOutputDirectory>${project.build.directory}/maven-shared-archive-resources</remoteResourcesOutputDirectory>
     <surefire.version>2.11</surefire.version>
