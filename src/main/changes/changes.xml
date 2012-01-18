@@ -50,7 +50,6 @@
       <action dev="schulte2005" type="add"><![CDATA[Added the <code>javacc-maven-plugin</code> to plugin management.]]></action>
       <action dev="schulte2005" type="add"><![CDATA[Added the <code>animal-sniffer-maven-plugin</code> to support building with JDK 1.6+.]]></action>
       <action dev="schulte2005" type="add"><![CDATA[Added the <code>taglist-maven-plugin</code> to plugin management and reporting section.]]></action>
-      <action dev="schulte2005" type="add"><![CDATA[Added the <code>maven-jaxb21-plugin</code> replacing the <code>jaxb2-maven-plugin</code>.]]></action>
       <action dev="schulte2005" type="add"><![CDATA[Added the <code>jaxb2-basics</code> XJC plugin to the <code>maven-jaxb21-plugin</code> plugin.]]></action>
       <action dev="schulte2005" type="add"><![CDATA[Added a Sourceforge logo to the generated Javadoc.]]></action>
       <action dev="schulte2005" type="update"><![CDATA[Updated the version of the <code>maven-changes-plugin</code> from <code>2.2</code> to <code>2.6</code>.]]></action>
