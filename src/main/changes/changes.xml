@@ -84,6 +84,7 @@
       <action dev="schulte2005" type="update"><![CDATA[Updated the version of <code>jaxb-api</code> from <code>2.2.1</code> to <code>2.2.3</code>.]]></action>
       <action dev="schulte2005" type="update"><![CDATA[Updated the version of <code>jaxb-impl</code> from <code>2.2.1.1</code> to <code>2.2.4-1</code>.]]></action>
       <action dev="schulte2005" type="update"><![CDATA[Updated the version of <code>jomc-build-resources</code> from <code>1.5</code> to <code>1.7</code>.]]></action>
+      <action dev="schulte2005" type="update"><![CDATA[Updated the version of <code>maven-classic-skin</code> from <code>1.0</code> to <code>1.1</code>.]]></action>
       <action dev="schulte2005" type="update"><![CDATA[Updated Javadoc Java API links to new location at Oracle.]]></action>
       <action dev="schulte2005" type="remove"><![CDATA[Removed the <code>jaxb2-maven-plugin</code>.]]></action>
       <action dev="schulte2005" type="remove"><![CDATA[Removed the <code>buildnumber-maven-plugin</code>.]]></action>
