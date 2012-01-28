@@ -42,6 +42,7 @@ import org.jomc.model.Modules;
 import org.jomc.model.modlet.ModelHelper;
 import org.jomc.modlet.Model;
 import org.jomc.modlet.ModelContext;
+import org.jomc.modlet.ModelContextFactory;
 import org.jomc.modlet.ModelValidationReport;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -76,7 +77,7 @@ public class StandaloneModelValidatorTest
 
     @Test public void testValidateModel() throws Exception
     {
-        final ModelContext context = ModelContext.createModelContext( this.getClass().getClassLoader() );
+        final ModelContext context = ModelContextFactory.newInstance().newModelContext();
         final Unmarshaller u = context.createUnmarshaller( ModelObject.MODEL_PUBLIC_ID );
 
         final Modules modules = new Modules();
