@@ -1851,7 +1851,7 @@
     <surefire.version>2.11</surefire.version>
     <plugintools.version>2.9</plugintools.version> <!-- See http://jira.codehaus.org/browse/MNG-3762 -->
     <plexuscontainers.version>1.5.5</plexuscontainers.version>
-    <wagon.version>1.0</wagon.version>
+    <wagon.version>2.2</wagon.version>
     <umlgraph.version>5.1</umlgraph.version>
     <cc-xjc-plugin.version>2.0</cc-xjc-plugin.version>
     <jaxb2-basics.version>0.6.3</jaxb2-basics.version>
