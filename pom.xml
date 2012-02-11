@@ -1103,13 +1103,17 @@
           <configuration>
             <templateParameters>
               <templateParameter>
-                <key>with-vendor-copyright</key>
-                <value>false</value>
-                <type>java.lang.Boolean</type>
+                <key>with-project-name</key>
+                <value>Java Object Management and Configuration</value>
               </templateParameter>
               <templateParameter>
                 <key>with-revision-keyword</key>
                 <value>JOMC</value>
+              </templateParameter>
+              <templateParameter>
+                <key>with-vendor-copyright</key>
+                <value>false</value>
+                <type>java.lang.Boolean</type>
               </templateParameter>
             </templateParameters>
           </configuration>
