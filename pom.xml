@@ -1859,7 +1859,7 @@
     <umlgraph.version>5.1</umlgraph.version>
     <cc-xjc-plugin.version>2.0</cc-xjc-plugin.version>
     <jaxb2-basics.version>0.6.3</jaxb2-basics.version>
-    <jomc.version>1.2-SNAPSHOT</jomc.version>
+    <jomc.version>1.2</jomc.version>
     <jomc.build.version>1.7</jomc.build.version>
     <jomc.base.version>1.0</jomc.base.version>
     <jomc-standalone-model.artifact.version>1.0-beta-3-SNAPSHOT</jomc-standalone-model.artifact.version>

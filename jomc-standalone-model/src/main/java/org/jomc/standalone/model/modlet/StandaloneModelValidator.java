@@ -72,7 +72,7 @@ import org.jomc.standalone.model.MethodsType;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2" )
 // </editor-fold>
 // SECTION-END
 public final class StandaloneModelValidator implements ModelValidator
@@ -160,7 +160,7 @@ public final class StandaloneModelValidator implements ModelValidator
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
     /** Creates a new {@code StandaloneModelValidator} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2" )
     public StandaloneModelValidator()
     {
         // SECTION-START[Default Constructor]

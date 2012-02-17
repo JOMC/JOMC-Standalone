@@ -86,7 +86,7 @@ import static org.jomc.standalone.model.TransactionAttributeType.*;
 // SECTION-END
 // SECTION-START[Annotations]
 // <editor-fold defaultstate="collapsed" desc=" Generated Annotations ">
-@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+@javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2" )
 // </editor-fold>
 // SECTION-END
 public class StandaloneInvoker extends DefaultInvoker
@@ -760,7 +760,7 @@ public class StandaloneInvoker extends DefaultInvoker
     // SECTION-START[Constructors]
     // <editor-fold defaultstate="collapsed" desc=" Generated Constructors ">
     /** Creates a new {@code StandaloneInvoker} instance. */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2" )
     public StandaloneInvoker()
     {
         // SECTION-START[Default Constructor]
@@ -783,7 +783,7 @@ public class StandaloneInvoker extends DefaultInvoker
      * @return The {@code <Locale>} dependency.
      * @throws org.jomc.ObjectManagementException if getting the dependency instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2" )
     private java.util.Locale getLocale()
     {
         final java.util.Locale _d = (java.util.Locale) org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getDependency( this, "Locale" );
@@ -810,7 +810,7 @@ public class StandaloneInvoker extends DefaultInvoker
      * @return The text of the {@code <illegalTransactionMessage>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2" )
     private String getIllegalTransactionMessage( final java.util.Locale locale, final java.lang.String methodName, final java.lang.String statusName )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "illegalTransactionMessage", locale, methodName, statusName );
@@ -831,7 +831,7 @@ public class StandaloneInvoker extends DefaultInvoker
      * @return The text of the {@code <unsupportedTransactionMessage>} message for {@code locale}.
      * @throws org.jomc.ObjectManagementException if getting the message instance fails.
      */
-    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2-SNAPSHOT", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2-SNAPSHOT" )
+    @javax.annotation.Generated( value = "org.jomc.tools.SourceFileProcessor 1.2", comments = "See http://jomc.sourceforge.net/jomc/1.2/jomc-tools-1.2" )
     private String getUnsupportedTransactionMessage( final java.util.Locale locale, final java.lang.String methodName, final java.lang.String transactionAttribute )
     {
         final String _m = org.jomc.ObjectManagerFactory.getObjectManager( this.getClass().getClassLoader() ).getMessage( this, "unsupportedTransactionMessage", locale, methodName, transactionAttribute );
